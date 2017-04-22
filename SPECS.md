@@ -1,33 +1,31 @@
 ## Pre development analysis:
 
 ### View descriptions:
+- 1. "Before continue..." - This screen only shows the user a message
+	Labels:
+		- Title
+		- Message
+	Controls:
+		- 2 buttons at the bottom: Cancel, Continue
 
-- 3 screens:
-	- 1. "Before continue..." - This screen only shows the user a message
-		Labels:
-			- Title
-			- Message
-		Controls:
-			- 2 buttons at the bottom: Cancel, Continue
+- 2. Chargeback - This screen lets the user lock/unlock the credit card, and send a chargeback request.
+	Labels: 
+		- Title
+		- Lock button label
+		- 2x Custom Switches labels (Color: When on is green, When off is grey)
+		- Bottom message
+	Controls:
+		- 1 button at the top: Lock/Unlock card			
+		- 2 switches: Does user know the establishment? Is the user carrying the card?
+		- 2 buttons at the bottom: Cancel, Continue
+		- 1 Text area with input enable
 
-	- 2. Chargeback - This screen lets the user lock/unlock the credit card, and send a chargeback request.
-		Labels: 
-			- Title
-			- Lock button label
-			- 2x Custom Switches labels (Color: When on is green, When off is grey)
-			- Bottom message
-		Controls:
-			- 1 button at the top: Lock/Unlock card			
-			- 2 switches: Does user know the establishment? Is the user carrying the card?
-			- 2 buttons at the bottom: Cancel, Continue
-			- 1 Text area with input enable
-
-	- 3. "Done message" - This informs the user the chargeback request was sent
-		Labels:
-			- Title
-			- Message
-		Buttons:
-			- Close
+- 3. "Done message" - This informs the user the chargeback request was sent
+	Labels:
+		- Title
+		- Message
+	Buttons:
+		- Close
 
 
 #### Screen 1
