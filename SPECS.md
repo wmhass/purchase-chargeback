@@ -31,45 +31,59 @@
 #### Screen 1
 	This view is presented as an overlay, and uses the default overlay view background (#fdfdfd)
 	- Title:
-		- text: "Antes de continuar" 
+		- text: [Received from server] ("title")
 		- color: Purple (#6e2b77)
+
 	- Message:
-		- text: [received from erver]
-			Estamos com você nesta! Certifique-se dos pontos abaixo. são muito importantes:
-			- Você pode [procurar o nome do estabelecimento no Google.](Link google) Diversas vezes encontramos informações valiosas por lá e elas podem te ajudar neste processo.
-			- Caso você reconheça a compra, é muito importante para nós que entre em contato com o estabelecimento e certifique-se de que a situação já não foi resolvida.
-	- Buttons:
-		- "CONTINUAR" - Go to next view - Color: Enabled purple (#6e2b77)
-		- "FECHAR" - Dismisses current view - Color: Close grey (#808191)
+		- text: [Received from server] ("description")
+		- Text color: (black texts) #222222
+		- Link color: (enabled purple) #6e2b77
+
+	- Buttons: [Received from server]
+		- "CONTINUAR" - ("primary_action") - Color: Enabled purple (#6e2b77)
+			-> Takes user to next view [Received from server] ("links/chargeback/href")
+
+		- "FECHAR" - ("secondary_action") - Dismisses current view - Color: Close grey (#808191)
 		- color: Attributed string
 
 	- Challenges:
-		- The message description needs to be a webview - we receive an HTML from the server
+		- The message description needs to be a webview - we receive an HTML from the server. Do not forget to setup the text and link colors of the webview. We might need an app CSS stylesheet here so that we can use the same style across all webviews the app uses.
 
 
 #### Screen 2 (Chargeback)
-	When user opens this screen, and the paremeter "autoblock", received from the server, is true, we do a request to lock the card.
-	- Title:
-		- text: "Não reconheço esta compra" [Received from the server]
+	When user opens this screen, and the paremeter "autoblock" received from the server is true, we do a request to lock the card.
+
+	- Title: [Received from the server]
+		- text: [Received from the server] ("title")
 		- color: #222222 (black texts)
+
 	- Buttons: 
 		- Lock/Unlock card button: Uses "locked_icon"/"unlocked_icon" - Text color: #d5171b (Red)
 			- On tap, if the card is locked, it unlocks the card, but if the card is unlocked, it locks the card (do a POST request). The initial state is unlocked.
+
 			- If card unlocked: 
 				- Text: "Cartão desbloqueado, recomendamos mantê-lo bloqueado."
 				- Icon: "unlocked_icon"
+				- Action: POST request to [Received from server]("links/block_card/href") URL
+
 			- If card locked: 
 				- Text: "Bloqueamos preventivamente o seu cartão"
 				- Icon: "locked_icon"
+				- Action: POST request to [Received from server]("links/unblock_card/href") URL
 
 		- "CANCELAR" - Dismisses current view. Color: Close grey (#808191)
-		- "CONTESTAR" - Send the chargeback requets:
+
+		- "CONTESTAR" - Send the chargeback request
+			- Action: POST Request to [Received from server] ("links/self/href")
+			- Is enable when: User has typed a reason
 			- Color:
 				- Disabled: #cccccc (disabled_gray)
 				- Enabled: #6e2b77 (enabled_purple)
 
-	- Switches: - On/off - When On: (green)#417505  / WHen off: (#aba9ab) - Status Text: White
-		- "merchant_recognized"
+
+	- Switches [received from server]("reason_details"):
+		- Style: OnWhen On: (green)#417505  / WHen off: (#aba9ab) / Status Text: White
+		- "merchant_recognized" 
 		- "card_in_possession"
 
 	- Textarea: (edit on)
@@ -96,5 +110,5 @@
 			- Text: "Fique de olho no seu email! Nos próximos 3 dias você deverá receber um primeiro retorno sobre sua contestação"
 			- Color: (black texts) #222222
 
-## Questions: 
+### Questions: 
 - Color of the "reason" textfield text: The mocks only shows the placeholder text color.
