@@ -82,7 +82,7 @@
 
 
 	- Switches [received from server]("reason_details"):
-		- Style: OnWhen On: (green)#417505  / WHen off: (#aba9ab) / Status Text: White
+		- Style: When On: (green)#417505  / When off: (#aba9ab) / Status Text: White
 		- "merchant_recognized" 
 		- "card_in_possession"
 
