@@ -1,9 +1,3 @@
-# Payment chargeback simple flow
-
-Implementation of a simple purchase chargeback flow.
-
-The intent of this project is to build a simple and easy purchase chargeback user experience.
-
 ## Pre development analysis:
 
 ### View descriptions:
@@ -20,18 +14,20 @@ The intent of this project is to build a simple and easy purchase chargeback use
 		Labels: 
 			- Title
 			- Lock button label
-			- 2x Switches labels (Color: When on is green, When off is grey)
+			- 2x Custom Switches labels (Color: When on is green, When off is grey)
 			- Bottom message
 		Controls:
 			- 1 button at the top: Lock/Unlock card			
 			- 2 switches: Does user know the establishment? Is the user carrying the card?
 			- 2 buttons at the bottom: Cancel, Continue
-			- Text area with input enable
+			- 1 Text area with input enable
 
 	- 3. "Done message" - This informs the user the chargeback request was sent
 		Labels:
 			- Title
 			- Message
+		Buttons:
+			- Close
 
 
 #### Screen 1
@@ -80,11 +76,27 @@ The intent of this project is to build a simple and easy purchase chargeback use
 
 	- Textarea: (edit on)
 		- Uses attributed placeholder or webview?
-		- Placeholder color: 
+		- Placeholder color: hint (#999999)
+
+	- Challenges:
+		- Textarea vs Keyboard: The content can easily overflow the view when keyboard is visible.
+		- Custom switches: Can we reuse the default UISwitch, just customizing, or we need a new one? (Not 100% confident I can resize the default UISwitch)
 
 
 #### Screen 3 (Request sent)
-	- 
+	Informs the user that the chargeback request was sent.
+	- Buttons:
+		- "Close"
+			- Text: Fechar
+			- Color: close_gray (#808191)
+
+	- Labels:
+		- Title:
+			- Text: "Contestação de compra recebida"
+			- Color: (purple titles) #6e2b77
+		- Message: 
+			- Text: "Fique de olho no seu email! Nos próximos 3 dias você deverá receber um primeiro retorno sobre sua contestação"
+			- Color: (black texts) #222222
 
 ## Questions: 
 - Color of the "reason" textfield text: The mocks only shows the placeholder text color.
