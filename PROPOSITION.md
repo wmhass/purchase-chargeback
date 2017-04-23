@@ -1,15 +1,15 @@
 ## Implementation proposition
 
 ### Mini VIPER:
-
 	- Modules
-		- Notice - 
-		- Chargeback
+		- Notice - Simple generic notice view. Can show a notice view containing the following UI components:
+			- A title
+			- A description message (can be a string or HTML)
+			- 0 or n button actions
 
-### 1st case - Overlay presentations
-	The views will be presented as a modal overlay. We can use a custom transition iOS subclass to accomplish this.
-	(UIViewControllerAnimatedTransitioning).
-
+		- Chargeback - 
+			- Allows user to submit a chargeback request
+			- Allows user to block/unblock credit card
 
 ### Views:
 	- NoticeViewController: This view shows a title, a description and two actions.
@@ -37,10 +37,12 @@
 			- When user taps on "Cancelar", we dismiss the view
 
 		- Title: Shows data from "title" json property
-		- Block/Unblock card status: The initial status should be unblocked (although it can be changed if the "autoblock" property is true). The icon in the row shows the current status of the card. When user taps on the row, it should toggle the card status.
+		- Block/Unblock card status: The initial status should be unblocked (although it can be changed right after launching if the "autoblock" property is true). The icon in the row shows the current status of the card. When user taps on the row, it should toggle the card status.
 		- Reasons: Shows one row containing a label positioned on the left side, and a switch on the right side for each reason object received in the "reason_details" Json property
 			- Each "reason_details" object has a "title" and "id" property.
 
 ### Misc
 
-- Colors: 
+- Colors: Have a struct to store all theme colors.
+- Network requests: AFNetworking?
+- Overlay presentations : The views will be presented as a modal overlay. Do we need a custom transition iOS subclass to accomplish this? (UIViewControllerAnimatedTransitioning).
