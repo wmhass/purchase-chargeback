@@ -105,6 +105,7 @@
 		3D54BD4F1EAB88D6000CC9AD /* PurchaseChargeback */ = {
 			isa = PBXGroup;
 			children = (
+				3D54BD881EAC5F7F000CC9AD /* General VIews */,
 				3D54BD831EAC4D46000CC9AD /* HomeViewController */,
 				3D54BD7E1EAC4C3B000CC9AD /* NoticeViewController */,
 				3D54BD501EAB88D6000CC9AD /* AppDelegate.swift */,
@@ -151,6 +152,13 @@
 				3D54BD851EAC4E97000CC9AD /* HomeViewController.xib */,
 			);
 			name = HomeViewController;
+			sourceTree = "<group>";
+		};
+		3D54BD881EAC5F7F000CC9AD /* General VIews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "General VIews";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

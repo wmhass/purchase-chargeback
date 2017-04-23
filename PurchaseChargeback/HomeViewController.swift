@@ -9,12 +9,14 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.startButtonTouched()
     }
     
-    @IBAction func startButtonTouched(_: AnyObject) {
+    @IBAction func startButtonTouched() {
         
         let noticeViewController = NoticeViewController()
         noticeViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve

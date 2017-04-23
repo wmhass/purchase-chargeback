@@ -23,7 +23,7 @@
                     <rect key="frame" x="164" y="318" width="46" height="30"/>
                     <state key="normal" title="Start"/>
                     <connections>
-                        <action selector="startButtonTouched:" destination="-1" eventType="touchUpInside" id="LIb-Sg-hHS"/>
+                        <action selector="startButtonTouched" destination="-1" eventType="touchUpInside" id="LJg-Bh-V3G"/>
                     </connections>
                 </button>
             </subviews>
