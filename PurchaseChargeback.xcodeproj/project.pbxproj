@@ -27,6 +27,11 @@
 		3D54BDA11EAD33FA000CC9AD /* AppModalContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */; };
 		3D54BDA41EAD3F59000CC9AD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BDA61EAD3F59000CC9AD /* Localizable.strings */; };
 		3D54BDA81EAD4017000CC9AD /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDA71EAD4017000CC9AD /* String+Additions.swift */; };
+		3D54BDB21EAD48B0000CC9AD /* ChargebackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDB01EAD48B0000CC9AD /* ChargebackViewController.swift */; };
+		3D54BDB31EAD48B0000CC9AD /* ChargebackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BDB11EAD48B0000CC9AD /* ChargebackViewController.xib */; };
+		3D54BDB71EAD54F7000CC9AD /* ToggleCardStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDB61EAD54F7000CC9AD /* ToggleCardStatusButton.swift */; };
+		3D54BDBB1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDB91EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift */; };
+		3D54BDBC1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,11 @@
 		3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModalContentView.swift; sourceTree = "<group>"; };
 		3D54BDA71EAD4017000CC9AD /* String+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
 		3D54BDAC1EAD42CF000CC9AD /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3D54BDB01EAD48B0000CC9AD /* ChargebackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackViewController.swift; sourceTree = "<group>"; };
+		3D54BDB11EAD48B0000CC9AD /* ChargebackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChargebackViewController.xib; sourceTree = "<group>"; };
+		3D54BDB61EAD54F7000CC9AD /* ToggleCardStatusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleCardStatusButton.swift; sourceTree = "<group>"; };
+		3D54BDB91EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackReasonDetailTableViewCell.swift; sourceTree = "<group>"; };
+		3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChargebackReasonDetailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +133,10 @@
 		3D54BD4F1EAB88D6000CC9AD /* PurchaseChargeback */ = {
 			isa = PBXGroup;
 			children = (
+				3D54BDB41EAD48C9000CC9AD /* Viewcontrollers */,
 				3D54BD9A1EAD2E4C000CC9AD /* General */,
 				3D54BD911EAD0427000CC9AD /* Extensions */,
 				3D54BD891EACF59D000CC9AD /* Resources */,
-				3D54BD831EAC4D46000CC9AD /* HomeViewController */,
-				3D54BD7E1EAC4C3B000CC9AD /* NoticeViewController */,
 				3D54BD501EAB88D6000CC9AD /* AppDelegate.swift */,
 				3D54BD521EAB88D6000CC9AD /* ViewController.swift */,
 				3D54BD571EAB88D6000CC9AD /* Assets.xcassets */,
@@ -226,6 +235,44 @@
 				3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		3D54BDAF1EAD489B000CC9AD /* ChargebackViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3D54BDB01EAD48B0000CC9AD /* ChargebackViewController.swift */,
+				3D54BDB11EAD48B0000CC9AD /* ChargebackViewController.xib */,
+				3D54BDB51EAD4FD7000CC9AD /* Views */,
+			);
+			name = ChargebackViewController;
+			sourceTree = "<group>";
+		};
+		3D54BDB41EAD48C9000CC9AD /* Viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				3D54BDAF1EAD489B000CC9AD /* ChargebackViewController */,
+				3D54BD7E1EAC4C3B000CC9AD /* NoticeViewController */,
+				3D54BD831EAC4D46000CC9AD /* HomeViewController */,
+			);
+			name = Viewcontrollers;
+			sourceTree = "<group>";
+		};
+		3D54BDB51EAD4FD7000CC9AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D54BDB81EAD60BB000CC9AD /* ChargebackReasonDetailTableViewCell */,
+				3D54BDB61EAD54F7000CC9AD /* ToggleCardStatusButton.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3D54BDB81EAD60BB000CC9AD /* ChargebackReasonDetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D54BDB91EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift */,
+				3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */,
+			);
+			name = ChargebackReasonDetailTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,10 +385,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D54BD581EAB88D6000CC9AD /* Assets.xcassets in Resources */,
+				3D54BDBC1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib in Resources */,
 				3D54BD871EAC4E97000CC9AD /* HomeViewController.xib in Resources */,
 				3D54BD8B1EACF5BE000CC9AD /* notice-stylesheet.css in Resources */,
 				3D54BD821EAC4C5B000CC9AD /* NoticeViewController.xib in Resources */,
 				3D54BDA41EAD3F59000CC9AD /* Localizable.strings in Resources */,
+				3D54BDB31EAD48B0000CC9AD /* ChargebackViewController.xib in Resources */,
 				3D54BD901EAD021E000CC9AD /* NoticeActionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +417,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D54BD9C1EAD2E56000CC9AD /* AppColors.swift in Sources */,
+				3D54BDB71EAD54F7000CC9AD /* ToggleCardStatusButton.swift in Sources */,
+				3D54BDB21EAD48B0000CC9AD /* ChargebackViewController.swift in Sources */,
+				3D54BDBB1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift in Sources */,
 				3D54BD531EAB88D6000CC9AD /* ViewController.swift in Sources */,
 				3D54BDA81EAD4017000CC9AD /* String+Additions.swift in Sources */,
 				3D54BD991EAD2E27000CC9AD /* UIColor+Additions.swift in Sources */,
@@ -623,6 +675,7 @@
 				3D54BD771EAB88D6000CC9AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D54BD781EAB88D6000CC9AD /* Build configuration list for PBXNativeTarget "PurchaseChargebackTests" */ = {
 			isa = XCConfigurationList;
@@ -631,6 +684,7 @@
 				3D54BD7A1EAB88D6000CC9AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D54BD7B1EAB88D6000CC9AD /* Build configuration list for PBXNativeTarget "PurchaseChargebackUITests" */ = {
 			isa = XCConfigurationList;
@@ -639,6 +693,7 @@
 				3D54BD7D1EAB88D6000CC9AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

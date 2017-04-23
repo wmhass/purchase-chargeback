@@ -24,5 +24,5 @@ struct AppColor {
     static let titlePrimary = UIColor(r: 0x6E, g: 0x2B, b: 0x77)
     static let titleSecondary = UIColor(r: 0x80, g: 0x81, b: 0x91)
     static let keylineBgd = UIColor(r: 0xDA, g: 0xDA, b: 0xDA)
-    
+    static let overlayBackground = UIColor.black.withAlphaComponent(0.6)
 }

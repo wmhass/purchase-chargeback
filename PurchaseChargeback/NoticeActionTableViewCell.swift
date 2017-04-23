@@ -21,7 +21,6 @@ class NoticeActionTableViewCell: UITableViewCell {
         didSet { self.reloadStyle() }
     }
     
-    static let defaultReuseIdentifier = "NoticeActionTableViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()        

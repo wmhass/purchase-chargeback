@@ -17,4 +17,8 @@ extension ViewWithNib where Self: UIView {
     }
 }
 
-extension UITableViewCell: ViewWithNib { }
+extension UITableViewCell: ViewWithNib {
+    static var defaultReuseIdentifier: String {
+        return String(describing: self.classForCoder())
+    }
+}

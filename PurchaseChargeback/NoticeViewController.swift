@@ -21,9 +21,9 @@ class NoticeViewController: UIViewController {
         
         self.setupActionsTableView()
         
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        self.view.backgroundColor = AppColor.overlayBackground
         self.titleLabel.font = AppFont.noticeTitle
-        self.titleLabel.textColor = AppColor.titlePrimary        
+        self.titleLabel.textColor = AppColor.titlePrimary
 
         self.titleLabel.text = "notice.title.beforecontinue".localized(comment: "Antes de continuar")
         let html = "<p>Estamos com você nesta! Certifique-se dos pontos abaixo, são muito importantes:<br/><strong>• Você pode <font color=\"#6e2b77\">procurar o nome do estabelecimento no Google</font>. Diversas vezes encontramos informações valiosas por lá e elas podem te ajudar neste processo.</strong><br/><strong>• Caso você reconheça a compra, é muito importante pra nós que entre em contato com o estabelecimento e certifique-se que a situação já não foi resolvida.</strong></p>"
@@ -78,6 +78,16 @@ extension NoticeViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         
         if indexPath.row == 0 {
+            let presentingView = self.presentingViewController
+            self.dismiss(animated: true, completion: {
+                let chargebackViewController = ChargebackViewController()
+                chargebackViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+                chargebackViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+                chargebackViewController.modalPresentationCapturesStatusBarAppearance = true
+                
+                presentingView?.present(chargebackViewController, animated: true, completion: nil)
+            })
+            
             
         } else {
             self.dismiss(animated: true, completion: nil)
