@@ -11,4 +11,4 @@ You can check the specs in the [SPECS.md](SPECS.md) file.
 
 ## Implementation proposition
 
-The iOS implementation proposition was written based on the specs. It describes some implementation approaches to accomplish the expected features. You can find the proposition in the [PROPOSITION.md] (PROPOSITION.md) file.
+The iOS implementation proposition was written based on the specs. It describes some implementation approaches to accomplish the expected features. You can find the proposition in the [PROPOSITION.md](PROPOSITION.md) file.
