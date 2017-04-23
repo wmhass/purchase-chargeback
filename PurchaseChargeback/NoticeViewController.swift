@@ -58,6 +58,14 @@ extension NoticeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NoticeActionTableViewCell.defaultReuseIdentifier, for: indexPath) as! NoticeActionTableViewCell
         
+        if indexPath.row == 0 {
+            cell.titleLabel.text = "notice.action.continue".localized(comment: "CONTINUAR")
+            cell.titleStyle = .primary
+        } else {
+            cell.titleLabel.text = "notice.action.close".localized(comment: "FECHAR")
+            cell.titleStyle = .secondary
+        }
+        
         return cell
     }
     
@@ -69,7 +77,11 @@ extension NoticeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        self.dismiss(animated: true, completion: nil)
+        if indexPath.row == 0 {
+            
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

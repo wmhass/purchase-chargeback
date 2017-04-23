@@ -24,8 +24,7 @@ class NoticeActionTableViewCell: UITableViewCell {
     static let defaultReuseIdentifier = "NoticeActionTableViewCell"
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-        self.titleLabel.text = "notice.action.continue".localized(comment: "CONTINUAR")
+        super.awakeFromNib()        
         
         self.selectedBackgroundView = UIView()
         self.titleLabel.font = AppFont.noticeActionTitle
@@ -39,9 +38,9 @@ class NoticeActionTableViewCell: UITableViewCell {
         
         switch self.titleStyle {
         case .primary:
-            self.titleLabel.textColor = AppColor.titleSecondary
-        case .secondary:
             self.titleLabel.textColor = AppColor.titlePrimary
+        case .secondary:
+            self.titleLabel.textColor = AppColor.titleSecondary
         }
     }
 }
