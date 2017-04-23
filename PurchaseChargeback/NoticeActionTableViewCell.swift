@@ -25,8 +25,7 @@ class NoticeActionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.titleLabel.text = "notice.title.beforecontinue".localized(comment: "Antes de continuar")
+        self.titleLabel.text = "notice.action.continue".localized(comment: "CONTINUAR")
         
         self.selectedBackgroundView = UIView()
         self.titleLabel.font = AppFont.noticeActionTitle

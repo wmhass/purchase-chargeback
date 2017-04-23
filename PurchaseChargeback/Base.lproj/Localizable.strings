@@ -7,3 +7,5 @@
 */
 
 "notice.title.beforecontinue" = "Antes de continuar";
+
+"notice.action.continue" = "CONTINUAR";

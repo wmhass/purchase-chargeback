@@ -15,13 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         let homeViewController = HomeViewController()
-        homeViewController.view.frame = self.window!.bounds
         
-        self.window = UIWindow()
-        self.window?.rootViewController = homeViewController
-        self.window?.addSubview(homeViewController.view)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window!.autoresizingMask = [UIViewAutoresizing.flexibleWidth, .flexibleHeight]
+        self.window!.rootViewController = homeViewController
+        
+        homeViewController.view.frame = self.window!.bounds
+        self.window!.addSubview(homeViewController.view)
+        self.window!.makeKeyAndVisible()
         
         return true
     }
