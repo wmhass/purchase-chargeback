@@ -10,7 +10,6 @@
 		3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD501EAB88D6000CC9AD /* AppDelegate.swift */; };
 		3D54BD531EAB88D6000CC9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD521EAB88D6000CC9AD /* ViewController.swift */; };
 		3D54BD581EAB88D6000CC9AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD571EAB88D6000CC9AD /* Assets.xcassets */; };
-		3D54BD5B1EAB88D6000CC9AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD591EAB88D6000CC9AD /* LaunchScreen.storyboard */; };
 		3D54BD661EAB88D6000CC9AD /* PurchaseChargebackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD651EAB88D6000CC9AD /* PurchaseChargebackTests.swift */; };
 		3D54BD711EAB88D6000CC9AD /* PurchaseChargebackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD701EAB88D6000CC9AD /* PurchaseChargebackUITests.swift */; };
 		3D54BD811EAC4C5B000CC9AD /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD7F1EAC4C5B000CC9AD /* NoticeViewController.swift */; };
@@ -52,7 +51,6 @@
 		3D54BD501EAB88D6000CC9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D54BD521EAB88D6000CC9AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D54BD571EAB88D6000CC9AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3D54BD5A1EAB88D6000CC9AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D54BD5C1EAB88D6000CC9AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D54BD611EAB88D6000CC9AD /* PurchaseChargebackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurchaseChargebackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D54BD651EAB88D6000CC9AD /* PurchaseChargebackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseChargebackTests.swift; sourceTree = "<group>"; };
@@ -73,8 +71,8 @@
 		3D54BD9B1EAD2E56000CC9AD /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		3D54BD9D1EAD2E82000CC9AD /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModalContentView.swift; sourceTree = "<group>"; };
-		3D54BDA51EAD3F59000CC9AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3D54BDA71EAD4017000CC9AD /* String+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		3D54BDAC1EAD42CF000CC9AD /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +131,6 @@
 				3D54BD501EAB88D6000CC9AD /* AppDelegate.swift */,
 				3D54BD521EAB88D6000CC9AD /* ViewController.swift */,
 				3D54BD571EAB88D6000CC9AD /* Assets.xcassets */,
-				3D54BD591EAB88D6000CC9AD /* LaunchScreen.storyboard */,
 				3D54BD5C1EAB88D6000CC9AD /* Info.plist */,
 			);
 			path = PurchaseChargeback;
@@ -321,8 +318,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
+				"pt-BR",
 			);
 			mainGroup = 3D54BD441EAB88D6000CC9AD;
 			productRefGroup = 3D54BD4E1EAB88D6000CC9AD /* Products */;
@@ -341,7 +337,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D54BD5B1EAB88D6000CC9AD /* LaunchScreen.storyboard in Resources */,
 				3D54BD581EAB88D6000CC9AD /* Assets.xcassets in Resources */,
 				3D54BD871EAC4E97000CC9AD /* HomeViewController.xib in Resources */,
 				3D54BD8B1EACF5BE000CC9AD /* notice-stylesheet.css in Resources */,
@@ -419,18 +414,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3D54BD591EAB88D6000CC9AD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D54BD5A1EAB88D6000CC9AD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		3D54BDA61EAD3F59000CC9AD /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3D54BDA51EAD3F59000CC9AD /* Base */,
+				3D54BDAC1EAD42CF000CC9AD /* pt-BR */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -442,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -492,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
