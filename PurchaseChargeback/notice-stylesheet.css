@@ -1,0 +1,12 @@
+p {
+    color: green;
+    font-family: "comic-sans";
+    font-size: 16px;
+    margin: 0 !important;
+    padding: 0;
+    display: inline-block;
+}
+
+strong {
+    color: black
+}

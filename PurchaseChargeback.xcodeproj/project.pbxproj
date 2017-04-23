@@ -18,6 +18,11 @@
 		3D54BD821EAC4C5B000CC9AD /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD801EAC4C5B000CC9AD /* NoticeViewController.xib */; };
 		3D54BD861EAC4E97000CC9AD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD841EAC4E97000CC9AD /* HomeViewController.swift */; };
 		3D54BD871EAC4E97000CC9AD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD851EAC4E97000CC9AD /* HomeViewController.xib */; };
+		3D54BD8B1EACF5BE000CC9AD /* notice-stylesheet.css in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD8A1EACF5BE000CC9AD /* notice-stylesheet.css */; };
+		3D54BD8F1EAD021E000CC9AD /* NoticeActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD8D1EAD021E000CC9AD /* NoticeActionTableViewCell.swift */; };
+		3D54BD901EAD021E000CC9AD /* NoticeActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD8E1EAD021E000CC9AD /* NoticeActionTableViewCell.xib */; };
+		3D54BD931EAD0440000CC9AD /* ViewWithNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD921EAD0440000CC9AD /* ViewWithNib.swift */; };
+		3D54BD961EAD0667000CC9AD /* NoticeDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD951EAD0667000CC9AD /* NoticeDescriptionTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		3D54BD801EAC4C5B000CC9AD /* NoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
 		3D54BD841EAC4E97000CC9AD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3D54BD851EAC4E97000CC9AD /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		3D54BD8A1EACF5BE000CC9AD /* notice-stylesheet.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "notice-stylesheet.css"; sourceTree = "<group>"; };
+		3D54BD8D1EAD021E000CC9AD /* NoticeActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeActionTableViewCell.swift; sourceTree = "<group>"; };
+		3D54BD8E1EAD021E000CC9AD /* NoticeActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeActionTableViewCell.xib; sourceTree = "<group>"; };
+		3D54BD921EAD0440000CC9AD /* ViewWithNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithNib.swift; sourceTree = "<group>"; };
+		3D54BD951EAD0667000CC9AD /* NoticeDescriptionTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDescriptionTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,8 @@
 		3D54BD4F1EAB88D6000CC9AD /* PurchaseChargeback */ = {
 			isa = PBXGroup;
 			children = (
+				3D54BD911EAD0427000CC9AD /* Extensions */,
+				3D54BD891EACF59D000CC9AD /* Resources */,
 				3D54BD881EAC5F7F000CC9AD /* General VIews */,
 				3D54BD831EAC4D46000CC9AD /* HomeViewController */,
 				3D54BD7E1EAC4C3B000CC9AD /* NoticeViewController */,
@@ -139,6 +151,7 @@
 		3D54BD7E1EAC4C3B000CC9AD /* NoticeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3D54BD941EAD0654000CC9AD /* Views */,
 				3D54BD7F1EAC4C5B000CC9AD /* NoticeViewController.swift */,
 				3D54BD801EAC4C5B000CC9AD /* NoticeViewController.xib */,
 			);
@@ -159,6 +172,40 @@
 			children = (
 			);
 			name = "General VIews";
+			sourceTree = "<group>";
+		};
+		3D54BD891EACF59D000CC9AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D54BD8A1EACF5BE000CC9AD /* notice-stylesheet.css */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3D54BD8C1EAD0204000CC9AD /* NoticeActionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D54BD8D1EAD021E000CC9AD /* NoticeActionTableViewCell.swift */,
+				3D54BD8E1EAD021E000CC9AD /* NoticeActionTableViewCell.xib */,
+			);
+			name = NoticeActionTableViewCell;
+			sourceTree = "<group>";
+		};
+		3D54BD911EAD0427000CC9AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D54BD921EAD0440000CC9AD /* ViewWithNib.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		3D54BD941EAD0654000CC9AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D54BD8C1EAD0204000CC9AD /* NoticeActionTableViewCell */,
+				3D54BD951EAD0667000CC9AD /* NoticeDescriptionTextView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +321,10 @@
 				3D54BD5B1EAB88D6000CC9AD /* LaunchScreen.storyboard in Resources */,
 				3D54BD581EAB88D6000CC9AD /* Assets.xcassets in Resources */,
 				3D54BD871EAC4E97000CC9AD /* HomeViewController.xib in Resources */,
+				3D54BD8B1EACF5BE000CC9AD /* notice-stylesheet.css in Resources */,
 				3D54BD821EAC4C5B000CC9AD /* NoticeViewController.xib in Resources */,
 				3D54BD561EAB88D6000CC9AD /* Main.storyboard in Resources */,
+				3D54BD901EAD021E000CC9AD /* NoticeActionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +353,9 @@
 				3D54BD811EAC4C5B000CC9AD /* NoticeViewController.swift in Sources */,
 				3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */,
 				3D54BD861EAC4E97000CC9AD /* HomeViewController.swift in Sources */,
+				3D54BD931EAD0440000CC9AD /* ViewWithNib.swift in Sources */,
+				3D54BD961EAD0667000CC9AD /* NoticeDescriptionTextView.swift in Sources */,
+				3D54BD8F1EAD021E000CC9AD /* NoticeActionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

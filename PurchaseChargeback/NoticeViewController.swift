@@ -12,45 +12,23 @@ import WebKit
 class NoticeViewController: UIViewController {
 
     @IBOutlet weak var actionsTableView: UITableView!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionTextView: NoticeDescriptionTextView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupActionsTableView()
+        self.setupDescriptionTextView()
+        
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        
-        self.actionsTableView.rowHeight = 77
-        self.actionsTableView.layoutMargins = UIEdgeInsets.zero
-        self.actionsTableView.separatorInset = UIEdgeInsets.zero
-        self.actionsTableView.tableFooterView = UIView()
-        self.actionsTableView.separatorColor = UIColor.purple
-        
-        let html = "<h1>H! Title</h1> <hr /> Hello world <br /> Hello < p/> Hello again  <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again<br /> Hello< p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again<br /> Hello< p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again <br /> Hello < p/> Hello again<br /> Hello - END"
-        let htmlData = html.data(using: String.Encoding.utf8)
-        
-        let htmlAttributedStringOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            
-            let htmlAttrString = try NSAttributedString(data: htmlData!, options: htmlAttributedStringOptions, documentAttributes: nil)
-            
-            self.descriptionTextView.bounces = false
-            self.descriptionTextView.isScrollEnabled = false
-            self.descriptionTextView.attributedText = htmlAttrString
-            
-            self.descriptionTextView.setNeedsLayout()
-            self.descriptionTextView.layoutIfNeeded()
-            
-            self.descriptionTextView.isScrollEnabled = true
-            
-        } catch {
-            
-        }
-        
-        
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
@@ -60,6 +38,20 @@ class NoticeViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    func setupActionsTableView() {
+        self.actionsTableView.rowHeight = 77
+        self.actionsTableView.tableFooterView = UIView()
+        self.actionsTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        self.actionsTableView.register(NoticeActionTableViewCell.nib, forCellReuseIdentifier: NoticeActionTableViewCell.defaultReuseIdentifier)
+    }
+    
+    func setupDescriptionTextView() {
+        let html = "<p>Estamos com você nesta! Certifique-se dos pontos abaixo, são muito importantes:<br/><strong>• Você pode <font color=\"#6e2b77\">procurar o nome do estabelecimento no Google</font>. Diversas vezes encontramos informações valiosas por lá e elas podem te ajudar neste processo.</strong><br/><strong>• Caso você reconheça a compra, é muito importante pra nós que entre em contato com o estabelecimento e certifique-se que a situação já não foi resolvida.</strong></p>"
+        self.descriptionTextView.setHTMLText(text: html, appendingStyle: true)
+    }
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -70,10 +62,7 @@ extension NoticeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell()
-        cell.layoutMargins = UIEdgeInsets.zero
-        cell.textLabel?.text = "Close"
+        let cell = tableView.dequeueReusableCell(withIdentifier: NoticeActionTableViewCell.defaultReuseIdentifier, for: indexPath) as! NoticeActionTableViewCell
         
         return cell
     }
