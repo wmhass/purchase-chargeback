@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  PurchaseChargeback
+
+  Created by William Hass on 4/23/17.
+  Copyright © 2017 lilohass. All rights reserved.
+*/
+
+"notice.title.beforecontinue" = "Antes de continuar";

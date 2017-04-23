@@ -27,6 +27,8 @@
 		3D54BD9C1EAD2E56000CC9AD /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD9B1EAD2E56000CC9AD /* AppColors.swift */; };
 		3D54BD9E1EAD2E82000CC9AD /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD9D1EAD2E82000CC9AD /* AppFont.swift */; };
 		3D54BDA11EAD33FA000CC9AD /* AppModalContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */; };
+		3D54BDA41EAD3F59000CC9AD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BDA61EAD3F59000CC9AD /* Localizable.strings */; };
+		3D54BDA81EAD4017000CC9AD /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDA71EAD4017000CC9AD /* String+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		3D54BD9B1EAD2E56000CC9AD /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		3D54BD9D1EAD2E82000CC9AD /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModalContentView.swift; sourceTree = "<group>"; };
+		3D54BDA51EAD3F59000CC9AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3D54BDA71EAD4017000CC9AD /* String+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +130,6 @@
 				3D54BD9A1EAD2E4C000CC9AD /* General */,
 				3D54BD911EAD0427000CC9AD /* Extensions */,
 				3D54BD891EACF59D000CC9AD /* Resources */,
-				3D54BD881EAC5F7F000CC9AD /* General VIews */,
 				3D54BD831EAC4D46000CC9AD /* HomeViewController */,
 				3D54BD7E1EAC4C3B000CC9AD /* NoticeViewController */,
 				3D54BD501EAB88D6000CC9AD /* AppDelegate.swift */,
@@ -176,17 +179,11 @@
 			name = HomeViewController;
 			sourceTree = "<group>";
 		};
-		3D54BD881EAC5F7F000CC9AD /* General VIews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "General VIews";
-			sourceTree = "<group>";
-		};
 		3D54BD891EACF59D000CC9AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				3D54BD8A1EACF5BE000CC9AD /* notice-stylesheet.css */,
+				3D54BDA61EAD3F59000CC9AD /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -205,6 +202,7 @@
 			children = (
 				3D54BD921EAD0440000CC9AD /* ViewWithNib.swift */,
 				3D54BD981EAD2E27000CC9AD /* UIColor+Additions.swift */,
+				3D54BDA71EAD4017000CC9AD /* String+Additions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -351,6 +349,7 @@
 				3D54BD871EAC4E97000CC9AD /* HomeViewController.xib in Resources */,
 				3D54BD8B1EACF5BE000CC9AD /* notice-stylesheet.css in Resources */,
 				3D54BD821EAC4C5B000CC9AD /* NoticeViewController.xib in Resources */,
+				3D54BDA41EAD3F59000CC9AD /* Localizable.strings in Resources */,
 				3D54BD561EAB88D6000CC9AD /* Main.storyboard in Resources */,
 				3D54BD901EAD021E000CC9AD /* NoticeActionTableViewCell.xib in Resources */,
 			);
@@ -379,6 +378,7 @@
 			files = (
 				3D54BD9C1EAD2E56000CC9AD /* AppColors.swift in Sources */,
 				3D54BD531EAB88D6000CC9AD /* ViewController.swift in Sources */,
+				3D54BDA81EAD4017000CC9AD /* String+Additions.swift in Sources */,
 				3D54BD991EAD2E27000CC9AD /* UIColor+Additions.swift in Sources */,
 				3D54BD811EAC4C5B000CC9AD /* NoticeViewController.swift in Sources */,
 				3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */,
@@ -437,6 +437,14 @@
 				3D54BD5A1EAB88D6000CC9AD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3D54BDA61EAD3F59000CC9AD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D54BDA51EAD3F59000CC9AD /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
