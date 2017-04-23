@@ -12,13 +12,11 @@ class NoticeDescriptionTextView: UITextView {
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
-        
         self.commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         self.commonInit()
     }
     
@@ -34,14 +32,9 @@ class NoticeDescriptionTextView: UITextView {
         guard var html = text else {
             return
         }
-        
-        if appendingStyle {
-            do {
-                if let filePath = Bundle.main.path(forResource: "notice-stylesheet", ofType: "css") {
-                    let styleSheet = try String(contentsOfFile: filePath, encoding: String.Encoding.utf8)
-                    html = "<style>" + styleSheet + "</style>" + html
-                }
-            } catch let error { print(error) }
+
+        if let stylesheet = AppColor.noticeDescriptionStylesheet, appendingStyle {
+            html = "<style>" + stylesheet + "</style>" + html
         }
         
         let htmlData = html.data(using: String.Encoding.unicode)

@@ -23,6 +23,10 @@
 		3D54BD901EAD021E000CC9AD /* NoticeActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD8E1EAD021E000CC9AD /* NoticeActionTableViewCell.xib */; };
 		3D54BD931EAD0440000CC9AD /* ViewWithNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD921EAD0440000CC9AD /* ViewWithNib.swift */; };
 		3D54BD961EAD0667000CC9AD /* NoticeDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD951EAD0667000CC9AD /* NoticeDescriptionTextView.swift */; };
+		3D54BD991EAD2E27000CC9AD /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD981EAD2E27000CC9AD /* UIColor+Additions.swift */; };
+		3D54BD9C1EAD2E56000CC9AD /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD9B1EAD2E56000CC9AD /* AppColors.swift */; };
+		3D54BD9E1EAD2E82000CC9AD /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD9D1EAD2E82000CC9AD /* AppFont.swift */; };
+		3D54BDA11EAD33FA000CC9AD /* AppModalContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		3D54BD8E1EAD021E000CC9AD /* NoticeActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeActionTableViewCell.xib; sourceTree = "<group>"; };
 		3D54BD921EAD0440000CC9AD /* ViewWithNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithNib.swift; sourceTree = "<group>"; };
 		3D54BD951EAD0667000CC9AD /* NoticeDescriptionTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDescriptionTextView.swift; sourceTree = "<group>"; };
+		3D54BD981EAD2E27000CC9AD /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		3D54BD9B1EAD2E56000CC9AD /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		3D54BD9D1EAD2E82000CC9AD /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModalContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 		3D54BD4F1EAB88D6000CC9AD /* PurchaseChargeback */ = {
 			isa = PBXGroup;
 			children = (
+				3D54BD9A1EAD2E4C000CC9AD /* General */,
 				3D54BD911EAD0427000CC9AD /* Extensions */,
 				3D54BD891EACF59D000CC9AD /* Resources */,
 				3D54BD881EAC5F7F000CC9AD /* General VIews */,
@@ -151,9 +160,9 @@
 		3D54BD7E1EAC4C3B000CC9AD /* NoticeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3D54BD941EAD0654000CC9AD /* Views */,
 				3D54BD7F1EAC4C5B000CC9AD /* NoticeViewController.swift */,
 				3D54BD801EAC4C5B000CC9AD /* NoticeViewController.xib */,
+				3D54BD941EAD0654000CC9AD /* Views */,
 			);
 			name = NoticeViewController;
 			sourceTree = "<group>";
@@ -195,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				3D54BD921EAD0440000CC9AD /* ViewWithNib.swift */,
+				3D54BD981EAD2E27000CC9AD /* UIColor+Additions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +214,24 @@
 			children = (
 				3D54BD8C1EAD0204000CC9AD /* NoticeActionTableViewCell */,
 				3D54BD951EAD0667000CC9AD /* NoticeDescriptionTextView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3D54BD9A1EAD2E4C000CC9AD /* General */ = {
+			isa = PBXGroup;
+			children = (
+				3D54BD9F1EAD33E6000CC9AD /* Views */,
+				3D54BD9B1EAD2E56000CC9AD /* AppColors.swift */,
+				3D54BD9D1EAD2E82000CC9AD /* AppFont.swift */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		3D54BD9F1EAD33E6000CC9AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -349,10 +377,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D54BD9C1EAD2E56000CC9AD /* AppColors.swift in Sources */,
 				3D54BD531EAB88D6000CC9AD /* ViewController.swift in Sources */,
+				3D54BD991EAD2E27000CC9AD /* UIColor+Additions.swift in Sources */,
 				3D54BD811EAC4C5B000CC9AD /* NoticeViewController.swift in Sources */,
 				3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */,
+				3D54BDA11EAD33FA000CC9AD /* AppModalContentView.swift in Sources */,
 				3D54BD861EAC4E97000CC9AD /* HomeViewController.swift in Sources */,
+				3D54BD9E1EAD2E82000CC9AD /* AppFont.swift in Sources */,
 				3D54BD931EAD0440000CC9AD /* ViewWithNib.swift in Sources */,
 				3D54BD961EAD0667000CC9AD /* NoticeDescriptionTextView.swift in Sources */,
 				3D54BD8F1EAD021E000CC9AD /* NoticeActionTableViewCell.swift in Sources */,

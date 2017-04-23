@@ -8,18 +8,41 @@
 
 import UIKit
 
-
-
 class NoticeActionTableViewCell: UITableViewCell {
     
-    static let defaultReuseIdentifier = "NoticeActionTableViewCell"
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    enum ActionTitleStyle {
+        case primary
+        case secondary
     }
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var topKeyline: UIView!
+    var titleStyle: ActionTitleStyle = .secondary {
+        didSet { self.reloadStyle() }
+    }
+    
+    static let defaultReuseIdentifier = "NoticeActionTableViewCell"
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.titleLabel.text = "CONTINUAR"
+        
+        self.selectedBackgroundView = UIView()
+        self.titleLabel.font = AppFont.noticeActionTitle
+        self.topKeyline.backgroundColor = AppColor.keylineBgd
+        self.selectedBackgroundView?.backgroundColor = AppColor.keylineBgd
+        
+        self.reloadStyle()
+    }
+    
+    func reloadStyle() {
+        
+        switch self.titleStyle {
+        case .primary:
+            self.titleLabel.textColor = AppColor.titleSecondary
+        case .secondary:
+            self.titleLabel.textColor = AppColor.titlePrimary
+        }
+    }
 }

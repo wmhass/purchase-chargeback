@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="actionsTableView" destination="n57-ON-pij" id="gmu-lJ-R2N"/>
                 <outlet property="descriptionTextView" destination="Nkc-9b-1VL" id="RY6-ie-syS"/>
+                <outlet property="titleLabel" destination="W4j-I9-HtR" id="zdz-B8-udZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-4w-fY5" userLabel="Content view">
+                <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-4w-fY5" userLabel="Content view" customClass="AppModalContentView" customModule="PurchaseChargeback" customModuleProvider="target">
                     <rect key="frame" x="15" y="87.5" width="345" height="492"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Antes de continuar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4j-I9-HtR">

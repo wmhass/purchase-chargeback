@@ -13,14 +13,8 @@ class NoticeViewController: UIViewController {
 
     @IBOutlet weak var actionsTableView: UITableView!
     @IBOutlet weak var descriptionTextView: NoticeDescriptionTextView!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +23,8 @@ class NoticeViewController: UIViewController {
         self.setupDescriptionTextView()
         
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        self.titleLabel.font = AppFont.noticeTitle
+        self.titleLabel.textColor = AppColor.titlePrimary
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
