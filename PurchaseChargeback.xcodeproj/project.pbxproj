@@ -32,6 +32,7 @@
 		3D54BDB71EAD54F7000CC9AD /* ToggleCardStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDB61EAD54F7000CC9AD /* ToggleCardStatusButton.swift */; };
 		3D54BDBB1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDB91EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift */; };
 		3D54BDBC1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */; };
+		3D54BDBE1EADFD24000CC9AD /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDBD1EADFD24000CC9AD /* AppImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		3D54BDB61EAD54F7000CC9AD /* ToggleCardStatusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleCardStatusButton.swift; sourceTree = "<group>"; };
 		3D54BDB91EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackReasonDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChargebackReasonDetailTableViewCell.xib; sourceTree = "<group>"; };
+		3D54BDBD1EADFD24000CC9AD /* AppImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				3D54BD9F1EAD33E6000CC9AD /* Views */,
 				3D54BD9B1EAD2E56000CC9AD /* AppColors.swift */,
 				3D54BD9D1EAD2E82000CC9AD /* AppFont.swift */,
+				3D54BDBD1EADFD24000CC9AD /* AppImage.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D54BD9C1EAD2E56000CC9AD /* AppColors.swift in Sources */,
+				3D54BDBE1EADFD24000CC9AD /* AppImage.swift in Sources */,
 				3D54BDB71EAD54F7000CC9AD /* ToggleCardStatusButton.swift in Sources */,
 				3D54BDB21EAD48B0000CC9AD /* ChargebackViewController.swift in Sources */,
 				3D54BDBB1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift in Sources */,

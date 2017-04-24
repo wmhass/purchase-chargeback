@@ -11,7 +11,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChargebackViewController" customModule="PurchaseChargeback" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="Ohw-eM-SNF" id="E26-Rw-zyP"/>
+                <outlet property="reasonsDetailsTableVew" destination="zW6-XZ-ka6" id="F41-1O-JDh"/>
+                <outlet property="titleLabel" destination="DPw-9b-6zy" id="gWY-cW-VuZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="keylineHeightConstraints" destination="cBx-PI-FAc" collectionClass="NSMutableArray" id="eZ3-0i-Gnq"/>
+                <outletCollection property="keylineHeightConstraints" destination="p5l-50-95Q" collectionClass="NSMutableArray" id="map-px-chf"/>
+                <outletCollection property="keylines" destination="a6r-kI-i2y" collectionClass="NSMutableArray" id="ZpE-94-wYM"/>
+                <outletCollection property="keylines" destination="F02-CY-d2n" collectionClass="NSMutableArray" id="0rd-15-Bh6"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -55,12 +61,15 @@
                                 <constraint firstAttribute="bottom" secondItem="VxF-c9-M5P" secondAttribute="bottom" id="oJh-g1-0tS"/>
                             </constraints>
                         </view>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-XZ-ka6">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-XZ-ka6">
                             <rect key="frame" x="0.0" y="108" width="345" height="82"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="82" id="myD-Ay-HPY"/>
                             </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="zSg-JK-RqL"/>
+                            </connections>
                         </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6r-kI-i2y" userLabel="Keyline">
                             <rect key="frame" x="0.0" y="190" width="345" height="1"/>
@@ -105,6 +114,7 @@
                     <constraints>
                         <constraint firstItem="VbX-ps-FFv" firstAttribute="leading" secondItem="jDr-Y5-iCV" secondAttribute="leading" id="5zG-Ma-qGa"/>
                         <constraint firstAttribute="trailing" secondItem="F02-CY-d2n" secondAttribute="trailing" id="6dJ-UW-ZfV"/>
+                        <constraint firstItem="DPw-9b-6zy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jDr-Y5-iCV" secondAttribute="leading" id="Eeb-Ki-dsV"/>
                         <constraint firstAttribute="bottom" secondItem="VbX-ps-FFv" secondAttribute="bottom" id="EiF-nd-hwb"/>
                         <constraint firstItem="zW6-XZ-ka6" firstAttribute="leading" secondItem="jDr-Y5-iCV" secondAttribute="leading" id="EwW-yZ-L4P"/>
                         <constraint firstItem="q3Z-2Z-6SP" firstAttribute="leading" secondItem="jDr-Y5-iCV" secondAttribute="leading" id="FPP-2W-0kv"/>
@@ -115,6 +125,7 @@
                         <constraint firstAttribute="trailing" secondItem="q3Z-2Z-6SP" secondAttribute="trailing" id="YLd-JQ-x3h"/>
                         <constraint firstItem="DPw-9b-6zy" firstAttribute="top" secondItem="jDr-Y5-iCV" secondAttribute="top" id="Zod-iN-yyF"/>
                         <constraint firstItem="VbX-ps-FFv" firstAttribute="top" secondItem="gfc-ke-vbP" secondAttribute="bottom" id="aM6-4S-mBl"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DPw-9b-6zy" secondAttribute="trailing" id="j01-qF-ScS"/>
                         <constraint firstAttribute="trailing" secondItem="a6r-kI-i2y" secondAttribute="trailing" id="kvY-0Z-S92"/>
                         <constraint firstItem="a6r-kI-i2y" firstAttribute="top" secondItem="zW6-XZ-ka6" secondAttribute="bottom" id="m2r-I5-rhZ"/>
                         <constraint firstItem="F02-CY-d2n" firstAttribute="leading" secondItem="jDr-Y5-iCV" secondAttribute="leading" id="njH-1a-0k0"/>

@@ -11,3 +11,9 @@
 "notice.action.continue" = "CONTINUAR";
 
 "notice.action.close" = "FECHAR";
+
+"chargeback.title.donotrecognize" = "NÃO RECONHEÇO ESSA COMPRA";
+
+"cardstatus.button.cardlocked" = "Bloqueamos preventivamente o seu cartão";
+
+"cardstatus.button.cardunlocked" = "Cartão desbloqueado, recomendamos mantê-lo bloqueado.";
