@@ -35,6 +35,7 @@ class ChargebackViewController: UIViewController {
         self.titleLabel.font = AppFont.chargebackTitle
         self.titleLabel.text = "chargeback.title.donotrecognize".localized(comment: "NÃO RECONHECO ESSA COMPRA")
         
+        self.reasonTextView.text = nil
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {

@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChargebackViewController" customModule="PurchaseChargeback" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="Ohw-eM-SNF" id="E26-Rw-zyP"/>
+                <outlet property="reasonTextView" destination="gfc-ke-vbP" id="CVp-zs-tfH"/>
                 <outlet property="reasonsDetailsTableVew" destination="zW6-XZ-ka6" id="F41-1O-JDh"/>
                 <outlet property="titleLabel" destination="DPw-9b-6zy" id="gWY-cW-VuZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -78,10 +79,9 @@
                                 <constraint firstAttribute="height" constant="1" id="p5l-50-95Q"/>
                             </constraints>
                         </view>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gfc-ke-vbP">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gfc-ke-vbP" customClass="AttributedPlaceholderTextView" customModule="PurchaseChargeback" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="191" width="345" height="379"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
