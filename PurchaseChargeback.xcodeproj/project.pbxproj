@@ -34,6 +34,7 @@
 		3D54BDBC1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */; };
 		3D54BDBE1EADFD24000CC9AD /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDBD1EADFD24000CC9AD /* AppImage.swift */; };
 		3D54BDC01EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */; };
+		3DF1DF511EB0D225005FB570 /* UICustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChargebackReasonDetailTableViewCell.xib; sourceTree = "<group>"; };
 		3D54BDBD1EADFD24000CC9AD /* AppImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedPlaceholderTextView.swift; sourceTree = "<group>"; };
+		3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomSwitch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 		3D54BD9F1EAD33E6000CC9AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DF1DF4F1EB0D211005FB570 /* Switch */,
 				3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */,
 				3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */,
 			);
@@ -279,6 +282,14 @@
 				3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */,
 			);
 			name = ChargebackReasonDetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		3DF1DF4F1EB0D211005FB570 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */,
+			);
+			name = Switch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +441,7 @@
 				3D54BD531EAB88D6000CC9AD /* ViewController.swift in Sources */,
 				3D54BDC01EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift in Sources */,
 				3D54BDA81EAD4017000CC9AD /* String+Additions.swift in Sources */,
+				3DF1DF511EB0D225005FB570 /* UICustomSwitch.swift in Sources */,
 				3D54BD991EAD2E27000CC9AD /* UIColor+Additions.swift in Sources */,
 				3D54BD811EAC4C5B000CC9AD /* NoticeViewController.swift in Sources */,
 				3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */,
