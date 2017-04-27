@@ -11,11 +11,21 @@ import UIKit
 // This view could have a nib, but it was done programatically for sample purpose.
 open class UICustomSwitch: UIView {
     
+    fileprivate static let animationDuration: TimeInterval = 0.2
+    
+    open var isOn: Bool = false
+    open var offTintColor: UIColor = UIColor.lightGray
+    open var onTintColor: UIColor = UIColor.green
+    open var thumbTintColor: UIColor = UIColor.white
+    open var onLabel: String?
+    open var offLabel: String?
+    open var labelFont: UIFont? = UIFont.systemFont(ofSize: 8)
+    
+    fileprivate var isPressed: Bool = false
     fileprivate let background: UIView = UIView()
     fileprivate let valueLabel: UILabel = UILabel()
     fileprivate let thumb: UIView = UIView()
     fileprivate let touchableAreaButton: UIButton = UIButton()
-    fileprivate let offBackgorundIndicator: UIView = UIView()
     
     var thumbMaxStretchScale: CGFloat = 1.3
     
@@ -26,12 +36,6 @@ open class UICustomSwitch: UIView {
             self.layoutIfNeeded()
         }
     }
-    
-    /*open var isOn: Bool = false
-    open var onTintColor: UIColor?
-    open var thumbTintColor: UIColor?
-    open var onText: String?
-    open var offText: String?*/
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,14 +48,10 @@ open class UICustomSwitch: UIView {
     }
     
     fileprivate func commonInit() {
-        self.background.backgroundColor = UIColor.gray
-        self.thumb.backgroundColor = UIColor.yellow
-        self.thumb.layer.anchorPoint = CGPoint(x: 0, y: 0)
-        self.offBackgorundIndicator.backgroundColor = UIColor.blue
-        self.offBackgorundIndicator.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+        self.valueLabel.font = self.labelFont
+        self.valueLabel.textAlignment = .center
         
         self.addSubview(self.background)
-        self.addSubview(self.offBackgorundIndicator)
         self.addSubview(self.valueLabel)
         self.addSubview(self.thumb)
         self.addSubview(self.touchableAreaButton)
@@ -59,68 +59,76 @@ open class UICustomSwitch: UIView {
         self.touchableAreaButton.addTarget(self, action: #selector(UICustomSwitch.touchDown), for: .touchDown)
         self.touchableAreaButton.addTarget(self, action: #selector(UICustomSwitch.touchUpInside), for: .touchUpInside)
         self.touchableAreaButton.addTarget(self, action: #selector(UICustomSwitch.touchUpOutside), for: .touchUpOutside)
-        self.touchableAreaButton.addTarget(self, action: #selector(UICustomSwitch.touchDragOutside), for: .touchDragOutside)
+        
+        self.setOn(self.isOn, animated: false)
     }
     
     override open func layoutSubviews() {
         super.layoutSubviews()
         
+        self.thumb.backgroundColor = self.thumbTintColor
+        self.valueLabel.textColor = self.thumbTintColor
+        
         self.touchableAreaButton.frame = self.bounds
         self.background.frame = self.bounds
         self.background.layer.cornerRadius = self.background.frame.height/2
         
+        let thumbDiameter = self.frame.height - (2*self.thumbPadding)
+        self.thumb.layer.cornerRadius = thumbDiameter/2
         
-        if !self.touchableAreaButton.isTouchInside {
-            let thumbDiameter = self.background.frame.height - (2*thumbPadding)
-            self.thumb.frame = CGRect(x: self.thumbPadding, y: self.thumbPadding, width: thumbDiameter, height: thumbDiameter)
-            self.thumb.layer.cornerRadius = thumbDiameter/2
+        if !self.isPressed {
+            self.thumb.frame.size = CGSize(width: thumbDiameter, height: thumbDiameter)
+        } else {
+            self.thumb.frame.size.width = thumbDiameter * self.thumbMaxStretchScale
+        }
+        
+        self.valueLabel.frame.size = CGSize(width: self.frame.size.width-thumbDiameter, height: self.frame.height)
+        
+        if self.isOn {
+            self.background.backgroundColor = self.onTintColor
+            self.thumb.frame.origin = CGPoint(x: self.frame.width - self.thumbPadding - self.thumb.frame.size.width, y: self.thumbPadding)
             
-            let padding: CGFloat = 1
-            self.offBackgorundIndicator.frame = CGRect(x: padding, y: padding, width: self.bounds.width - (2*padding), height: self.bounds.height - (2*padding))
-            self.offBackgorundIndicator.layer.cornerRadius = self.offBackgorundIndicator.frame.height/2
+            self.valueLabel.text = self.onLabel
+            self.valueLabel.frame.origin = CGPoint(x: 0, y: 0)
+            
+        } else {
+            self.background.backgroundColor = self.offTintColor
+            self.thumb.frame.origin = CGPoint(x: self.thumbPadding, y: self.thumbPadding)
+            
+            self.valueLabel.text = self.offLabel
+            let valueXPosition = self.frame.size.width - self.valueLabel.frame.size.width
+            self.valueLabel.frame.origin = CGPoint(x: valueXPosition, y: 0)
         }
     }
     
     func setOn(_ on: Bool, animated: Bool) {
-        
+        self.isOn = on
+        self.refreshView(animated: animated)
+    }
+
+    fileprivate func refreshView(animated: Bool) {
+        self.setNeedsLayout()
+        if animated {
+            UIView.animate(withDuration: UICustomSwitch.animationDuration, delay: 0, options: .curveEaseOut, animations: { 
+                self.layoutIfNeeded()
+            }, completion: nil)
+        } else {
+            self.layoutIfNeeded()
+        }
     }
     
     @objc fileprivate func touchDown() {
-        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
-            self.thumb.frame.size.width = self.thumb.frame.height * self.thumbMaxStretchScale
-            //self.offBackgorundIndicator.alpha = 0
-            self.offBackgorundIndicator.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        }, completion: nil)
-    }
-    
-    @objc fileprivate func touchDragInside() {
-        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
-            self.thumb.frame.size.width = self.thumb.frame.height * self.thumbMaxStretchScale
-            //self.offBackgorundIndicator.alpha = 0
-            self.offBackgorundIndicator.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        }, completion: nil)
+        self.isPressed = true
+        self.refreshView(animated: true)
     }
     
     @objc fileprivate func touchUpInside() {
-        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
-            self.thumb.frame.size.width = self.thumb.frame.height
-            //self.offBackgorundIndicator.alpha = 1
-            self.offBackgorundIndicator.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }, completion: nil)
+        self.isPressed = false
+        self.setOn(!self.isOn, animated: true)
     }
     
     @objc fileprivate func touchUpOutside() {
-        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
-            self.thumb.frame.size.width = self.thumb.frame.height
-            //self.offBackgorundIndicator.alpha = 1
-            self.offBackgorundIndicator.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }, completion: nil)
+        self.isPressed = false
+        self.setOn(!self.isOn, animated: true)
     }
-    
-    @objc fileprivate func touchDragOutside() {
-        
-    }
-    
-    
-    
 }
