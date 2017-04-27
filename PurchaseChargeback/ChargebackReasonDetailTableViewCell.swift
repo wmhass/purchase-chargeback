@@ -11,11 +11,14 @@ import UIKit
 class ChargebackReasonDetailTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var switchContainer: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let customSwitch = UICustomSwitch(frame: CGRect(x: 0, y: 0, width: 60, height:20))
-        self.addSubview(customSwitch)
+        customSwitch.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        customSwitch.translatesAutoresizingMaskIntoConstraints = true
+        self.switchContainer.addSubview(customSwitch)
     }
 }

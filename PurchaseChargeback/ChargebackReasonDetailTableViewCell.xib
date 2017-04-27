@@ -23,14 +23,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="niW-AU-PWn" userLabel="UICustomSwitch Container">
+                        <rect key="frame" x="249" y="8" width="63" height="24"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="63" id="E7J-cC-3JU"/>
+                            <constraint firstAttribute="height" constant="24" id="eLd-g7-Z5N"/>
+                        </constraints>
+                    </view>
                 </subviews>
-                <color key="backgroundColor" red="0.18039215689999999" green="0.6588235294" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="rHp-MG-h0K" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="L7z-L3-ax5"/>
                     <constraint firstItem="rHp-MG-h0K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="SX0-Oq-Mdh"/>
+                    <constraint firstItem="niW-AU-PWn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rHp-MG-h0K" secondAttribute="trailing" constant="20" id="ebV-Jn-Dh8"/>
+                    <constraint firstItem="niW-AU-PWn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gDf-gH-NR8"/>
+                    <constraint firstAttribute="trailing" secondItem="niW-AU-PWn" secondAttribute="trailing" constant="8" id="otD-bj-G6s"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="switchContainer" destination="niW-AU-PWn" id="D9a-ym-5G1"/>
                 <outlet property="titleLabel" destination="rHp-MG-h0K" id="qGi-QI-wM8"/>
             </connections>
         </tableViewCell>

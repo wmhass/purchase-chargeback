@@ -239,9 +239,9 @@
 		3D54BD9F1EAD33E6000CC9AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3DF1DF4F1EB0D211005FB570 /* Switch */,
 				3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */,
 				3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */,
+				3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -282,14 +282,6 @@
 				3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */,
 			);
 			name = ChargebackReasonDetailTableViewCell;
-			sourceTree = "<group>";
-		};
-		3DF1DF4F1EB0D211005FB570 /* Switch */ = {
-			isa = PBXGroup;
-			children = (
-				3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */,
-			);
-			name = Switch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

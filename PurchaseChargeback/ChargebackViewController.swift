@@ -15,7 +15,7 @@ class ChargebackViewController: UIViewController {
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var keylineHeightConstraints: [NSLayoutConstraint]!
     @IBOutlet var keylines: [UIView]!
-    @IBOutlet var reasonTextView: UITextView!
+    @IBOutlet var reasonTextView: AttributedPlaceholderTextView!
     @IBOutlet var continueButton: UIButton!
     
     override func viewDidLoad() {
@@ -36,6 +36,7 @@ class ChargebackViewController: UIViewController {
         self.titleLabel.text = "chargeback.title.donotrecognize".localized(comment: "NÃO RECONHECO ESSA COMPRA")
         
         self.reasonTextView.text = nil
+        self.reasonTextView.attributedPlaceholder = NSAttributedString(string: "Raaa")
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
