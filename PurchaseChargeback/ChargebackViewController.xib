@@ -30,6 +30,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qeJ-hT-mBK" userLabel="Content View Reference Frame">
                     <rect key="frame" x="10" y="10" width="355" height="647"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="768" id="gbD-4O-7JV"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="460" id="hHa-xg-qJD"/>
+                    </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ska-dy-QHa">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -155,10 +159,12 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="jDr-Y5-iCV" firstAttribute="top" secondItem="ska-dy-QHa" secondAttribute="top" constant="10" id="eJz-jg-Ufc"/>
-                        <constraint firstAttribute="trailing" secondItem="jDr-Y5-iCV" secondAttribute="trailing" constant="10" id="eqc-n6-wiH"/>
-                        <constraint firstItem="jDr-Y5-iCV" firstAttribute="leading" secondItem="ska-dy-QHa" secondAttribute="leading" constant="10" id="wfl-Tt-qdh"/>
-                        <constraint firstAttribute="bottom" secondItem="jDr-Y5-iCV" secondAttribute="bottom" constant="10" id="y2b-3v-AjE"/>
+                        <constraint firstItem="jDr-Y5-iCV" firstAttribute="centerY" secondItem="ska-dy-QHa" secondAttribute="centerY" id="dhk-go-8os"/>
+                        <constraint firstAttribute="trailing" secondItem="jDr-Y5-iCV" secondAttribute="trailing" priority="750" constant="10" id="eqc-n6-wiH"/>
+                        <constraint firstItem="jDr-Y5-iCV" firstAttribute="centerX" secondItem="ska-dy-QHa" secondAttribute="centerX" id="kkw-ak-uVc"/>
+                        <constraint firstItem="jDr-Y5-iCV" firstAttribute="top" secondItem="ska-dy-QHa" secondAttribute="top" priority="750" constant="10" id="oeb-f4-pPj"/>
+                        <constraint firstItem="jDr-Y5-iCV" firstAttribute="leading" secondItem="ska-dy-QHa" secondAttribute="leading" priority="750" constant="10" id="wfl-Tt-qdh"/>
+                        <constraint firstAttribute="bottom" secondItem="jDr-Y5-iCV" secondAttribute="bottom" priority="750" constant="10" id="y2b-3v-AjE"/>
                     </constraints>
                     <connections>
                         <outlet property="delegate" destination="-1" id="qmh-pH-lhw"/>
@@ -167,16 +173,22 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="qeJ-hT-mBK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="8er-dC-va7"/>
+                <constraint firstAttribute="bottom" secondItem="qeJ-hT-mBK" secondAttribute="bottom" priority="750" constant="10" id="2lo-Jv-1iF"/>
+                <constraint firstAttribute="trailing" secondItem="qeJ-hT-mBK" secondAttribute="trailing" priority="750" constant="10" id="4J0-O8-nht"/>
+                <constraint firstItem="qeJ-hT-mBK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="8er-dC-va7"/>
                 <constraint firstAttribute="bottom" secondItem="ska-dy-QHa" secondAttribute="bottom" id="C2n-h9-h7r"/>
                 <constraint firstItem="ska-dy-QHa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CfL-ke-w9b"/>
                 <constraint firstItem="jDr-Y5-iCV" firstAttribute="height" secondItem="qeJ-hT-mBK" secondAttribute="height" id="EVG-Aw-C6r"/>
-                <constraint firstItem="qeJ-hT-mBK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Jnv-An-FOA"/>
+                <constraint firstItem="qeJ-hT-mBK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HvZ-us-tEL"/>
+                <constraint firstItem="qeJ-hT-mBK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Jnv-An-FOA"/>
+                <constraint firstItem="qeJ-hT-mBK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="MaD-np-CZd"/>
                 <constraint firstAttribute="trailing" secondItem="ska-dy-QHa" secondAttribute="trailing" id="Vfu-17-VUn"/>
-                <constraint firstAttribute="trailing" secondItem="qeJ-hT-mBK" secondAttribute="trailing" constant="10" id="dm0-WR-g7O"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qeJ-hT-mBK" secondAttribute="trailing" constant="10" id="dm0-WR-g7O"/>
                 <constraint firstItem="ska-dy-QHa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kBh-ta-NTA"/>
+                <constraint firstItem="qeJ-hT-mBK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" priority="750" constant="10" id="n7r-ba-bYV"/>
                 <constraint firstItem="jDr-Y5-iCV" firstAttribute="width" secondItem="qeJ-hT-mBK" secondAttribute="width" id="t84-CK-2kI"/>
-                <constraint firstAttribute="bottom" secondItem="qeJ-hT-mBK" secondAttribute="bottom" constant="10" id="tN5-fU-hVE"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qeJ-hT-mBK" secondAttribute="bottom" constant="10" id="tN5-fU-hVE"/>
+                <constraint firstItem="qeJ-hT-mBK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="250" constant="10" id="zbV-9M-R51"/>
             </constraints>
             <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>
