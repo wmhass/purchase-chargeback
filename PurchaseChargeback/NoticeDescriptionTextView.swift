@@ -37,13 +37,13 @@ class NoticeDescriptionTextView: UITextView {
             html = "<style>" + stylesheet + "</style>" + html
         }
         
-        let htmlData = html.data(using: String.Encoding.unicode)
-        let htmlAttributedStringOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
         do {
-            let htmlAttrString = try NSAttributedString(data: htmlData!, options: htmlAttributedStringOptions, documentAttributes: nil)
-            self.attributedText = htmlAttrString
+            let htmlData = html.data(using: String.Encoding.unicode)
+            let htmlAttributedStringOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+            
+            self.attributedText = try NSAttributedString(data: htmlData!, options: htmlAttributedStringOptions, documentAttributes: nil)
+            
         } catch { }
-        
     }
     
 }

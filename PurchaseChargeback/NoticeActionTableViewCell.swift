@@ -34,7 +34,6 @@ class NoticeActionTableViewCell: UITableViewCell {
     }
     
     func reloadStyle() {
-        
         switch self.titleStyle {
         case .primary:
             self.titleLabel.textColor = AppColor.titlePrimary

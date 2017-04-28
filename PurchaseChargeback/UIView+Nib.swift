@@ -1,5 +1,5 @@
 //
-//  ViewWithNib.swift
+//  UIView+Nib.swift
 //  PurchaseChargeback
 //
 //  Created by William Hass on 4/23/17.
@@ -8,16 +8,13 @@
 
 import UIKit
 
-protocol ViewWithNib {
-}
-
-extension ViewWithNib where Self: UIView {
+extension UIView {
     static var nib: UINib? {
         return UINib(nibName: String(describing: self.classForCoder()), bundle: Bundle(for: self))
     }
 }
 
-extension UITableViewCell: ViewWithNib {
+extension UITableViewCell {
     static var defaultReuseIdentifier: String {
         return String(describing: self.classForCoder())
     }

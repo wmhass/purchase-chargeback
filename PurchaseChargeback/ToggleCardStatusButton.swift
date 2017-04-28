@@ -8,16 +8,16 @@
 
 import UIKit
 
-enum ToggleCardStatusButtonStyle {
+enum ToggleCardStatusButtonMode {
     case locked
     case unlocked
 }
 
 class ToggleCardStatusButton: UIButton {
 
-    var style: ToggleCardStatusButtonStyle = .unlocked {
+    var mode: ToggleCardStatusButtonMode = .unlocked {
         didSet {
-            self.refreshStyle()
+            self.refreshMode()
         }
     }
     
@@ -44,20 +44,20 @@ class ToggleCardStatusButton: UIButton {
         self.imageEdgeInsets = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
         self.contentEdgeInsets = UIEdgeInsets.zero
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
-        self.refreshStyle()
+        
+        self.refreshMode()
     }
     
-    fileprivate func refreshStyle() {
-        
-        switch self.style {
+    fileprivate func refreshMode() {
+        switch self.mode {
         case .locked:
             let localizedTitle = "cardstatus.button.cardlocked".localized(comment: "Bloqueamos preventivamente o seu cartão")
             self.setTitle(localizedTitle, for: UIControlState.normal)
-            self.setImage(AppImage.icChargebackLock?.withRenderingMode(.alwaysOriginal), for: UIControlState.normal)
+            self.setImage(UIImage(named: "ic_chargeback_lock")?.withRenderingMode(.alwaysOriginal), for: UIControlState.normal)
         case .unlocked:
             let localizedTitle = "cardstatus.button.cardunlocked".localized(comment: "Cartão desbloqueado, recomendamos mantê-lo bloqueado.")
             self.setTitle(localizedTitle, for: UIControlState.normal)
-            self.setImage(AppImage.icChargebackUnlock?.withRenderingMode(.alwaysOriginal), for: UIControlState.normal)
+            self.setImage(UIImage(named: "ic_chargeback_unlock")?.withRenderingMode(.alwaysOriginal), for: UIControlState.normal)
         }
     }
     

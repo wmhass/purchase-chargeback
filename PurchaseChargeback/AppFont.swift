@@ -9,8 +9,6 @@
 import UIKit
 
 
-
-
 struct AppFont {
     
     static let customSwitchLabel: UIFont? = UIFont.systemFont(ofSize: 8)

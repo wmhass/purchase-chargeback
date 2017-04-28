@@ -8,34 +8,48 @@
 
 import UIKit
 
-// This view could have a nib, but it was done programatically for sample purpose.
 open class UICustomSwitch: UIView {
     
     fileprivate static let animationDuration: TimeInterval = 0.2
     
-    open var isOn: Bool = false
-    open var offTintColor: UIColor = UIColor.lightGray
-    open var onTintColor: UIColor = UIColor.green
-    open var thumbTintColor: UIColor = UIColor.white
-    open var onLabel: String?
-    open var offLabel: String?
-    open var labelFont: UIFont? = UIFont.systemFont(ofSize: 8)
+    private(set) var isOn: Bool = false
+    open var offTintColor: UIColor = UIColor.lightGray {
+        didSet {
+            self.refreshView(animated: false)
+        }
+    }
+    open var onTintColor: UIColor = UIColor.green {
+        didSet {
+            self.refreshView(animated: false)
+        }
+    }
+    open var thumbTintColor: UIColor = UIColor.white {
+        didSet {
+            self.refreshView(animated: false)
+        }
+    }
+    open var labelFont: UIFont? = UIFont.systemFont(ofSize: 8) {
+        didSet {
+            self.refreshView(animated: false)
+        }
+    }
+    open var onLabel: String? {
+        didSet {
+            self.refreshView(animated: false)
+        }
+    }
+    open var offLabel: String? {
+        didSet {
+            self.refreshView(animated: false)
+        }
+    }
     
-    fileprivate var isPressed: Bool = false
     fileprivate let background: UIView = UIView()
     fileprivate let valueLabel: UILabel = UILabel()
     fileprivate let thumb: UIView = UIView()
     fileprivate let touchableAreaButton: UIButton = UIButton()
-    
-    var thumbMaxStretchScale: CGFloat = 1.3
-    
-    
-    var thumbPadding: CGFloat = 1 {
-        didSet {
-            self.setNeedsLayout()
-            self.layoutIfNeeded()
-        }
-    }
+    fileprivate let thumbPadding: CGFloat = 1
+    fileprivate var isPressed: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -79,7 +93,7 @@ open class UICustomSwitch: UIView {
         if !self.isPressed {
             self.thumb.frame.size = CGSize(width: thumbDiameter, height: thumbDiameter)
         } else {
-            self.thumb.frame.size.width = thumbDiameter * self.thumbMaxStretchScale
+            self.thumb.frame.size.width = thumbDiameter * 1.5
         }
         
         self.valueLabel.frame.size = CGSize(width: self.frame.size.width-thumbDiameter, height: self.frame.height)

@@ -1,5 +1,5 @@
 //
-//  UIColor+Additions.swift
+//  UIColor+Hex.swift
 //  PurchaseChargeback
 //
 //  Created by William Hass on 4/23/17.
