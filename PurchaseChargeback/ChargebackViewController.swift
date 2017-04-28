@@ -13,31 +13,9 @@ class ChargebackViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var reasonsDetailsTableVew: UITableView!
     @IBOutlet var cancelButton: UIButton!
-    @IBOutlet var keylineHeightConstraints: [NSLayoutConstraint]!
     @IBOutlet var keylines: [UIView]!
     @IBOutlet var reasonTextView: AttributedPlaceholderTextView!
     @IBOutlet var continueButton: UIButton!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = AppColor.overlayBackground
-        
-        self.reasonsDetailsTableVew.register(ChargebackReasonDetailTableViewCell.nib, forCellReuseIdentifier: ChargebackReasonDetailTableViewCell.defaultReuseIdentifier)
-        
-        for keylineHeightConstraint in self.keylineHeightConstraints {
-            keylineHeightConstraint.constant = 1
-        }
-        
-        for keylineView in self.keylines {
-            keylineView.backgroundColor = AppColor.keylineBgd
-        }
-        
-        self.titleLabel.font = AppFont.chargebackTitle
-        self.titleLabel.text = "chargeback.title.donotrecognize".localized(comment: "NÃO RECONHECO ESSA COMPRA")
-        
-        self.reasonTextView.text = nil
-        self.reasonTextView.attributedPlaceholder = NSAttributedString(string: "Raaa")
-    }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return UIStatusBarAnimation.slide
@@ -45,6 +23,40 @@ class ChargebackViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = AppColor.overlayBackground
+        
+        self.reasonsDetailsTableVew.register(ChargebackReasonDetailTableViewCell.nib, forCellReuseIdentifier: ChargebackReasonDetailTableViewCell.defaultReuseIdentifier)
+        
+        self.setupFooterButtons()
+        self.themeKeylines()
+
+        self.titleLabel.font = AppFont.chargebackTitle
+        self.titleLabel.text = "chargeback.title.donotrecognize".localized(comment: "NÃO RECONHECO ESSA COMPRA")
+        
+        
+        self.reasonTextView.text = nil
+        self.reasonTextView.attributedPlaceholder = NSAttributedString(string: "Raaa")
+    }
+    
+    fileprivate func themeKeylines() {
+        for keylineView in self.keylines {
+            keylineView.backgroundColor = AppColor.keylineBgd
+        }
+    }
+    
+    fileprivate func setupFooterButtons() {
+        self.cancelButton.setTitle("chargeback.button.cancelar".localized(comment: "CANCELAR"), for: UIControlState.normal)
+        self.continueButton.setTitle("chargeback.button.contestar".localized(comment: "CONTESTAR"), for: UIControlState.normal)
+        
+        self.cancelButton.titleLabel?.font = AppFont.chargebackFooterButton
+        self.continueButton.titleLabel?.font = AppFont.chargebackFooterButton
+        
+        self.cancelButton.setTitleColor(AppColor.titleSecondary, for: .normal)
+        self.continueButton.setTitleColor(AppColor.titleSecondaryDisabled, for: .normal)
     }
 
 }

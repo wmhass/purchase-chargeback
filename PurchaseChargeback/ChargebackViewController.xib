@@ -11,12 +11,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChargebackViewController" customModule="PurchaseChargeback" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="Ohw-eM-SNF" id="E26-Rw-zyP"/>
+                <outlet property="continueButton" destination="0XK-ob-MXr" id="340-6u-N9I"/>
                 <outlet property="reasonTextView" destination="gfc-ke-vbP" id="CVp-zs-tfH"/>
                 <outlet property="reasonsDetailsTableVew" destination="zW6-XZ-ka6" id="F41-1O-JDh"/>
                 <outlet property="titleLabel" destination="DPw-9b-6zy" id="gWY-cW-VuZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="keylineHeightConstraints" destination="cBx-PI-FAc" collectionClass="NSMutableArray" id="eZ3-0i-Gnq"/>
-                <outletCollection property="keylineHeightConstraints" destination="p5l-50-95Q" collectionClass="NSMutableArray" id="map-px-chf"/>
                 <outletCollection property="keylines" destination="a6r-kI-i2y" collectionClass="NSMutableArray" id="ZpE-94-wYM"/>
                 <outletCollection property="keylines" destination="F02-CY-d2n" collectionClass="NSMutableArray" id="0rd-15-Bh6"/>
             </connections>
@@ -27,10 +26,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jDr-Y5-iCV" userLabel="Content view" customClass="AppModalContentView" customModule="PurchaseChargeback" customModuleProvider="target">
-                    <rect key="frame" x="15" y="15" width="345" height="637"/>
+                    <rect key="frame" x="10" y="10" width="355" height="647"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPw-9b-6zy">
-                            <rect key="frame" x="151" y="0.0" width="42" height="56"/>
+                            <rect key="frame" x="156" y="0.0" width="42" height="56"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="JJB-NZ-MUJ"/>
                             </constraints>
@@ -39,17 +38,17 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F02-CY-d2n" userLabel="Keyline">
-                            <rect key="frame" x="0.0" y="56" width="345" height="1"/>
+                            <rect key="frame" x="0.0" y="56" width="355" height="1"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="cBx-PI-FAc"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3Z-2Z-6SP" userLabel="Block/Unblock card area">
-                            <rect key="frame" x="0.0" y="58" width="345" height="50"/>
+                            <rect key="frame" x="0.0" y="58" width="355" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxF-c9-M5P" customClass="ToggleCardStatusButton" customModule="PurchaseChargeback" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
                                     <state key="normal" title="Button"/>
                                 </button>
                             </subviews>
@@ -63,7 +62,7 @@
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-XZ-ka6">
-                            <rect key="frame" x="0.0" y="108" width="345" height="82"/>
+                            <rect key="frame" x="0.0" y="108" width="355" height="82"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="82" id="myD-Ay-HPY"/>
@@ -73,40 +72,39 @@
                             </connections>
                         </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6r-kI-i2y" userLabel="Keyline">
-                            <rect key="frame" x="0.0" y="190" width="345" height="1"/>
+                            <rect key="frame" x="0.0" y="190" width="355" height="1"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="p5l-50-95Q"/>
                             </constraints>
                         </view>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gfc-ke-vbP" customClass="AttributedPlaceholderTextView" customModule="PurchaseChargeback" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="191" width="345" height="379"/>
+                            <rect key="frame" x="0.0" y="191" width="355" height="389"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbX-ps-FFv" userLabel="Footer Buttons Area">
-                            <rect key="frame" x="0.0" y="570" width="345" height="67"/>
+                            <rect key="frame" x="0.0" y="580" width="355" height="67"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohw-eM-SNF">
-                                    <rect key="frame" x="37" y="18" width="120" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="120" id="tkM-08-ovs"/>
-                                    </constraints>
-                                    <state key="normal" title="Button"/>
+                                    <rect key="frame" x="25" y="0.0" width="78" height="67"/>
+                                    <state key="normal" title="CANCELAR"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XK-ob-MXr">
-                                    <rect key="frame" x="263" y="18" width="46" height="30"/>
-                                    <state key="normal" title="Button"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XK-ob-MXr">
+                                    <rect key="frame" x="242" y="0.0" width="88" height="67"/>
+                                    <state key="normal" title="CONTESTAR"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="0XK-ob-MXr" secondAttribute="trailing" constant="36" id="5hg-Lx-WX8"/>
-                                <constraint firstItem="Ohw-eM-SNF" firstAttribute="centerY" secondItem="VbX-ps-FFv" secondAttribute="centerY" id="HdO-N9-fdP"/>
+                                <constraint firstAttribute="trailing" secondItem="0XK-ob-MXr" secondAttribute="trailing" constant="25" id="5hg-Lx-WX8"/>
+                                <constraint firstItem="Ohw-eM-SNF" firstAttribute="top" secondItem="VbX-ps-FFv" secondAttribute="top" id="G8b-Wh-cfd"/>
+                                <constraint firstAttribute="bottom" secondItem="0XK-ob-MXr" secondAttribute="bottom" id="PPX-d5-Q7k"/>
+                                <constraint firstAttribute="bottom" secondItem="Ohw-eM-SNF" secondAttribute="bottom" id="RVw-9w-kEw"/>
                                 <constraint firstAttribute="height" constant="67" id="g1T-Ni-yNp"/>
-                                <constraint firstItem="0XK-ob-MXr" firstAttribute="centerY" secondItem="VbX-ps-FFv" secondAttribute="centerY" id="guU-jf-Hr4"/>
-                                <constraint firstItem="Ohw-eM-SNF" firstAttribute="leading" secondItem="VbX-ps-FFv" secondAttribute="leading" constant="37" id="tnU-p4-1T2"/>
+                                <constraint firstItem="0XK-ob-MXr" firstAttribute="top" secondItem="VbX-ps-FFv" secondAttribute="top" id="j3W-cf-r2y"/>
+                                <constraint firstItem="Ohw-eM-SNF" firstAttribute="leading" secondItem="VbX-ps-FFv" secondAttribute="leading" constant="25" id="tnU-p4-1T2"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -140,11 +138,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="jDr-Y5-iCV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="CBb-B4-FUX"/>
-                <constraint firstItem="jDr-Y5-iCV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LD5-or-6cP"/>
-                <constraint firstAttribute="trailing" secondItem="jDr-Y5-iCV" secondAttribute="trailing" constant="15" id="Ruh-AB-TpL"/>
-                <constraint firstItem="jDr-Y5-iCV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="ZMl-ij-KKb"/>
-                <constraint firstAttribute="bottom" secondItem="jDr-Y5-iCV" secondAttribute="bottom" constant="15" id="jfO-ah-7Vq"/>
+                <constraint firstItem="jDr-Y5-iCV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="CBb-B4-FUX"/>
+                <constraint firstAttribute="trailing" secondItem="jDr-Y5-iCV" secondAttribute="trailing" constant="10" id="Ruh-AB-TpL"/>
+                <constraint firstItem="jDr-Y5-iCV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="ZMl-ij-KKb"/>
+                <constraint firstAttribute="bottom" secondItem="jDr-Y5-iCV" secondAttribute="bottom" constant="10" id="jfO-ah-7Vq"/>
             </constraints>
             <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>
