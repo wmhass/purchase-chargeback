@@ -10,9 +10,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.slide
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
     }
     
     @IBAction func startButtonTouched() {
@@ -22,9 +25,5 @@ class HomeViewController: UIViewController {
         modal.installContentViewController(noticeViewController)
         
         self.present(modal, animated: true, completion: nil)
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return false
     }
 }
