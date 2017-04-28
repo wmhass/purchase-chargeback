@@ -18,6 +18,8 @@ class ToggleCardStatusButton: UIButton {
     var mode: ToggleCardStatusButtonMode = .unlocked {
         didSet {
             self.refreshMode()
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
         }
     }
     

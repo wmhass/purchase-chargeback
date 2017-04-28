@@ -79,7 +79,7 @@ extension NoticeViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         
         if indexPath.row == 0 {
-            let presentingView = self.presentingViewController
+            weak var presentingView = self.presentingViewController
             self.dismiss(animated: true, completion: {
                 let chargebackViewController = ChargebackViewController()
                 chargebackViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve

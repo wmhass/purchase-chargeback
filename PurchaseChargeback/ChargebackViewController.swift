@@ -28,6 +28,8 @@ class ChargebackViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.cardStatusButton.mode = .unlocked
         self.view.backgroundColor = AppColor.overlayBackground
         
         self.reasonsDetailsTableVew.register(ChargebackReasonDetailTableViewCell.nib, forCellReuseIdentifier: ChargebackReasonDetailTableViewCell.defaultReuseIdentifier)
@@ -67,6 +69,22 @@ class ChargebackViewController: UIViewController {
             self.cardStatusButton.mode = .unlocked
         } else {
             self.cardStatusButton.mode = .locked
+        }
+    }
+    
+    @IBAction func cancelButtonTouched(_:AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func continueButtonTouched(_:AnyObject) {
+        weak var presentingView = self.presentingViewController
+        self.dismiss(animated: true) { 
+            let noticeViewController = NoticeViewController()
+            noticeViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            noticeViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            noticeViewController.modalPresentationCapturesStatusBarAppearance = true
+            
+            presentingView?.present(noticeViewController, animated: true, completion: nil)
         }
     }
 

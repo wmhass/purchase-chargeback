@@ -94,10 +94,16 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohw-eM-SNF">
                                     <rect key="frame" x="25" y="0.0" width="78" height="67"/>
                                     <state key="normal" title="CANCELAR"/>
+                                    <connections>
+                                        <action selector="cancelButtonTouched:" destination="-1" eventType="touchUpInside" id="Qh5-L3-3rS"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XK-ob-MXr">
                                     <rect key="frame" x="242" y="0.0" width="88" height="67"/>
                                     <state key="normal" title="CONTESTAR"/>
+                                    <connections>
+                                        <action selector="continueButtonTouched:" destination="-1" eventType="touchUpInside" id="uJJ-9S-dc8"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
