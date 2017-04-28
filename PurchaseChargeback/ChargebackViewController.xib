@@ -79,7 +79,7 @@
                             </constraints>
                         </view>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gfc-ke-vbP" customClass="AttributedPlaceholderTextView" customModule="PurchaseChargeback" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="191" width="355" height="389"/>
+                            <rect key="frame" x="11" y="196" width="333" height="379"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -122,17 +122,17 @@
                         <constraint firstItem="zW6-XZ-ka6" firstAttribute="top" secondItem="q3Z-2Z-6SP" secondAttribute="bottom" id="KyB-rI-PhJ"/>
                         <constraint firstAttribute="trailing" secondItem="q3Z-2Z-6SP" secondAttribute="trailing" id="YLd-JQ-x3h"/>
                         <constraint firstItem="DPw-9b-6zy" firstAttribute="top" secondItem="jDr-Y5-iCV" secondAttribute="top" id="Zod-iN-yyF"/>
-                        <constraint firstItem="VbX-ps-FFv" firstAttribute="top" secondItem="gfc-ke-vbP" secondAttribute="bottom" id="aM6-4S-mBl"/>
+                        <constraint firstItem="VbX-ps-FFv" firstAttribute="top" secondItem="gfc-ke-vbP" secondAttribute="bottom" constant="5" id="aM6-4S-mBl"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DPw-9b-6zy" secondAttribute="trailing" id="j01-qF-ScS"/>
                         <constraint firstAttribute="trailing" secondItem="a6r-kI-i2y" secondAttribute="trailing" id="kvY-0Z-S92"/>
                         <constraint firstItem="a6r-kI-i2y" firstAttribute="top" secondItem="zW6-XZ-ka6" secondAttribute="bottom" id="m2r-I5-rhZ"/>
                         <constraint firstItem="F02-CY-d2n" firstAttribute="leading" secondItem="jDr-Y5-iCV" secondAttribute="leading" id="njH-1a-0k0"/>
                         <constraint firstItem="q3Z-2Z-6SP" firstAttribute="top" secondItem="F02-CY-d2n" secondAttribute="bottom" constant="1" id="oJU-Ye-QlD"/>
-                        <constraint firstItem="gfc-ke-vbP" firstAttribute="top" secondItem="a6r-kI-i2y" secondAttribute="bottom" id="qhd-v0-CJ3"/>
+                        <constraint firstItem="gfc-ke-vbP" firstAttribute="top" secondItem="a6r-kI-i2y" secondAttribute="bottom" constant="5" id="qhd-v0-CJ3"/>
                         <constraint firstAttribute="trailing" secondItem="zW6-XZ-ka6" secondAttribute="trailing" id="thn-Zv-ySZ"/>
                         <constraint firstItem="a6r-kI-i2y" firstAttribute="leading" secondItem="jDr-Y5-iCV" secondAttribute="leading" id="xrs-rX-HMQ"/>
-                        <constraint firstAttribute="trailing" secondItem="gfc-ke-vbP" secondAttribute="trailing" id="xz5-vw-SpK"/>
-                        <constraint firstItem="gfc-ke-vbP" firstAttribute="leading" secondItem="jDr-Y5-iCV" secondAttribute="leading" id="zzq-GC-dab"/>
+                        <constraint firstAttribute="trailing" secondItem="gfc-ke-vbP" secondAttribute="trailing" constant="11" id="xz5-vw-SpK"/>
+                        <constraint firstItem="gfc-ke-vbP" firstAttribute="leading" secondItem="jDr-Y5-iCV" secondAttribute="leading" constant="11" id="zzq-GC-dab"/>
                     </constraints>
                 </view>
             </subviews>

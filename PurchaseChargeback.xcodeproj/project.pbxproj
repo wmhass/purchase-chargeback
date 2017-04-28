@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D38643B1EB35F9500D94398 /* UIHTMLTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38643A1EB35F9500D94398 /* UIHTMLTextView.swift */; };
+		3D38643D1EB3609400D94398 /* Bundle+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38643C1EB3609400D94398 /* Bundle+Additions.swift */; };
+		3D38643F1EB3640E00D94398 /* NSAttributedString+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38643E1EB3640E00D94398 /* NSAttributedString+Additions.swift */; };
+		3D3864411EB3670A00D94398 /* chargeback-textview.css in Resources */ = {isa = PBXBuildFile; fileRef = 3D3864401EB3670A00D94398 /* chargeback-textview.css */; };
 		3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD501EAB88D6000CC9AD /* AppDelegate.swift */; };
 		3D54BD531EAB88D6000CC9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD521EAB88D6000CC9AD /* ViewController.swift */; };
 		3D54BD581EAB88D6000CC9AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD571EAB88D6000CC9AD /* Assets.xcassets */; };
@@ -20,7 +24,6 @@
 		3D54BD8F1EAD021E000CC9AD /* NoticeActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD8D1EAD021E000CC9AD /* NoticeActionTableViewCell.swift */; };
 		3D54BD901EAD021E000CC9AD /* NoticeActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD8E1EAD021E000CC9AD /* NoticeActionTableViewCell.xib */; };
 		3D54BD931EAD0440000CC9AD /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD921EAD0440000CC9AD /* UIView+Nib.swift */; };
-		3D54BD961EAD0667000CC9AD /* NoticeDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD951EAD0667000CC9AD /* NoticeDescriptionTextView.swift */; };
 		3D54BD991EAD2E27000CC9AD /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD981EAD2E27000CC9AD /* UIColor+Hex.swift */; };
 		3D54BD9C1EAD2E56000CC9AD /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD9B1EAD2E56000CC9AD /* AppColors.swift */; };
 		3D54BD9E1EAD2E82000CC9AD /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD9D1EAD2E82000CC9AD /* AppFont.swift */; };
@@ -54,6 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D38643A1EB35F9500D94398 /* UIHTMLTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHTMLTextView.swift; sourceTree = "<group>"; };
+		3D38643C1EB3609400D94398 /* Bundle+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Additions.swift"; sourceTree = "<group>"; };
+		3D38643E1EB3640E00D94398 /* NSAttributedString+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Additions.swift"; sourceTree = "<group>"; };
+		3D3864401EB3670A00D94398 /* chargeback-textview.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chargeback-textview.css"; sourceTree = "<group>"; };
 		3D54BD4D1EAB88D6000CC9AD /* PurchaseChargeback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PurchaseChargeback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D54BD501EAB88D6000CC9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D54BD521EAB88D6000CC9AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +80,6 @@
 		3D54BD8D1EAD021E000CC9AD /* NoticeActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeActionTableViewCell.swift; sourceTree = "<group>"; };
 		3D54BD8E1EAD021E000CC9AD /* NoticeActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeActionTableViewCell.xib; sourceTree = "<group>"; };
 		3D54BD921EAD0440000CC9AD /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
-		3D54BD951EAD0667000CC9AD /* NoticeDescriptionTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDescriptionTextView.swift; sourceTree = "<group>"; };
 		3D54BD981EAD2E27000CC9AD /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		3D54BD9B1EAD2E56000CC9AD /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		3D54BD9D1EAD2E82000CC9AD /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
@@ -191,6 +197,7 @@
 			children = (
 				3D54BD8A1EACF5BE000CC9AD /* notice-stylesheet.css */,
 				3D54BDA61EAD3F59000CC9AD /* Localizable.strings */,
+				3D3864401EB3670A00D94398 /* chargeback-textview.css */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -210,6 +217,8 @@
 				3D54BD921EAD0440000CC9AD /* UIView+Nib.swift */,
 				3D54BD981EAD2E27000CC9AD /* UIColor+Hex.swift */,
 				3D54BDA71EAD4017000CC9AD /* String+Additions.swift */,
+				3D38643C1EB3609400D94398 /* Bundle+Additions.swift */,
+				3D38643E1EB3640E00D94398 /* NSAttributedString+Additions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -218,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				3D54BD8C1EAD0204000CC9AD /* NoticeActionTableViewCell */,
-				3D54BD951EAD0667000CC9AD /* NoticeDescriptionTextView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 				3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */,
 				3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */,
 				3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */,
+				3D38643A1EB35F9500D94398 /* UIHTMLTextView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -390,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3864411EB3670A00D94398 /* chargeback-textview.css in Resources */,
 				3D54BD581EAB88D6000CC9AD /* Assets.xcassets in Resources */,
 				3D54BDBC1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib in Resources */,
 				3D54BD871EAC4E97000CC9AD /* HomeViewController.xib in Resources */,
@@ -422,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D38643F1EB3640E00D94398 /* NSAttributedString+Additions.swift in Sources */,
 				3D54BD9C1EAD2E56000CC9AD /* AppColors.swift in Sources */,
 				3D54BDB71EAD54F7000CC9AD /* ToggleCardStatusButton.swift in Sources */,
 				3D54BDB21EAD48B0000CC9AD /* ChargebackViewController.swift in Sources */,
@@ -432,12 +443,13 @@
 				3DF1DF511EB0D225005FB570 /* UICustomSwitch.swift in Sources */,
 				3D54BD991EAD2E27000CC9AD /* UIColor+Hex.swift in Sources */,
 				3D54BD811EAC4C5B000CC9AD /* NoticeViewController.swift in Sources */,
+				3D38643D1EB3609400D94398 /* Bundle+Additions.swift in Sources */,
 				3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */,
 				3D54BDA11EAD33FA000CC9AD /* AppModalContentView.swift in Sources */,
 				3D54BD861EAC4E97000CC9AD /* HomeViewController.swift in Sources */,
 				3D54BD9E1EAD2E82000CC9AD /* AppFont.swift in Sources */,
+				3D38643B1EB35F9500D94398 /* UIHTMLTextView.swift in Sources */,
 				3D54BD931EAD0440000CC9AD /* UIView+Nib.swift in Sources */,
-				3D54BD961EAD0667000CC9AD /* NoticeDescriptionTextView.swift in Sources */,
 				3D54BD8F1EAD021E000CC9AD /* NoticeActionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

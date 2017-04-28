@@ -39,7 +39,14 @@ class ChargebackViewController: UIViewController {
         
         
         self.reasonTextView.text = nil
-        self.reasonTextView.attributedPlaceholder = NSAttributedString(string: "Raaa")
+        
+        
+        
+        var placeholderText = "Nos conte <strong>em detalhes</strong> o que aconteceu com a sua compra em Transaction..."
+        if let sheet = AppColor.chargebackTextViewStylesheet {
+            placeholderText = sheet.css() + placeholderText
+        }
+        self.reasonTextView.attributedPlaceholder = NSAttributedString(html: placeholderText)
     }
     
     fileprivate func themeKeylines() {

@@ -12,7 +12,7 @@ import WebKit
 class NoticeViewController: UIViewController {
 
     @IBOutlet weak var actionsTableView: UITableView!
-    @IBOutlet weak var descriptionTextView: NoticeDescriptionTextView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
     
     
@@ -27,7 +27,7 @@ class NoticeViewController: UIViewController {
 
         self.titleLabel.text = "notice.title.beforecontinue".localized(comment: "Antes de continuar")
         let html = "<p>Estamos com você nesta! Certifique-se dos pontos abaixo, são muito importantes:<br/><strong>• Você pode <font color=\"#6e2b77\">procurar o nome do estabelecimento no Google</font>. Diversas vezes encontramos informações valiosas por lá e elas podem te ajudar neste processo.</strong><br/><strong>• Caso você reconheça a compra, é muito importante pra nós que entre em contato com o estabelecimento e certifique-se que a situação já não foi resolvida.</strong></p>"
-        self.descriptionTextView.setHTMLText(text: html, appendingStyle: true)
+        self.descriptionTextView.setHTMLText(text: html, styleSheet: AppColor.noticeDescriptionStylesheet)
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {

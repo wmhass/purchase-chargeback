@@ -10,14 +10,8 @@ import UIKit
 
 struct AppColor {
     
-    static var noticeDescriptionStylesheet: String? = {
-        do {
-            if let filePath = Bundle.main.path(forResource: "notice-stylesheet", ofType: "css") {
-                return try String(contentsOfFile: filePath, encoding: String.Encoding.utf8)
-            }
-        } catch let error { print(error) }
-        return nil
-    }()
+    static var chargebackTextViewStylesheet: String? = Bundle.main.loadCSSFile(named: "chargeback-textview")
+    static var noticeDescriptionStylesheet: String? = Bundle.main.loadCSSFile(named: "notice-stylesheet")
     
     static let toggleCardStatusText = UIColor(r: 0xD5, g: 0x17, b: 0x1B)
     static let modalContentBgd = UIColor(r: 0xFD, g: 0xFD, b: 0xFD)

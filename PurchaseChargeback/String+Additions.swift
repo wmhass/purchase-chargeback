@@ -8,6 +8,16 @@
 
 import Foundation
 
+protocol StyleSheetString {
+    func css() -> String
+}
+
+extension String: StyleSheetString {
+    func css() -> String {
+        return "<style>" + self + "</style>"
+    }
+}
+
 extension String {
     
     func localized(comment: String) -> String? {
