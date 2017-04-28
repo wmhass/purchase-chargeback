@@ -9,12 +9,12 @@
 import Foundation
 
 protocol StyleSheetString {
-    func css() -> String
+    func css(style: String?) -> String
 }
 
 extension String: StyleSheetString {
-    func css() -> String {
-        return "<style>" + self + "</style>"
+    func css(style: String?) -> String {
+        return "<style>" + (style ?? "") + "</style>" + self
     }
 }
 

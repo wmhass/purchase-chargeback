@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D38643B1EB35F9500D94398 /* UIHTMLTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38643A1EB35F9500D94398 /* UIHTMLTextView.swift */; };
 		3D38643D1EB3609400D94398 /* Bundle+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38643C1EB3609400D94398 /* Bundle+Additions.swift */; };
 		3D38643F1EB3640E00D94398 /* NSAttributedString+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38643E1EB3640E00D94398 /* NSAttributedString+Additions.swift */; };
 		3D3864411EB3670A00D94398 /* chargeback-textview.css in Resources */ = {isa = PBXBuildFile; fileRef = 3D3864401EB3670A00D94398 /* chargeback-textview.css */; };
@@ -57,7 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D38643A1EB35F9500D94398 /* UIHTMLTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHTMLTextView.swift; sourceTree = "<group>"; };
 		3D38643C1EB3609400D94398 /* Bundle+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Additions.swift"; sourceTree = "<group>"; };
 		3D38643E1EB3640E00D94398 /* NSAttributedString+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Additions.swift"; sourceTree = "<group>"; };
 		3D3864401EB3670A00D94398 /* chargeback-textview.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chargeback-textview.css"; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 				3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */,
 				3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */,
 				3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */,
-				3D38643A1EB35F9500D94398 /* UIHTMLTextView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -448,7 +445,6 @@
 				3D54BDA11EAD33FA000CC9AD /* AppModalContentView.swift in Sources */,
 				3D54BD861EAC4E97000CC9AD /* HomeViewController.swift in Sources */,
 				3D54BD9E1EAD2E82000CC9AD /* AppFont.swift in Sources */,
-				3D38643B1EB35F9500D94398 /* UIHTMLTextView.swift in Sources */,
 				3D54BD931EAD0440000CC9AD /* UIView+Nib.swift in Sources */,
 				3D54BD8F1EAD021E000CC9AD /* NoticeActionTableViewCell.swift in Sources */,
 			);
