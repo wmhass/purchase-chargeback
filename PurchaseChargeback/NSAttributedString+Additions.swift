@@ -14,9 +14,7 @@ extension NSAttributedString {
         guard let html = html else {
             return nil
         }
-        
         let htmlData = html.data(using: String.Encoding.unicode)
-        
         let htmlAttributedStringOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
         
         do {
