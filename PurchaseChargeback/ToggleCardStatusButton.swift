@@ -37,6 +37,7 @@ class ToggleCardStatusButton: UIButton {
         self.titleLabel?.numberOfLines = 2
         self.titleLabel?.font = AppFont.toggleCardStatus
         self.setTitleColor(AppColor.toggleCardStatusText, for: UIControlState.normal)
+        self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
         
         self.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         self.imageView?.clipsToBounds = true

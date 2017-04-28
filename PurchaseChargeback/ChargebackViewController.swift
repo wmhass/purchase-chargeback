@@ -16,6 +16,7 @@ class ChargebackViewController: UIViewController {
     @IBOutlet var keylines: [UIView]!
     @IBOutlet var reasonTextView: AttributedPlaceholderTextView!
     @IBOutlet var continueButton: UIButton!
+    @IBOutlet var cardStatusButton: ToggleCardStatusButton!
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return UIStatusBarAnimation.slide
@@ -59,6 +60,14 @@ class ChargebackViewController: UIViewController {
         
         self.cancelButton.setTitleColor(AppColor.titleSecondary, for: .normal)
         self.continueButton.setTitleColor(AppColor.titleSecondaryDisabled, for: .normal)
+    }
+    
+    @IBAction func cardStatusButtonTouched(_:AnyObject) {
+        if self.cardStatusButton.mode == .locked {
+            self.cardStatusButton.mode = .unlocked
+        } else {
+            self.cardStatusButton.mode = .locked
+        }
     }
 
 }

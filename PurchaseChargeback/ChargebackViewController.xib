@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChargebackViewController" customModule="PurchaseChargeback" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="Ohw-eM-SNF" id="E26-Rw-zyP"/>
+                <outlet property="cardStatusButton" destination="VxF-c9-M5P" id="XbG-MV-SV4"/>
                 <outlet property="continueButton" destination="0XK-ob-MXr" id="340-6u-N9I"/>
                 <outlet property="reasonTextView" destination="gfc-ke-vbP" id="CVp-zs-tfH"/>
                 <outlet property="reasonsDetailsTableVew" destination="zW6-XZ-ka6" id="F41-1O-JDh"/>
@@ -50,6 +51,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxF-c9-M5P" customClass="ToggleCardStatusButton" customModule="PurchaseChargeback" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="cardStatusButtonTouched:" destination="-1" eventType="touchUpInside" id="bTQ-zp-xuC"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
