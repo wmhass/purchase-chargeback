@@ -35,24 +35,17 @@ class ChargebackViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupNotificationObservers()
+        self.setupReasonTextView()
+        self.setupFooterButtons()
+        self.themeKeylines()
         
         self.cardStatusButton.mode = .unlocked
         self.view.backgroundColor = AppColor.overlayBackground
         
         self.reasonsDetailsTableVew.register(ChargebackReasonDetailTableViewCell.nib, forCellReuseIdentifier: ChargebackReasonDetailTableViewCell.defaultReuseIdentifier)
         
-        self.setupFooterButtons()
-        self.themeKeylines()
-
         self.titleLabel.font = AppFont.chargebackTitle
         self.titleLabel.text = "chargeback.title.donotrecognize".localized(comment: "NÃO RECONHECO ESSA COMPRA")
-        
-        
-        self.reasonTextView.text = nil
-
-        let placeholderText = "Nos conte <strong>em detalhes</strong> o que aconteceu com a sua compra em Transaction...".css(style: AppColor.chargebackTextViewStylesheet)
-        self.reasonTextView.attributedPlaceholder = NSAttributedString(html: placeholderText)
-        self.reasonTextView.delegate = self
         
         let tapViewGesture = UITapGestureRecognizer(target: self, action: #selector(ChargebackViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tapViewGesture)
@@ -62,6 +55,14 @@ class ChargebackViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChargebackViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChargebackViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    fileprivate func setupReasonTextView() {
+        self.reasonTextView.text = nil
+        
+        let placeholderText = "Nos conte <strong>em detalhes</strong> o que aconteceu com a sua compra em Transaction...".css(style: AppColor.chargebackTextViewStylesheet)
+        self.reasonTextView.attributedPlaceholder = NSAttributedString(html: placeholderText)
+        self.reasonTextView.delegate = self
     }
     
     fileprivate func themeKeylines() {
@@ -84,6 +85,11 @@ class ChargebackViewController: UIViewController {
     func dismissKeyboard() {
         self.reasonTextView.resignFirstResponder()
     }
+
+}
+
+// MARK: - IBActions
+extension ChargebackViewController {
     
     @IBAction func cardStatusButtonTouched(_:AnyObject) {
         if self.cardStatusButton.mode == .locked {
@@ -101,7 +107,7 @@ class ChargebackViewController: UIViewController {
     @IBAction func continueButtonTouched(_:AnyObject) {
         self.dismissKeyboard()
         weak var presentingView = self.presentingViewController
-        self.dismiss(animated: true) { 
+        self.dismiss(animated: true) {
             let noticeViewController = NoticeViewController()
             noticeViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
             noticeViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
@@ -111,6 +117,11 @@ class ChargebackViewController: UIViewController {
         }
     }
     
+}
+
+
+// MARK: - Keyboard
+extension ChargebackViewController {
     
     func keyboardWillShow(_ notification: Notification) {
         let keyboardBeginFrame = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey]! as AnyObject).cgRectValue!
@@ -128,7 +139,7 @@ class ChargebackViewController: UIViewController {
         
         self.contentScrollView.layoutIfNeeded()
     }
-
+    
     func keyboardWillHide(_ notification: Notification) {
         let keyboardBeginFrame = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey]! as AnyObject).cgRectValue!
         let keyboardEndFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue!
