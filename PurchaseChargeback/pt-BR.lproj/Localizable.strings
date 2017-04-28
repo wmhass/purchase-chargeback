@@ -21,3 +21,7 @@
 "chargeback.button.contestar" = "CONTESTAR";
 
 "chargeback.button.cancelar" = "CANCELAR";
+
+"chargeback.reasondetail.on" = "sim";
+
+"chargeback.reasondetail.off" = "não";

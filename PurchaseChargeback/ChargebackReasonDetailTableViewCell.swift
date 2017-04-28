@@ -8,17 +8,45 @@
 
 import UIKit
 
+protocol ChargebackReasonDetailTableViewCellDelegate: class {
+    func reasonDetailTableViewCell(cell: ChargebackReasonDetailTableViewCell, didChangeSwitchToValue: Bool)
+}
+
 class ChargebackReasonDetailTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var switchContainer: UIView!
+    let customSwitch = UICustomSwitch()
+    weak var delegate: ChargebackReasonDetailTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let customSwitch = UICustomSwitch(frame: CGRect(x: 0, y: 0, width: 60, height:20))
-        customSwitch.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        customSwitch.translatesAutoresizingMaskIntoConstraints = true
+        self.titleLabel.font = AppFont.chargebackReasonLabel
+        
+        self.customSwitch.frame = self.switchContainer.bounds
+        self.customSwitch.onLabel = "chargeback.reasondetail.on".localized(comment: "sim")
+        self.customSwitch.offLabel = "chargeback.reasondetail.off".localized(comment: "não")
+        self.customSwitch.onTintColor = AppColor.chargebackReasonOn
+        self.customSwitch.valueChanged = { [weak self] _ in
+            self?.customSwitchValueChanged()
+        }
+        
         self.switchContainer.addSubview(customSwitch)
+        self.updateLayoutForCurrentSwitchValue()
     }
+    
+    fileprivate func customSwitchValueChanged() {
+        self.delegate?.reasonDetailTableViewCell(cell: self, didChangeSwitchToValue: self.customSwitch.isOn)
+        self.updateLayoutForCurrentSwitchValue()
+    }
+    
+    fileprivate func updateLayoutForCurrentSwitchValue() {
+        if self.customSwitch.isOn {
+            self.titleLabel.textColor = self.customSwitch.onTintColor
+        } else {
+            self.titleLabel.textColor = AppColor.blackText
+        }
+    }
+    
 }

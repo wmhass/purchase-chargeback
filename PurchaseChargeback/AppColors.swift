@@ -20,5 +20,7 @@ struct AppColor {
     static let titleSecondaryDisabled = UIColor(r: 0xCC, g: 0xCC, b: 0xCC)
     static let keylineBgd = UIColor(r: 0xDA, g: 0xDA, b: 0xDA)
     static let overlayBackground = UIColor.black.withAlphaComponent(0.6)
+    static let chargebackReasonOn = UIColor(r: 0x41, g: 0x75, b: 0x05)
     
+    static let blackText = UIColor(r: 0x22, g: 0x22, b: 0x22)
 }

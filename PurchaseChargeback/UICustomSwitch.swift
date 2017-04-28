@@ -61,6 +61,8 @@ open class UICustomSwitch: UIView {
         self.commonInit()
     }
     
+    var valueChanged: (_: UICustomSwitch) -> Void = { _ in }
+    
     fileprivate func commonInit() {
         self.valueLabel.font = self.labelFont
         self.valueLabel.textAlignment = .center
@@ -118,6 +120,7 @@ open class UICustomSwitch: UIView {
     func setOn(_ on: Bool, animated: Bool) {
         self.isOn = on
         self.refreshView(animated: animated)
+        self.valueChanged(self)
     }
 
     fileprivate func refreshView(animated: Bool) {

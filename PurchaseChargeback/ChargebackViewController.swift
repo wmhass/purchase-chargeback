@@ -73,7 +73,16 @@ extension ChargebackViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChargebackReasonDetailTableViewCell.defaultReuseIdentifier, for: indexPath) as! ChargebackReasonDetailTableViewCell
         
+        cell.delegate = self
+        
         return cell
     }
     
+}
+
+// MARK: - ChargebackReasonDetailTableViewCellDelegate
+extension ChargebackViewController: ChargebackReasonDetailTableViewCellDelegate {
+    func reasonDetailTableViewCell(cell: ChargebackReasonDetailTableViewCell, didChangeSwitchToValue: Bool) {
+        
+    }
 }
