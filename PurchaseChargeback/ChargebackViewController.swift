@@ -10,6 +10,7 @@ import UIKit
 
 class ChargebackViewController: UIViewController {
 
+    @IBOutlet var contentScrollView: UIScrollView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var reasonsDetailsTableVew: UITableView!
     @IBOutlet var cancelButton: UIButton!
@@ -26,8 +27,14 @@ class ChargebackViewController: UIViewController {
         return true
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupNotificationObservers()
         
         self.cardStatusButton.mode = .unlocked
         self.view.backgroundColor = AppColor.overlayBackground
@@ -45,6 +52,16 @@ class ChargebackViewController: UIViewController {
 
         let placeholderText = "Nos conte <strong>em detalhes</strong> o que aconteceu com a sua compra em Transaction...".css(style: AppColor.chargebackTextViewStylesheet)
         self.reasonTextView.attributedPlaceholder = NSAttributedString(html: placeholderText)
+        self.reasonTextView.delegate = self
+        
+        let tapViewGesture = UITapGestureRecognizer(target: self, action: #selector(ChargebackViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(tapViewGesture)
+    }
+    
+    fileprivate func setupNotificationObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(ChargebackViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ChargebackViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     fileprivate func themeKeylines() {
@@ -64,6 +81,10 @@ class ChargebackViewController: UIViewController {
         self.continueButton.setTitleColor(AppColor.titleSecondaryDisabled, for: .normal)
     }
     
+    func dismissKeyboard() {
+        self.reasonTextView.resignFirstResponder()
+    }
+    
     @IBAction func cardStatusButtonTouched(_:AnyObject) {
         if self.cardStatusButton.mode == .locked {
             self.cardStatusButton.mode = .unlocked
@@ -73,10 +94,12 @@ class ChargebackViewController: UIViewController {
     }
     
     @IBAction func cancelButtonTouched(_:AnyObject) {
+        self.dismissKeyboard()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func continueButtonTouched(_:AnyObject) {
+        self.dismissKeyboard()
         weak var presentingView = self.presentingViewController
         self.dismiss(animated: true) { 
             let noticeViewController = NoticeViewController()
@@ -87,7 +110,45 @@ class ChargebackViewController: UIViewController {
             presentingView?.present(noticeViewController, animated: true, completion: nil)
         }
     }
+    
+    
+    func keyboardWillShow(_ notification: Notification) {
+        let keyboardBeginFrame = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey]! as AnyObject).cgRectValue!
+        let keyboardEndFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue!
+        
+        guard keyboardBeginFrame.minY != keyboardEndFrame.minY else {
+            return
+        }
+        
+        self.contentScrollView.contentInset = UIEdgeInsetsMake(0, 0, keyboardEndFrame.height, 0)
+        self.contentScrollView.scrollIndicatorInsets = self.contentScrollView.contentInset
+        
+        let textViewAbsolutFrame = self.contentScrollView.convert(self.reasonTextView.frame, from: self.reasonTextView.superview)
+        self.contentScrollView.scrollRectToVisible(textViewAbsolutFrame, animated: true)
+        
+        self.contentScrollView.layoutIfNeeded()
+    }
 
+    func keyboardWillHide(_ notification: Notification) {
+        let keyboardBeginFrame = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey]! as AnyObject).cgRectValue!
+        let keyboardEndFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue!
+        
+        guard keyboardBeginFrame.minY != keyboardEndFrame.minY else {
+            return
+        }
+        self.contentScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.contentScrollView.scrollIndicatorInsets = self.contentScrollView.contentInset
+        self.contentScrollView.layoutIfNeeded()
+    }
+    
+}
+
+// MARK: - UIScrollViewDelegate, UITextViewDelegate
+extension ChargebackViewController: UIScrollViewDelegate, UITextViewDelegate {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.dismissKeyboard()
+    }
 }
 
 // MARK: - UITableViewDataSource
