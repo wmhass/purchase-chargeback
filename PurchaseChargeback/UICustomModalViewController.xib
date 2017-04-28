@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UICustomModalViewController" customModule="PurchaseChargeback" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="JR2-Rh-7R4" id="gPU-t8-p7O"/>
+                <outlet property="view" destination="fs3-Y3-UgK" id="ICF-kR-oeo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="fs3-Y3-UgK">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="JR2-Rh-7R4" userLabel="Content View Reference Frame">
+                    <rect key="frame" x="10" y="10" width="355" height="647"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="768" id="EWL-MZ-yFQ"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="460" id="EjY-a9-5NN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="JR2-Rh-7R4" firstAttribute="centerY" secondItem="fs3-Y3-UgK" secondAttribute="centerY" id="1Qm-sW-1Fm"/>
+                <constraint firstItem="JR2-Rh-7R4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fs3-Y3-UgK" secondAttribute="top" constant="10" id="7Ly-Uc-Qot"/>
+                <constraint firstItem="JR2-Rh-7R4" firstAttribute="centerX" secondItem="fs3-Y3-UgK" secondAttribute="centerX" id="Q6b-bA-7FP"/>
+                <constraint firstAttribute="trailing" secondItem="JR2-Rh-7R4" secondAttribute="trailing" priority="250" constant="10" id="Zbc-GX-mmC"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JR2-Rh-7R4" secondAttribute="trailing" constant="10" id="d6l-ki-Lkn"/>
+                <constraint firstItem="JR2-Rh-7R4" firstAttribute="leading" secondItem="fs3-Y3-UgK" secondAttribute="leading" priority="250" constant="10" id="ewr-eU-dHN"/>
+                <constraint firstItem="JR2-Rh-7R4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fs3-Y3-UgK" secondAttribute="leading" constant="10" id="i7R-3Q-W2a"/>
+                <constraint firstAttribute="bottom" secondItem="JR2-Rh-7R4" secondAttribute="bottom" constant="10" id="m5o-rE-dMM"/>
+            </constraints>
+            <point key="canvasLocation" x="35.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

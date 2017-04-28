@@ -15,13 +15,12 @@ class NoticeViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupActionsTableView()
         
-        self.view.backgroundColor = AppColor.overlayBackground
+        self.view.backgroundColor = UIColor.clear
         self.titleLabel.font = AppFont.noticeTitle
         self.titleLabel.textColor = AppColor.titlePrimary
 
@@ -31,14 +30,6 @@ class NoticeViewController: UIViewController {
         self.descriptionTextView.attributedText = NSAttributedString(html: html)
     }
     
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return UIStatusBarAnimation.slide
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
     func setupActionsTableView() {
         self.actionsTableView.rowHeight = 77
         self.actionsTableView.tableFooterView = UIView()
@@ -46,7 +37,6 @@ class NoticeViewController: UIViewController {
         
         self.actionsTableView.register(NoticeActionTableViewCell.nib, forCellReuseIdentifier: NoticeActionTableViewCell.defaultReuseIdentifier)
     }
-    
 }
 
 // MARK: - UITableViewDataSource
@@ -81,12 +71,13 @@ extension NoticeViewController: UITableViewDelegate {
         if indexPath.row == 0 {
             weak var presentingView = self.presentingViewController
             self.dismiss(animated: true, completion: {
-                let chargebackViewController = ChargebackViewController()
-                chargebackViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-                chargebackViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-                chargebackViewController.modalPresentationCapturesStatusBarAppearance = true
                 
-                presentingView?.present(chargebackViewController, animated: true, completion: nil)
+                let chargebackViewController = ChargebackViewController()
+                
+                let modalViewController = UICustomModalViewController()
+                modalViewController.installContentViewController(chargebackViewController)
+                
+                presentingView?.present(modalViewController, animated: true, completion: nil)
             })
             
             

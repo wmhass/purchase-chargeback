@@ -13,22 +13,17 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.startButtonTouched()
     }
     
     @IBAction func startButtonTouched() {
-        
         let noticeViewController = NoticeViewController()
-        noticeViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        noticeViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        noticeViewController.modalPresentationCapturesStatusBarAppearance = true
         
-        self.present(noticeViewController, animated: true, completion: nil)
+        let modal = UICustomModalViewController()
+        modal.installContentViewController(noticeViewController)
+        
+        self.present(modal, animated: true, completion: nil)
     }
     
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return UIStatusBarAnimation.slide
-    }
     override var prefersStatusBarHidden: Bool {
         return false
     }

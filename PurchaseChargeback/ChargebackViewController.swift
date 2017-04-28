@@ -19,14 +19,6 @@ class ChargebackViewController: UIViewController {
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var cardStatusButton: ToggleCardStatusButton!
     
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return UIStatusBarAnimation.slide
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -40,7 +32,7 @@ class ChargebackViewController: UIViewController {
         self.themeKeylines()
         
         self.cardStatusButton.mode = .unlocked
-        self.view.backgroundColor = AppColor.overlayBackground
+        self.view.backgroundColor = UIColor.clear
         
         self.reasonsDetailsTableVew.register(ChargebackReasonDetailTableViewCell.nib, forCellReuseIdentifier: ChargebackReasonDetailTableViewCell.defaultReuseIdentifier)
         
@@ -109,11 +101,11 @@ extension ChargebackViewController {
         weak var presentingView = self.presentingViewController
         self.dismiss(animated: true) {
             let noticeViewController = NoticeViewController()
-            noticeViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-            noticeViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-            noticeViewController.modalPresentationCapturesStatusBarAppearance = true
             
-            presentingView?.present(noticeViewController, animated: true, completion: nil)
+            let modal = UICustomModalViewController()
+            modal.installContentViewController(noticeViewController)
+            
+            presentingView?.present(modal, animated: true, completion: nil)
         }
     }
     

@@ -10,6 +10,8 @@
 		3D38643D1EB3609400D94398 /* Bundle+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38643C1EB3609400D94398 /* Bundle+Additions.swift */; };
 		3D38643F1EB3640E00D94398 /* NSAttributedString+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38643E1EB3640E00D94398 /* NSAttributedString+Additions.swift */; };
 		3D3864411EB3670A00D94398 /* chargeback-textview.css in Resources */ = {isa = PBXBuildFile; fileRef = 3D3864401EB3670A00D94398 /* chargeback-textview.css */; };
+		3D3864451EB38B7500D94398 /* UICustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3864431EB38B7500D94398 /* UICustomModalViewController.swift */; };
+		3D3864461EB38B7500D94398 /* UICustomModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D3864441EB38B7500D94398 /* UICustomModalViewController.xib */; };
 		3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD501EAB88D6000CC9AD /* AppDelegate.swift */; };
 		3D54BD531EAB88D6000CC9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD521EAB88D6000CC9AD /* ViewController.swift */; };
 		3D54BD581EAB88D6000CC9AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD571EAB88D6000CC9AD /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		3D38643C1EB3609400D94398 /* Bundle+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Additions.swift"; sourceTree = "<group>"; };
 		3D38643E1EB3640E00D94398 /* NSAttributedString+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Additions.swift"; sourceTree = "<group>"; };
 		3D3864401EB3670A00D94398 /* chargeback-textview.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chargeback-textview.css"; sourceTree = "<group>"; };
+		3D3864431EB38B7500D94398 /* UICustomModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomModalViewController.swift; sourceTree = "<group>"; };
+		3D3864441EB38B7500D94398 /* UICustomModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICustomModalViewController.xib; sourceTree = "<group>"; };
 		3D54BD4D1EAB88D6000CC9AD /* PurchaseChargeback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PurchaseChargeback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D54BD501EAB88D6000CC9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D54BD521EAB88D6000CC9AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D3864421EB38B3300D94398 /* UICustomModalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3D3864431EB38B7500D94398 /* UICustomModalViewController.swift */,
+				3D3864441EB38B7500D94398 /* UICustomModalViewController.xib */,
+			);
+			name = UICustomModalViewController;
+			sourceTree = "<group>";
+		};
 		3D54BD441EAB88D6000CC9AD = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +255,7 @@
 		3D54BD9F1EAD33E6000CC9AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D3864421EB38B3300D94398 /* UICustomModalViewController */,
 				3D54BDA01EAD33FA000CC9AD /* AppModalContentView.swift */,
 				3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */,
 				3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */,
@@ -397,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3864411EB3670A00D94398 /* chargeback-textview.css in Resources */,
+				3D3864461EB38B7500D94398 /* UICustomModalViewController.xib in Resources */,
 				3D54BD581EAB88D6000CC9AD /* Assets.xcassets in Resources */,
 				3D54BDBC1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib in Resources */,
 				3D54BD871EAC4E97000CC9AD /* HomeViewController.xib in Resources */,
@@ -434,6 +449,7 @@
 				3D54BDB71EAD54F7000CC9AD /* ToggleCardStatusButton.swift in Sources */,
 				3D54BDB21EAD48B0000CC9AD /* ChargebackViewController.swift in Sources */,
 				3D54BDBB1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift in Sources */,
+				3D3864451EB38B7500D94398 /* UICustomModalViewController.swift in Sources */,
 				3D54BD531EAB88D6000CC9AD /* ViewController.swift in Sources */,
 				3D54BDC01EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift in Sources */,
 				3D54BDA81EAD4017000CC9AD /* String+Additions.swift in Sources */,
@@ -598,6 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lilohass.PurchaseChargeback;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -611,6 +628,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lilohass.PurchaseChargeback;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
