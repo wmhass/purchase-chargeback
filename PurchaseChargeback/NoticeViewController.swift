@@ -46,16 +46,16 @@ class NoticeViewController: UIViewController {
     }
     
     func reloadNoticeTextView() {
+        self.descriptionTextView.alpha = 0
+        
         let styleSheet = AppColor.chargebackDescriptionStylesheet
         self.page?.loadHTMLDescription(styleSheet: styleSheet) { html in
-            self.descriptionTextView.alpha = 0
-            
             UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                 self.descriptionTextView.alpha = 1
                 self.descriptionTextView.attributedText = html
                 
-                self.view.layoutIfNeeded()
                 self.view.setNeedsLayout()
+                self.view.layoutIfNeeded()
             }, completion: nil)
         }
     }
