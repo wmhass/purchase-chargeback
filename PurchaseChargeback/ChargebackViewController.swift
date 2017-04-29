@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ChargebackUIEventHandler {
+    
+}
+
 class ChargebackViewController: UIViewController {
 
     @IBOutlet var contentScrollView: UIScrollView!
@@ -18,6 +22,7 @@ class ChargebackViewController: UIViewController {
     @IBOutlet var reasonTextView: AttributedPlaceholderTextView!
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var cardStatusButton: ToggleCardStatusButton!
+    var eventHandler: ChargebackUIEventHandler?
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -176,4 +181,9 @@ extension ChargebackViewController: ChargebackReasonDetailTableViewCellDelegate 
     func reasonDetailTableViewCell(cell: ChargebackReasonDetailTableViewCell, didChangeSwitchToValue: Bool) {
         
     }
+}
+
+// MARK: - ChargebackUserInterface
+extension ChargebackViewController: ChargebackUserInterface {
+    
 }

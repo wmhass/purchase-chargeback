@@ -9,11 +9,16 @@
 import UIKit
 import WebKit
 
+protocol NoticeViewControllerUIEventHandler {
+    
+}
+
 class NoticeViewController: UIViewController {
 
     @IBOutlet weak var actionsTableView: UITableView!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
+    var eventHandler: NoticeViewControllerUIEventHandler?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,5 +95,10 @@ extension NoticeViewController: UITableViewDelegate {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+}
+
+// MARK: - NoticeUserInterface
+extension NoticeViewController: NoticeUserInterface {
     
 }

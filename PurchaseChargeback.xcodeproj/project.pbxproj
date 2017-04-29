@@ -37,6 +37,8 @@
 		3D54BDBB1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDB91EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift */; };
 		3D54BDBC1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */; };
 		3D54BDC01EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */; };
+		3DBD89D11EB4246100F03604 /* ChargebackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */; };
+		3DBD89D31EB4253700F03604 /* NoticePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD89D21EB4253700F03604 /* NoticePresenter.swift */; };
 		3DF1DF511EB0D225005FB570 /* UICustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		3D54BDB91EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackReasonDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChargebackReasonDetailTableViewCell.xib; sourceTree = "<group>"; };
 		3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedPlaceholderTextView.swift; sourceTree = "<group>"; };
+		3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackPresenter.swift; sourceTree = "<group>"; };
+		3DBD89D21EB4253700F03604 /* NoticePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticePresenter.swift; sourceTree = "<group>"; };
 		3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomSwitch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +191,7 @@
 		3D54BD7E1EAC4C3B000CC9AD /* NoticeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3DBD89D21EB4253700F03604 /* NoticePresenter.swift */,
 				3D54BD7F1EAC4C5B000CC9AD /* NoticeViewController.swift */,
 				3D54BD801EAC4C5B000CC9AD /* NoticeViewController.xib */,
 				3D54BD941EAD0654000CC9AD /* Views */,
@@ -266,6 +271,7 @@
 		3D54BDAF1EAD489B000CC9AD /* ChargebackViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */,
 				3D54BDB01EAD48B0000CC9AD /* ChargebackViewController.swift */,
 				3D54BDB11EAD48B0000CC9AD /* ChargebackViewController.xib */,
 				3D54BDB51EAD4FD7000CC9AD /* Views */,
@@ -458,7 +464,9 @@
 				3D54BD811EAC4C5B000CC9AD /* NoticeViewController.swift in Sources */,
 				3D38643D1EB3609400D94398 /* Bundle+Additions.swift in Sources */,
 				3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */,
+				3DBD89D31EB4253700F03604 /* NoticePresenter.swift in Sources */,
 				3D54BDA11EAD33FA000CC9AD /* AppModalContentView.swift in Sources */,
+				3DBD89D11EB4246100F03604 /* ChargebackPresenter.swift in Sources */,
 				3D54BD861EAC4E97000CC9AD /* HomeViewController.swift in Sources */,
 				3D54BD9E1EAD2E82000CC9AD /* AppFont.swift in Sources */,
 				3D54BD931EAD0440000CC9AD /* UIView+Nib.swift in Sources */,
