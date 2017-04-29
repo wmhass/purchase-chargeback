@@ -19,4 +19,8 @@ struct NoticePresenter {
 // MARK: - NoticeViewControllerUIEventHandler
 extension NoticePresenter: NoticeViewControllerUIEventHandler {
     
+    func didTapAction(action: NoticePage.Action) {
+        
+    }
+    
 }

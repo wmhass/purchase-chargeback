@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 protocol NoticeViewControllerUIEventHandler {
-    
+    func didTapAction(action: NoticePage.Action)
 }
 
 class NoticeViewController: UIViewController {
