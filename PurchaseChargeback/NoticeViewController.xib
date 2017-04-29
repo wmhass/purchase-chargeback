@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-4w-fY5" userLabel="Content view" customClass="AppModalContentView" customModule="PurchaseChargeback" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="99.5" width="375" height="468"/>
+                    <rect key="frame" x="0.0" y="116.5" width="375" height="434"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Antes de continuar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4j-I9-HtR">
                             <rect key="frame" x="87.5" y="28" width="201.5" height="29"/>
@@ -32,7 +32,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="hpG-Hh-5pO" userLabel="Description container">
-                            <rect key="frame" x="0.0" y="57" width="375" height="257"/>
+                            <rect key="frame" x="0.0" y="57" width="375" height="223"/>
                             <subviews>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkc-9b-1VL">
                                     <rect key="frame" x="13" y="16" width="349" height="207"/>
@@ -46,12 +46,12 @@
                             <constraints>
                                 <constraint firstItem="Nkc-9b-1VL" firstAttribute="leading" secondItem="hpG-Hh-5pO" secondAttribute="leading" constant="13" id="73F-G6-c0e"/>
                                 <constraint firstItem="Nkc-9b-1VL" firstAttribute="top" secondItem="hpG-Hh-5pO" secondAttribute="top" constant="16" id="PeN-Jc-LoH"/>
-                                <constraint firstAttribute="bottom" secondItem="Nkc-9b-1VL" secondAttribute="bottom" constant="34" id="S6L-4r-7DF"/>
+                                <constraint firstAttribute="bottom" secondItem="Nkc-9b-1VL" secondAttribute="bottom" id="S6L-4r-7DF"/>
                                 <constraint firstAttribute="trailing" secondItem="Nkc-9b-1VL" secondAttribute="trailing" constant="13" id="qh6-Il-rg0"/>
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n57-ON-pij">
-                            <rect key="frame" x="0.0" y="314" width="375" height="154"/>
+                            <rect key="frame" x="0.0" y="280" width="375" height="154"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="154" id="RRU-QH-hL4"/>
