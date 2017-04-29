@@ -22,6 +22,7 @@ class NoticeViewController: UIViewController {
     
     var eventHandler: NoticeViewControllerUIEventHandler?
     var page: NoticePage?
+    let queue = DispatchQueue(label: "NoticeViewController.Queue")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,8 @@ class NoticeViewController: UIViewController {
         self.view.backgroundColor = UIColor.clear
         self.titleLabel.font = AppFont.noticeTitle
         self.titleLabel.textColor = AppColor.titlePrimary
-
+        
+        self.descriptionTextView.text = nil
         self.reloadPage()
     }
     
@@ -47,16 +49,17 @@ class NoticeViewController: UIViewController {
         self.titleLabel.text = self.page?.title
         self.actionsTableView.reloadData()
         self.tableViewHeightConstraint.constant = self.actionsTableView.contentSize.height
-        
-        
-        if let description = self.page?.description {
-            DispatchQueue.main.async {
-                let html = description.css(style: AppColor.chargebackTextViewStylesheet)
-                self.descriptionTextView.attributedText = NSAttributedString(html: html)
-                self.view.setNeedsLayout()
+        self.page?.loadHTMLDescription(completion: { (html: NSAttributedString?) in
+            self.descriptionTextView.attributedText = html
+            
+            self.descriptionTextView.alpha = 0
+            self.view.setNeedsLayout()
+            UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                self.descriptionTextView.alpha = 1
                 self.view.layoutIfNeeded()
-            }
-        }
+            }, completion: nil)
+            
+        })
         
     }
 }

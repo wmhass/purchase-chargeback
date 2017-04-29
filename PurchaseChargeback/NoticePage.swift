@@ -26,6 +26,19 @@ struct NoticePage {
     var description: String?
     var links: [String: NSURL] = [:]
     var actions: [NoticePage.Action] = []
+    
+    func loadHTMLDescription(completion: @escaping ((_ a: NSAttributedString?) -> Void) ) -> Void {
+        guard let description = self.description else {
+            return completion(nil)
+        }
+        DispatchQueue.global().async {
+            let styledHtml = description.css(style: AppColor.chargebackDescriptionStylesheet)
+            let attributeString = NSAttributedString(html: styledHtml)
+            DispatchQueue.main.async {
+                completion(attributeString)
+            }
+        }
+    }
 }
 
 

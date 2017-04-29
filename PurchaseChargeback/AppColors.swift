@@ -10,7 +10,7 @@ import UIKit
 
 struct AppColor {
     
-    static var chargebackTextViewStylesheet: String? = Bundle.main.loadCSSFile(named: "chargeback-textview")
+    static var chargebackDescriptionStylesheet: String? = Bundle.main.loadCSSFile(named: "chargeback-textview")
     static var noticeDescriptionStylesheet: String? = Bundle.main.loadCSSFile(named: "notice-stylesheet")
     
     static let toggleCardStatusText = UIColor(r: 0xD5, g: 0x17, b: 0x1B)

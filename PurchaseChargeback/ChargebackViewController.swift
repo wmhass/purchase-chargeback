@@ -57,7 +57,7 @@ class ChargebackViewController: UIViewController {
     fileprivate func setupReasonTextView() {
         self.reasonTextView.text = nil
         
-        let placeholderText = "Nos conte <strong>em detalhes</strong> o que aconteceu com a sua compra em Transaction...".css(style: AppColor.chargebackTextViewStylesheet)
+        let placeholderText = "Nos conte <strong>em detalhes</strong> o que aconteceu com a sua compra em Transaction...".css(style: AppColor.chargebackDescriptionStylesheet)
         self.reasonTextView.attributedPlaceholder = NSAttributedString(html: placeholderText)
         self.reasonTextView.delegate = self
     }
