@@ -21,15 +21,20 @@ class PurchaseChargebackTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCSSString() {
+        let html = "<body>blah</body>"
+        let styleSheet = "p { color: #ff0000 }"
+        let generatedCSS = html.css(style: styleSheet)
+        
+        let expectedCSS = "<style>" + styleSheet + "</style>" + html
+        XCTAssertEqual(generatedCSS, expectedCSS)
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
+        let html = "<style>p { color: #ff0000; }</style>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>"
         self.measure {
-            // Put the code you want to measure the time of here.
+            NSAttributedString(html: html)
         }
     }
     
