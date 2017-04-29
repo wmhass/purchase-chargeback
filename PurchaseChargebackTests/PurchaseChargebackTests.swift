@@ -30,12 +30,4 @@ class PurchaseChargebackTests: XCTestCase {
         XCTAssertEqual(generatedCSS, expectedCSS)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        let html = "<style>p { color: #ff0000; }</style>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>jash shd uahsdasdhuas d<strong>asdasdasd</strong><p>asd</p>"
-        self.measure {
-            NSAttributedString(html: html)
-        }
-    }
-    
 }
