@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BCC6B891EFAA04280C1A1EA /* Pods_PurchaseChargeback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3780F61B2861E309F2D8A17 /* Pods_PurchaseChargeback.framework */; };
 		3D38643D1EB3609400D94398 /* Bundle+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38643C1EB3609400D94398 /* Bundle+Additions.swift */; };
 		3D38643F1EB3640E00D94398 /* NSAttributedString+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38643E1EB3640E00D94398 /* NSAttributedString+Additions.swift */; };
 		3D3864411EB3670A00D94398 /* chargeback-textview.css in Resources */ = {isa = PBXBuildFile; fileRef = 3D3864401EB3670A00D94398 /* chargeback-textview.css */; };
@@ -40,6 +41,8 @@
 		3DBD89D11EB4246100F03604 /* ChargebackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */; };
 		3DBD89D31EB4253700F03604 /* NoticePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD89D21EB4253700F03604 /* NoticePresenter.swift */; };
 		3DF1DF511EB0D225005FB570 /* UICustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */; };
+		E76726FD69E4AD5F799EA0AC /* Pods_PurchaseChargebackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4135F943322FA6E741AFA /* Pods_PurchaseChargebackTests.framework */; };
+		EDC73FD24633B860076D7675 /* Pods_PurchaseChargebackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63975188515CC37D981FC53 /* Pods_PurchaseChargebackUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E72888AAFCFCAC1028E07F5 /* Pods-PurchaseChargeback.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseChargeback.release.xcconfig"; path = "Pods/Target Support Files/Pods-PurchaseChargeback/Pods-PurchaseChargeback.release.xcconfig"; sourceTree = "<group>"; };
 		3D38643C1EB3609400D94398 /* Bundle+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Additions.swift"; sourceTree = "<group>"; };
 		3D38643E1EB3640E00D94398 /* NSAttributedString+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Additions.swift"; sourceTree = "<group>"; };
 		3D3864401EB3670A00D94398 /* chargeback-textview.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chargeback-textview.css"; sourceTree = "<group>"; };
@@ -99,6 +103,14 @@
 		3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackPresenter.swift; sourceTree = "<group>"; };
 		3DBD89D21EB4253700F03604 /* NoticePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticePresenter.swift; sourceTree = "<group>"; };
 		3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomSwitch.swift; sourceTree = "<group>"; };
+		3E6F83856ABF6AAC3E251336 /* Pods-PurchaseChargebackUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseChargebackUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PurchaseChargebackUITests/Pods-PurchaseChargebackUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4F832363E4B127A8603D0875 /* Pods-PurchaseChargebackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseChargebackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PurchaseChargebackTests/Pods-PurchaseChargebackTests.debug.xcconfig"; sourceTree = "<group>"; };
+		977F70B8E76D7A72C79F157F /* Pods-PurchaseChargeback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseChargeback.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PurchaseChargeback/Pods-PurchaseChargeback.debug.xcconfig"; sourceTree = "<group>"; };
+		9C8A1F4C77AD77E1DACF1D4B /* Pods-PurchaseChargebackUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseChargebackUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PurchaseChargebackUITests/Pods-PurchaseChargebackUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A63975188515CC37D981FC53 /* Pods_PurchaseChargebackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PurchaseChargebackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5A0EE7DE879B65B40F3E0F /* Pods-PurchaseChargebackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseChargebackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PurchaseChargebackTests/Pods-PurchaseChargebackTests.release.xcconfig"; sourceTree = "<group>"; };
+		CDC4135F943322FA6E741AFA /* Pods_PurchaseChargebackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PurchaseChargebackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3780F61B2861E309F2D8A17 /* Pods_PurchaseChargeback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PurchaseChargeback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BCC6B891EFAA04280C1A1EA /* Pods_PurchaseChargeback.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E76726FD69E4AD5F799EA0AC /* Pods_PurchaseChargebackTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC73FD24633B860076D7675 /* Pods_PurchaseChargebackUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +157,8 @@
 				3D54BD641EAB88D6000CC9AD /* PurchaseChargebackTests */,
 				3D54BD6F1EAB88D6000CC9AD /* PurchaseChargebackUITests */,
 				3D54BD4E1EAB88D6000CC9AD /* Products */,
+				909E735375CBD2A34DEC14C8 /* Pods */,
+				A0850FF81B5FDD70C1E2CEE3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -307,6 +324,29 @@
 			name = ChargebackReasonDetailTableViewCell;
 			sourceTree = "<group>";
 		};
+		909E735375CBD2A34DEC14C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				977F70B8E76D7A72C79F157F /* Pods-PurchaseChargeback.debug.xcconfig */,
+				1E72888AAFCFCAC1028E07F5 /* Pods-PurchaseChargeback.release.xcconfig */,
+				4F832363E4B127A8603D0875 /* Pods-PurchaseChargebackTests.debug.xcconfig */,
+				BE5A0EE7DE879B65B40F3E0F /* Pods-PurchaseChargebackTests.release.xcconfig */,
+				9C8A1F4C77AD77E1DACF1D4B /* Pods-PurchaseChargebackUITests.debug.xcconfig */,
+				3E6F83856ABF6AAC3E251336 /* Pods-PurchaseChargebackUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A0850FF81B5FDD70C1E2CEE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3780F61B2861E309F2D8A17 /* Pods_PurchaseChargeback.framework */,
+				CDC4135F943322FA6E741AFA /* Pods_PurchaseChargebackTests.framework */,
+				A63975188515CC37D981FC53 /* Pods_PurchaseChargebackUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,9 +354,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D54BD751EAB88D6000CC9AD /* Build configuration list for PBXNativeTarget "PurchaseChargeback" */;
 			buildPhases = (
+				8B8B8753F8429AC60BB4E1B9 /* [CP] Check Pods Manifest.lock */,
 				3D54BD491EAB88D6000CC9AD /* Sources */,
 				3D54BD4A1EAB88D6000CC9AD /* Frameworks */,
 				3D54BD4B1EAB88D6000CC9AD /* Resources */,
+				1A447E94A4B6859B8923D0F9 /* [CP] Embed Pods Frameworks */,
+				CC1193A0CB6764B172753135 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,9 +374,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D54BD781EAB88D6000CC9AD /* Build configuration list for PBXNativeTarget "PurchaseChargebackTests" */;
 			buildPhases = (
+				32BD1853D41E16494C68A878 /* [CP] Check Pods Manifest.lock */,
 				3D54BD5D1EAB88D6000CC9AD /* Sources */,
 				3D54BD5E1EAB88D6000CC9AD /* Frameworks */,
 				3D54BD5F1EAB88D6000CC9AD /* Resources */,
+				F5AB4CB9534C55C33A199674 /* [CP] Embed Pods Frameworks */,
+				7BAA372F518A6375BA55CB32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -349,9 +395,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D54BD7B1EAB88D6000CC9AD /* Build configuration list for PBXNativeTarget "PurchaseChargebackUITests" */;
 			buildPhases = (
+				89E60517B686F6579F2CF837 /* [CP] Check Pods Manifest.lock */,
 				3D54BD681EAB88D6000CC9AD /* Sources */,
 				3D54BD691EAB88D6000CC9AD /* Frameworks */,
 				3D54BD6A1EAB88D6000CC9AD /* Resources */,
+				5D9CF7278EBF9A9B49EC4AE9 /* [CP] Embed Pods Frameworks */,
+				B6D543182029AFB53066105E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -444,6 +493,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A447E94A4B6859B8923D0F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PurchaseChargeback/Pods-PurchaseChargeback-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32BD1853D41E16494C68A878 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5D9CF7278EBF9A9B49EC4AE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PurchaseChargebackUITests/Pods-PurchaseChargebackUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BAA372F518A6375BA55CB32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PurchaseChargebackTests/Pods-PurchaseChargebackTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89E60517B686F6579F2CF837 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B8B8753F8429AC60BB4E1B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B6D543182029AFB53066105E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PurchaseChargebackUITests/Pods-PurchaseChargebackUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC1193A0CB6764B172753135 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PurchaseChargeback/Pods-PurchaseChargeback-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5AB4CB9534C55C33A199674 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PurchaseChargebackTests/Pods-PurchaseChargebackTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D54BD491EAB88D6000CC9AD /* Sources */ = {
@@ -614,6 +801,7 @@
 		};
 		3D54BD761EAB88D6000CC9AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 977F70B8E76D7A72C79F157F /* Pods-PurchaseChargeback.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R8DRDAPLCP;
@@ -628,6 +816,7 @@
 		};
 		3D54BD771EAB88D6000CC9AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E72888AAFCFCAC1028E07F5 /* Pods-PurchaseChargeback.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R8DRDAPLCP;
@@ -642,6 +831,7 @@
 		};
 		3D54BD791EAB88D6000CC9AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F832363E4B127A8603D0875 /* Pods-PurchaseChargebackTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -657,6 +847,7 @@
 		};
 		3D54BD7A1EAB88D6000CC9AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE5A0EE7DE879B65B40F3E0F /* Pods-PurchaseChargebackTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -672,6 +863,7 @@
 		};
 		3D54BD7C1EAB88D6000CC9AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C8A1F4C77AD77E1DACF1D4B /* Pods-PurchaseChargebackUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R8DRDAPLCP;
@@ -686,6 +878,7 @@
 		};
 		3D54BD7D1EAB88D6000CC9AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E6F83856ABF6AAC3E251336 /* Pods-PurchaseChargebackUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R8DRDAPLCP;
