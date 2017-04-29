@@ -25,9 +25,7 @@ struct NoticePage {
     var title: String?
     var description: String?
     var links: [String: NSURL] = [:]
-    var primaryAction: NoticePage.Action?
-    var secondaryAction: NoticePage.Action?
-    
+    var actions: [NoticePage.Action] = []
 }
 
 
@@ -48,6 +46,16 @@ extension NoticePage {
                     self.links[linkName] = url
                 }
             }
+        }
+
+        if let rawPrimaryAction = raw[NoticePage.Field.primary_action.rawValue] as? [String: String],
+            let primaryAction = NoticePage.Action(raw: rawPrimaryAction) {
+            self.actions.append(primaryAction)
+        }
+        
+        if let rawSecondaryAction = raw[NoticePage.Field.secondary_action.rawValue] as? [String: String],
+            let secondaryAction = NoticePage.Action(raw: rawSecondaryAction) {
+            self.actions.append(secondaryAction)
         }
     }
     

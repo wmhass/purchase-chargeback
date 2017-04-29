@@ -9,12 +9,10 @@
 import Foundation
 
 protocol NoticeUserInterface: class {
-    
+    func presentPage(page: NoticePage)
 }
 
 struct NoticePresenter {
-    
-    weak var view: NoticeUserInterface?
     
 }
 

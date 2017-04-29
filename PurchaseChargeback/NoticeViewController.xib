@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="actionsTableView" destination="n57-ON-pij" id="gmu-lJ-R2N"/>
                 <outlet property="descriptionTextView" destination="Nkc-9b-1VL" id="RY6-ie-syS"/>
+                <outlet property="tableViewHeightConstraint" destination="RRU-QH-hL4" id="VAB-ey-QJR"/>
                 <outlet property="titleLabel" destination="W4j-I9-HtR" id="zdz-B8-udZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,7 +25,7 @@
                 <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-4w-fY5" userLabel="Content view" customClass="AppModalContentView" customModule="PurchaseChargeback" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="116.5" width="375" height="434"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Antes de continuar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4j-I9-HtR">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Antes de continuar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4j-I9-HtR">
                             <rect key="frame" x="87.5" y="28" width="201.5" height="29"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -71,8 +72,10 @@
                         <constraint firstItem="W4j-I9-HtR" firstAttribute="centerX" secondItem="ESa-4w-fY5" secondAttribute="centerX" id="bd0-mc-4vn"/>
                         <constraint firstAttribute="trailing" secondItem="hpG-Hh-5pO" secondAttribute="trailing" id="d3g-WT-1Py"/>
                         <constraint firstItem="W4j-I9-HtR" firstAttribute="top" secondItem="ESa-4w-fY5" secondAttribute="top" constant="28" id="fpG-EI-xzJ"/>
+                        <constraint firstItem="W4j-I9-HtR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ESa-4w-fY5" secondAttribute="leading" constant="20" id="lmP-gM-mZg"/>
                         <constraint firstItem="n57-ON-pij" firstAttribute="leading" secondItem="ESa-4w-fY5" secondAttribute="leading" id="mek-hv-S94"/>
                         <constraint firstItem="n57-ON-pij" firstAttribute="top" secondItem="hpG-Hh-5pO" secondAttribute="bottom" id="o5G-RV-a2m"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W4j-I9-HtR" secondAttribute="trailing" constant="20" id="uiu-S3-N2h"/>
                     </constraints>
                 </view>
             </subviews>

@@ -105,7 +105,19 @@ extension ChargebackViewController {
         self.dismissKeyboard()
         weak var presentingView = self.presentingViewController
         self.dismiss(animated: true) {
+            
+            let html = "<center>Fique de olho no seu email! Nos próximos 3 dias você deverá receber um primeiro retorno sobre sua contestação</center>"
+            
+            let actions = [
+                NoticePage.Action(title: "notice.action.close".localized(comment: "FECHAR"), type: NoticePage.Action.ActionType.cancel)
+            ]
+            
+            let title = "Contestação de compra recebida"
+            
+            let page = NoticePage(title: title, description: html, links: [:], actions: actions)
+            
             let noticeViewController = NoticeViewController()
+            noticeViewController.presentPage(page: page)
             
             let modal = UICustomModalViewController()
             modal.installContentViewController(noticeViewController)

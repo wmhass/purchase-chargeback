@@ -15,10 +15,13 @@ protocol NoticeViewControllerUIEventHandler {
 
 class NoticeViewController: UIViewController {
 
-    @IBOutlet weak var actionsTableView: UITableView!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet var actionsTableView: UITableView!
+    @IBOutlet var descriptionTextView: UITextView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var tableViewHeightConstraint: NSLayoutConstraint!
+    
     var eventHandler: NoticeViewControllerUIEventHandler?
+    var page: NoticePage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +32,7 @@ class NoticeViewController: UIViewController {
         self.titleLabel.font = AppFont.noticeTitle
         self.titleLabel.textColor = AppColor.titlePrimary
 
-        self.titleLabel.text = "notice.title.beforecontinue".localized(comment: "Antes de continuar")
-        
-        DispatchQueue.main.async {
-            let html = "<p>Estamos com você nesta! Certifique-se dos pontos abaixo, são muito importantes:<br/><strong>• Você pode <font color=\"#6e2b77\">procurar o nome do estabelecimento no Google</font>. Diversas vezes encontramos informações valiosas por lá e elas podem te ajudar neste processo.</strong><br/><strong>• Caso você reconheça a compra, é muito importante pra nós que entre em contato com o estabelecimento e certifique-se que a situação já não foi resolvida.</strong></p>".css(style: AppColor.chargebackTextViewStylesheet)
-
-            self.descriptionTextView.attributedText = NSAttributedString(html: html)
-            self.view.setNeedsLayout()
-            self.view.layoutIfNeeded()
-        }
+        self.reloadPage()
     }
     
     func setupActionsTableView() {
@@ -47,24 +42,43 @@ class NoticeViewController: UIViewController {
         
         self.actionsTableView.register(NoticeActionTableViewCell.nib, forCellReuseIdentifier: NoticeActionTableViewCell.defaultReuseIdentifier)
     }
+    
+    func reloadPage() {
+        self.titleLabel.text = self.page?.title
+        self.actionsTableView.reloadData()
+        self.tableViewHeightConstraint.constant = self.actionsTableView.contentSize.height
+        
+        
+        if let description = self.page?.description {
+            DispatchQueue.main.async {
+                let html = description.css(style: AppColor.chargebackTextViewStylesheet)
+                self.descriptionTextView.attributedText = NSAttributedString(html: html)
+                self.view.setNeedsLayout()
+                self.view.layoutIfNeeded()
+            }
+        }
+        
+    }
 }
 
 // MARK: - UITableViewDataSource
 extension NoticeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        guard let page = self.page else {
+            return 0
+        }
+        return page.actions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NoticeActionTableViewCell.defaultReuseIdentifier, for: indexPath) as! NoticeActionTableViewCell
         
-        if indexPath.row == 0 {
-            cell.titleLabel.text = "notice.action.continue".localized(comment: "CONTINUAR")
-            cell.titleStyle = .primary
-        } else {
-            cell.titleLabel.text = "notice.action.close".localized(comment: "FECHAR")
-            cell.titleStyle = .secondary
+        cell.topKeyline.isHidden = tableView.numberOfRows(inSection: indexPath.section) < 2
+        
+        if let action = self.page?.actions[indexPath.row] {
+            cell.titleLabel.text = action.title
+            cell.titleStyle = action.type == .`continue` ? .primary : .secondary
         }
         
         return cell
@@ -77,16 +91,17 @@ extension NoticeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        guard let action = self.page?.actions[indexPath.row] else {
+            return
+        }
         
-        if indexPath.row == 0 {
+        if action.type == .`continue` {
             weak var presentingView = self.presentingViewController
             self.dismiss(animated: true, completion: {
                 
                 let chargebackViewController = ChargebackViewController()
-                
                 let modalViewController = UICustomModalViewController()
                 modalViewController.installContentViewController(chargebackViewController)
-                
                 presentingView?.present(modalViewController, animated: true, completion: nil)
             })
             
@@ -100,5 +115,10 @@ extension NoticeViewController: UITableViewDelegate {
 
 // MARK: - NoticeUserInterface
 extension NoticeViewController: NoticeUserInterface {
-    
+    func presentPage(page: NoticePage) {
+        self.page = page
+        if self.viewIfLoaded != nil {
+            self.reloadPage()
+        }
+    }
 }
