@@ -14,7 +14,7 @@ protocol NoticeViewControllerUIEventHandler {
 }
 
 class NoticeViewController: UIViewController {
-
+    
     @IBOutlet var actionsTableView: UITableView!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var titleLabel: UILabel!
@@ -45,22 +45,27 @@ class NoticeViewController: UIViewController {
         self.actionsTableView.register(NoticeActionTableViewCell.nib, forCellReuseIdentifier: NoticeActionTableViewCell.defaultReuseIdentifier)
     }
     
+    func reloadNoticeTextView() {
+        let styleSheet = AppColor.chargebackDescriptionStylesheet
+        self.page?.loadHTMLDescription(styleSheet: styleSheet) { html in
+            self.descriptionTextView.alpha = 0
+            
+            UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                self.descriptionTextView.alpha = 1
+                self.descriptionTextView.attributedText = html
+                
+                self.view.layoutIfNeeded()
+                self.view.setNeedsLayout()
+            }, completion: nil)
+        }
+    }
+    
     func reloadPage() {
         self.titleLabel.text = self.page?.title
         self.actionsTableView.reloadData()
         self.tableViewHeightConstraint.constant = self.actionsTableView.contentSize.height
-        self.page?.loadHTMLDescription(completion: { (html: NSAttributedString?) in
-            self.descriptionTextView.attributedText = html
-            
-            self.descriptionTextView.alpha = 0
-            self.view.setNeedsLayout()
-            UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
-                self.descriptionTextView.alpha = 1
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-            
-        })
         
+        self.reloadNoticeTextView()
     }
 }
 

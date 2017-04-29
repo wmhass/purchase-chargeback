@@ -27,12 +27,12 @@ struct NoticePage {
     var links: [String: NSURL] = [:]
     var actions: [NoticePage.Action] = []
     
-    func loadHTMLDescription(completion: @escaping ((_ a: NSAttributedString?) -> Void) ) -> Void {
+    func loadHTMLDescription(styleSheet: String?, completion: @escaping ((_ a: NSAttributedString?) -> Void) ) -> Void {
         guard let description = self.description else {
             return completion(nil)
         }
         DispatchQueue.global().async {
-            let styledHtml = description.css(style: AppColor.chargebackDescriptionStylesheet)
+            let styledHtml = description.css(style: styleSheet)
             let attributeString = NSAttributedString(html: styledHtml)
             DispatchQueue.main.async {
                 completion(attributeString)
@@ -40,8 +40,6 @@ struct NoticePage {
         }
     }
 }
-
-
 
 extension NoticePage {
     
