@@ -18,11 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.autoresizingMask = [UIViewAutoresizing.flexibleWidth, .flexibleHeight]
         
-        let homeViewController = HomeViewController()
-        homeViewController.view.frame = self.window!.bounds
-        self.window!.rootViewController = homeViewController
-        self.window!.addSubview(homeViewController.view)
+        let navigationController: UINavigationController = UINavigationController()
+        navigationController.view.frame = self.window!.bounds
         
+        self.window!.rootViewController = navigationController
+        self.window!.addSubview(navigationController.view)
+        
+        
+        HomeViewWireframe.launchWithNavigationController(navigationController)
         self.window!.makeKeyAndVisible()
         
         return true

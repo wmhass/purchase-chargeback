@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum LinkField: String {
-    case links, href
-}
+
 
 struct NoticePage {
+    
+    var descriptionStyleSheet = AppColor.noticeDescriptionStylesheet
     
     struct Action {
         enum ActionType: String {
@@ -23,25 +23,26 @@ struct NoticePage {
     }
     
     var title: String?
-    var description: String?
+    var description: NSAttributedString?
     var links: [String: NSURL] = [:]
     var actions: [NoticePage.Action] = []
     
-    func loadHTMLDescription(styleSheet: String?, completion: @escaping ((_ a: NSAttributedString?) -> Void) ) -> Void {
-        guard let description = self.description else {
-            return completion(nil)
-        }
-        DispatchQueue.global().async {
-            let styledHtml = description.css(style: styleSheet)
-            let attributeString = NSAttributedString(html: styledHtml)
-            DispatchQueue.main.async {
-                completion(attributeString)
-            }
+    init(title: String?, htmlMessage html: String?, actions: [NoticePage.Action]) {
+        self.title = title
+        self.actions = actions
+
+        if let html = html {
+            let styledHtml = html.prependStyleSheet(self.descriptionStyleSheet)
+            self.description = NSAttributedString(html: styledHtml)
         }
     }
 }
 
 extension NoticePage {
+    
+    var type: AppPageType {
+        return .notice
+    }
     
     enum Field: String {
         case title, description, primary_action, secondary_action, chargeback
@@ -49,15 +50,20 @@ extension NoticePage {
     
     init(raw: [String: AnyObject]) {
         self.title = raw[NoticePage.Field.title.rawValue] as? String
-        self.description = raw[NoticePage.Field.description.rawValue] as? String
         
-        if let links = raw[LinkField.links.rawValue] as?  [String: [String: AnyObject]] {
+        if let description = raw[NoticePage.Field.description.rawValue] as? String {
+            if let attrString = NSMutableAttributedString(html: description.prependStyleSheet(self.descriptionStyleSheet)) {
+                self.description = attrString
+            }
+        }
+        
+        /*if let links = raw[AppLink.Field.links.rawValue] as?  [String: [String: AnyObject]] {
             for (linkName, link) in links {
-                if let href = link[LinkField.href.rawValue] as? String, let url = NSURL(string: href) {
+                if let href = link[AppLink.Field.href.rawValue] as? String, let url = NSURL(string: href) {
                     self.links[linkName] = url
                 }
             }
-        }
+        }*/
 
         if let rawPrimaryAction = raw[NoticePage.Field.primary_action.rawValue] as? [String: String],
             let primaryAction = NoticePage.Action(raw: rawPrimaryAction) {

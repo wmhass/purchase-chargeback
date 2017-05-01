@@ -15,10 +15,12 @@ protocol ChargebackUserInterface: class {
 
 
 struct ChargebackPresenter {
-    weak var view: ChargebackUserInterface?
+    weak var userInterface: ChargebackUserInterface?
 }
 
-// MARK: - ChargebackUIEventHandler
-extension ChargebackPresenter: ChargebackUIEventHandler {
-    
+// MARK: - NoticeUIEventHandler
+extension ChargebackPresenter: NoticeUIEventHandler {
+    func didTapAction(action: NoticePage.Action) {
+        
+    }
 }

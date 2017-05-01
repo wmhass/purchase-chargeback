@@ -7,9 +7,14 @@
 //
 
 import UIKit
-import Alamofire
 
-class HomeViewController: UIViewController {
+protocol HomeUIEventHandler {
+    func beginChargebackFlow()
+}
+
+class HomeViewController: UIViewController, HomeUserInterface {
+    
+    var evenHandler: HomeUIEventHandler?
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return UIStatusBarAnimation.slide
@@ -20,24 +25,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func startButtonTouched() {
-    
-        Alamofire.request("https://nu-mobile-hiring.herokuapp.com/notice", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response: DataResponse<Any>) in
-            
-            guard let json = response.result.value as? [String: AnyObject] else {
-                // TODO: Notify error
-                print("asd")
-                return
-            }
-            
-            let page = NoticePage(raw: json)
-            let noticeViewController = NoticeViewController()
-            noticeViewController.presentPage(page: page)
-            
-            let modal = UICustomModalViewController()
-            modal.installContentViewController(noticeViewController)
-            
-            self.present(modal, animated: true, completion: nil)
-            
-        }
+        self.evenHandler?.beginChargebackFlow()
     }
 }

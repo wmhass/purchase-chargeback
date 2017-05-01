@@ -9,15 +9,22 @@
 import Foundation
 
 protocol NoticeUserInterface: class {
-    func presentPage(page: NoticePage)
+    func presentPage(_ page: NoticePage)
 }
 
-struct NoticePresenter {
+class NoticePresenter {
     
+    var wireframe: NoticeWireframe
+    weak var userInterface: NoticeUserInterface?
+    
+    init(wireframe: NoticeWireframe, userInterface: NoticeUserInterface) {
+        self.wireframe = wireframe
+        self.userInterface = userInterface
+    }
 }
 
-// MARK: - NoticeViewControllerUIEventHandler
-extension NoticePresenter: NoticeViewControllerUIEventHandler {
+// MARK: - NoticeUIEventHandler
+extension NoticePresenter: NoticeUIEventHandler {
     
     func didTapAction(action: NoticePage.Action) {
         

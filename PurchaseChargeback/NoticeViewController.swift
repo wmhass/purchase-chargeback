@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-protocol NoticeViewControllerUIEventHandler {
+protocol NoticeUIEventHandler {
     func didTapAction(action: NoticePage.Action)
 }
 
@@ -20,7 +20,7 @@ class NoticeViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var tableViewHeightConstraint: NSLayoutConstraint!
     
-    var eventHandler: NoticeViewControllerUIEventHandler?
+    var eventHandler: NoticeUIEventHandler?
     var page: NoticePage?
     let queue = DispatchQueue(label: "NoticeViewController.Queue")
     
@@ -44,28 +44,12 @@ class NoticeViewController: UIViewController {
         
         self.actionsTableView.register(NoticeActionTableViewCell.nib, forCellReuseIdentifier: NoticeActionTableViewCell.defaultReuseIdentifier)
     }
-    
-    func reloadNoticeTextView() {
-        self.descriptionTextView.alpha = 0
-        
-        let styleSheet = AppColor.chargebackDescriptionStylesheet
-        self.page?.loadHTMLDescription(styleSheet: styleSheet) { html in
-            UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
-                self.descriptionTextView.alpha = 1
-                self.descriptionTextView.attributedText = html
-                
-                self.view.setNeedsLayout()
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-        }
-    }
-    
+
     func reloadPage() {
         self.titleLabel.text = self.page?.title
         self.actionsTableView.reloadData()
         self.tableViewHeightConstraint.constant = self.actionsTableView.contentSize.height
-        
-        self.reloadNoticeTextView()
+        self.descriptionTextView.attributedText = self.page?.description
     }
 }
 
@@ -123,7 +107,7 @@ extension NoticeViewController: UITableViewDelegate {
 
 // MARK: - NoticeUserInterface
 extension NoticeViewController: NoticeUserInterface {
-    func presentPage(page: NoticePage) {
+    func presentPage(_ page: NoticePage) {
         self.page = page
         if self.viewIfLoaded != nil {
             self.reloadPage()

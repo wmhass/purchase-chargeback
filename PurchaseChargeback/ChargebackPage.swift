@@ -39,13 +39,13 @@ extension ChargebackPage {
             self.autoBlock = autoBlock
         }
         
-        if let links = raw[LinkField.links.rawValue] as?  [String: [String: AnyObject]] {
+        /*if let links = raw[AppLink.Field.links.rawValue] as?  [String: [String: AnyObject]] {
             for (linkName, link) in links {
-                if let href = link[LinkField.href.rawValue] as? String, let url = NSURL(string: href) {
+                if let href = link[AppLink.Field.href.rawValue] as? String, let url = NSURL(string: href) {
                     self.links[linkName] = url
                 }
             }
-        }
+        }*/
         
         if let reasonDetails = raw[ChargebackPage.Field.reason_details.rawValue] as? [[String: AnyObject]] {
             self.reasonDetails = reasonDetails.map({ (item: [String : AnyObject]) -> ChargebackPage.ReasonDetail in

@@ -57,7 +57,7 @@ class ChargebackViewController: UIViewController {
     fileprivate func setupReasonTextView() {
         self.reasonTextView.text = nil
         
-        let placeholderText = "Nos conte <strong>em detalhes</strong> o que aconteceu com a sua compra em Transaction...".css(style: AppColor.chargebackDescriptionStylesheet)
+        let placeholderText = "Nos conte <strong>em detalhes</strong> o que aconteceu com a sua compra em Transaction...".prependStyleSheet(AppColor.chargebackDescriptionStylesheet)
         self.reasonTextView.attributedPlaceholder = NSAttributedString(html: placeholderText)
         self.reasonTextView.delegate = self
     }
@@ -106,18 +106,16 @@ extension ChargebackViewController {
         weak var presentingView = self.presentingViewController
         self.dismiss(animated: true) {
             
-            let html = "<center>Fique de olho no seu email! Nos próximos 3 dias você deverá receber um primeiro retorno sobre sua contestação</center>"
-            
+            let title = "Contestação de compra recebida"
+            let message = "<center><p>Fique de olho no seu email! Nos próximos 3 dias você deverá receber um primeiro retorno sobre sua contestação</p></center>"
             let actions = [
                 NoticePage.Action(title: "notice.action.close".localized(comment: "FECHAR"), type: NoticePage.Action.ActionType.cancel)
             ]
-            
-            let title = "Contestação de compra recebida"
-            
-            let page = NoticePage(title: title, description: html, links: [:], actions: actions)
+
+            let page = NoticePage(title: title, htmlMessage: message, actions: actions)
             
             let noticeViewController = NoticeViewController()
-            noticeViewController.presentPage(page: page)
+            noticeViewController.presentPage(page)
             
             let modal = UICustomModalViewController()
             modal.installContentViewController(noticeViewController)
