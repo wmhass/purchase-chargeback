@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum RouterResult {
-    case success
+    case success(wireframe: AppPageWireframe.Type, rawPage: [String: AnyObject])
     case error(String?)
 }
 
@@ -20,8 +20,7 @@ struct AppRouter {
         AppPageType.notice : NoticeWireframe.self
     ]
     
-    static func launchPage(ofType pageType: AppPageType, fromURL url: URL, fromViewController: UIViewController, completion: @escaping (_ result: RouterResult) -> Void) {
-        
+    static func routePage(ofType pageType: AppPageType, fromURL url: URL, fromViewController: UIViewController, completion: @escaping (_ result: RouterResult) -> Void) {
         AppServerAPI.get(url: url) { (result: AppServerAPI.Result) in
             switch result {
             case .failed(_):
@@ -34,12 +33,8 @@ struct AppRouter {
                     completion(.error(message))
                     return
                 }
-                wireframe.launchModally(rawPage: object, fromViewController: fromViewController)
+                completion(RouterResult.success(wireframe: wireframe, rawPage: object))
             }
         }
-        
-        
-        
-        
     }
 }

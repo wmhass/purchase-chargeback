@@ -16,7 +16,7 @@ class NoticeWireframe: AppPageWireframe {
         self.rootViewController = rootViewController
     }
     
-    static func launchModally(rawPage: [String: AnyObject], fromViewController: UIViewController) {
+    static func launchModule(rawPage: [String: AnyObject], fromViewController: UIViewController) {
         let noticePage = NoticePage(raw: rawPage)
         let noticeViewController = NoticeViewController()
         let modal = UICustomModalViewController()

@@ -9,14 +9,18 @@
 import UIKit
 
 protocol HomeViewWireframeProtocol {
-    func launchNoticePage(_ page: NoticePage)
+    func launchNoticePage(fromURL url: URL)
 }
 
-protocol HomeUserInterface: class, ViewErrorHandler {
-    
+protocol HomeUserInterface: class {
+    func showErrorMessage(_ message: String?)
+    func refresh(withPage page: HomePage)
+    func showLoadingContentState(_ shouldShow: Bool)
 }
 
 class HomePresenter {
+    
+    static let pageURL = URL(string: "https://nu-mobile-hiring.herokuapp.com/notice")
     
     weak var userInterface: HomeUserInterface?
     var wireframe: HomeViewWireframeProtocol?
@@ -25,24 +29,34 @@ class HomePresenter {
         self.wireframe = wireframe
         self.userInterface = userInterface
     }
-    
 }
 
 // MARK: - HomeUIEventHandler
 extension HomePresenter: HomeUIEventHandler {
     
     func beginChargebackFlow() {
-        
-        /*AppServerAPI.get(resource: AppServerAPI.Resource.notice) { [weak self] (result) in
-            switch result {
-            case .failed(let message):
-                self?.userInterface?.hanldeErrorMessage(message: message)
-            case .success(let object):
-                let page = NoticePage(raw: object)
-                self?.wireframe?.launchNoticePage(page)
-            }
-        }*/
-        
+        if let url = URL(string: "https://nu-mobile-hiring.herokuapp.com/notice") {
+            self.wireframe?.launchNoticePage(fromURL: url)
+        }
+    }
+
+    func uiFinishedLoading() {
+        if let url = HomePresenter.pageURL {
+            self.userInterface?.showLoadingContentState(true)
+            
+            AppServerAPI.get(url: url, completion: { [weak self] (result: AppServerAPI.Result) in
+                self?.userInterface?.showLoadingContentState(false)
+                
+                switch result {
+                case .failed(let error):
+                    self?.userInterface?.showErrorMessage(error)
+                    break
+                case .success(let rawPage):
+                    self?.userInterface?.refresh(withPage: HomePage(raw: rawPage))
+                    break
+                }
+            })
+        }
     }
     
 }

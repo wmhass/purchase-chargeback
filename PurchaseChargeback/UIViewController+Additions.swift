@@ -1,19 +1,14 @@
 //
-//  ViewErrorHandler.swift
+//  UIViewController+Additions.swift
 //  PurchaseChargeback
 //
-//  Created by William Hass on 4/29/17.
+//  Created by William Hass on 5/1/17.
 //  Copyright © 2017 lilohass. All rights reserved.
 //
 
 import UIKit
-
-protocol ViewErrorHandler {
-    func hanldeErrorMessage(message: String?)
-}
-
-extension ViewErrorHandler where Self: UIViewController {
-    func hanldeErrorMessage(message: String?) {
+extension UIViewController {
+    func handleErrorMessage(_ message: String?) {
         let alertTitle = "appapi.error.generictitle".localized(comment: "Oops!")
         let alert = UIAlertController(title: title, message: alertTitle, preferredStyle: UIAlertControllerStyle.alert)
         

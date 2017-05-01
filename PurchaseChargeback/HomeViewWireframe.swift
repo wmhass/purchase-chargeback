@@ -27,11 +27,24 @@ class HomeViewWireframe {
         
         navigationController.setViewControllers([homeViewController], animated: false)
     }
-
 }
 
 // MARK: - HomeViewWireframeProtocol
 extension HomeViewWireframe: HomeViewWireframeProtocol {
-    func launchNoticePage(_ page: NoticePage) {
+    
+    func launchNoticePage(fromURL url: URL) {
+        guard let navigationController = self.navigationController else {
+            return
+        }
+        AppRouter.routePage(ofType: AppPageType.notice, fromURL: url, fromViewController: navigationController) { [weak self] (didRoute: RouterResult) in
+            switch didRoute {
+            case .success(let pagewireframe, let rawPage):
+                pagewireframe.launchModule(rawPage: rawPage, fromViewController: navigationController)
+            case .error(let error):
+                self?.navigationController?.handleErrorMessage(error)
+            }
+        }
     }
+    
+    
 }

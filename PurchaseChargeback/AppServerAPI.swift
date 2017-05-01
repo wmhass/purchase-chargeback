@@ -11,30 +11,9 @@ import Alamofire
 
 struct AppServerAPI {
     
-    
-    
-    static let domain = "https://nu-mobile-hiring.herokuapp.com"
-    
     typealias RequestCompletion = (AppServerAPI.Result) -> Void
     
-    static func url(forResource resource: AppServerAPI.Resource) -> URL? {
-        return URL(string: AppServerAPI.domain + "/" + resource.rawValue)
-    }
-    
     static func get(url: URL, completion: RequestCompletion?) {
-        AppServerAPI.request(url: url, completion: completion)
-    }
-    
-    static func get(resource: AppServerAPI.Resource, completion: RequestCompletion?) {
-        AppServerAPI.request(resource, method: .get, parameters: nil, completion: completion)
-    }
-    
-    static func request(_ resource: AppServerAPI.Resource, method: HTTPMethod = .get, parameters: Parameters? = nil, completion: RequestCompletion?) {
-        guard let url = self.url(forResource: resource) else {
-            let message = "appapi.error.unknown".localized(comment: "Ocorreu um erro desconhecido. Por favor, tente novamente.")
-            completion?(Result.failed(message))
-            return
-        }
         AppServerAPI.request(url: url, completion: completion)
     }
     

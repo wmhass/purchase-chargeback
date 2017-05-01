@@ -41,13 +41,14 @@
 		3D936B301EB43CB200AE4FB2 /* ChargebackPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B2F1EB43CB200AE4FB2 /* ChargebackPage.swift */; };
 		3D936B321EB43CD200AE4FB2 /* NoticePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B311EB43CD200AE4FB2 /* NoticePage.swift */; };
 		3D936B341EB50C2000AE4FB2 /* AppServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B331EB50C2000AE4FB2 /* AppServerAPI.swift */; };
-		3D936B361EB5166F00AE4FB2 /* ViewErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B351EB5166F00AE4FB2 /* ViewErrorHandler.swift */; };
 		3D936B381EB5231900AE4FB2 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B371EB5231900AE4FB2 /* HomePresenter.swift */; };
 		3D936B3A1EB5243300AE4FB2 /* HomeViewWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B391EB5243300AE4FB2 /* HomeViewWireframe.swift */; };
 		3D936B3F1EB52C8000AE4FB2 /* NoticeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B3E1EB52C8000AE4FB2 /* NoticeWireframe.swift */; };
 		3D936B411EB5328C00AE4FB2 /* AppPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B401EB5328C00AE4FB2 /* AppPage.swift */; };
 		3D936B431EB532A900AE4FB2 /* AppPageWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B421EB532A900AE4FB2 /* AppPageWireframe.swift */; };
 		3D936B451EB532E100AE4FB2 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B441EB532E100AE4FB2 /* AppRouter.swift */; };
+		3D936B4A1EB7596B00AE4FB2 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B491EB7596B00AE4FB2 /* UIViewController+Additions.swift */; };
+		3D936B4C1EB75D0D00AE4FB2 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B4B1EB75D0D00AE4FB2 /* HomePage.swift */; };
 		3DBD89D11EB4246100F03604 /* ChargebackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */; };
 		3DBD89D31EB4253700F03604 /* NoticePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD89D21EB4253700F03604 /* NoticePresenter.swift */; };
 		3DF1DF511EB0D225005FB570 /* UICustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */; };
@@ -113,13 +114,14 @@
 		3D936B2F1EB43CB200AE4FB2 /* ChargebackPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackPage.swift; sourceTree = "<group>"; };
 		3D936B311EB43CD200AE4FB2 /* NoticePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticePage.swift; sourceTree = "<group>"; };
 		3D936B331EB50C2000AE4FB2 /* AppServerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppServerAPI.swift; sourceTree = "<group>"; };
-		3D936B351EB5166F00AE4FB2 /* ViewErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewErrorHandler.swift; sourceTree = "<group>"; };
 		3D936B371EB5231900AE4FB2 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		3D936B391EB5243300AE4FB2 /* HomeViewWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewWireframe.swift; sourceTree = "<group>"; };
 		3D936B3E1EB52C8000AE4FB2 /* NoticeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeWireframe.swift; sourceTree = "<group>"; };
 		3D936B401EB5328C00AE4FB2 /* AppPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPage.swift; sourceTree = "<group>"; };
 		3D936B421EB532A900AE4FB2 /* AppPageWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPageWireframe.swift; sourceTree = "<group>"; };
 		3D936B441EB532E100AE4FB2 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		3D936B491EB7596B00AE4FB2 /* UIViewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
+		3D936B4B1EB75D0D00AE4FB2 /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackPresenter.swift; sourceTree = "<group>"; };
 		3DBD89D21EB4253700F03604 /* NoticePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticePresenter.swift; sourceTree = "<group>"; };
 		3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomSwitch.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				3D54BD851EAC4E97000CC9AD /* HomeViewController.xib */,
 				3D936B371EB5231900AE4FB2 /* HomePresenter.swift */,
 				3D936B391EB5243300AE4FB2 /* HomeViewWireframe.swift */,
+				3D936B4B1EB75D0D00AE4FB2 /* HomePage.swift */,
 			);
 			name = HomeViewController;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				3D54BDA71EAD4017000CC9AD /* String+Additions.swift */,
 				3D38643C1EB3609400D94398 /* Bundle+Additions.swift */,
 				3D38643E1EB3640E00D94398 /* NSAttributedString+Additions.swift */,
+				3D936B491EB7596B00AE4FB2 /* UIViewController+Additions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -356,7 +360,6 @@
 		3D936B3B1EB52B1600AE4FB2 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				3D936B351EB5166F00AE4FB2 /* ViewErrorHandler.swift */,
 				3D936B401EB5328C00AE4FB2 /* AppPage.swift */,
 				3D936B421EB532A900AE4FB2 /* AppPageWireframe.swift */,
 			);
@@ -691,7 +694,6 @@
 				3D54BDBB1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift in Sources */,
 				3D3864451EB38B7500D94398 /* UICustomModalViewController.swift in Sources */,
 				3D936B321EB43CD200AE4FB2 /* NoticePage.swift in Sources */,
-				3D936B361EB5166F00AE4FB2 /* ViewErrorHandler.swift in Sources */,
 				3D936B341EB50C2000AE4FB2 /* AppServerAPI.swift in Sources */,
 				3D936B411EB5328C00AE4FB2 /* AppPage.swift in Sources */,
 				3D936B3F1EB52C8000AE4FB2 /* NoticeWireframe.swift in Sources */,
@@ -699,12 +701,14 @@
 				3D54BD531EAB88D6000CC9AD /* ViewController.swift in Sources */,
 				3D936B301EB43CB200AE4FB2 /* ChargebackPage.swift in Sources */,
 				3D54BDC01EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift in Sources */,
+				3D936B4C1EB75D0D00AE4FB2 /* HomePage.swift in Sources */,
 				3D54BDA81EAD4017000CC9AD /* String+Additions.swift in Sources */,
 				3DF1DF511EB0D225005FB570 /* UICustomSwitch.swift in Sources */,
 				3D54BD991EAD2E27000CC9AD /* UIColor+Hex.swift in Sources */,
 				3D54BD811EAC4C5B000CC9AD /* NoticeViewController.swift in Sources */,
 				3D38643D1EB3609400D94398 /* Bundle+Additions.swift in Sources */,
 				3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */,
+				3D936B4A1EB7596B00AE4FB2 /* UIViewController+Additions.swift in Sources */,
 				3DBD89D31EB4253700F03604 /* NoticePresenter.swift in Sources */,
 				3D54BDA11EAD33FA000CC9AD /* AppModalContentView.swift in Sources */,
 				3DBD89D11EB4246100F03604 /* ChargebackPresenter.swift in Sources */,

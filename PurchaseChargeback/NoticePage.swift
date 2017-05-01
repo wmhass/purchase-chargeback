@@ -40,10 +40,6 @@ struct NoticePage {
 
 extension NoticePage {
     
-    var type: AppPageType {
-        return .notice
-    }
-    
     enum Field: String {
         case title, description, primary_action, secondary_action, chargeback
     }

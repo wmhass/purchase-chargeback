@@ -9,5 +9,5 @@
 import UIKit
 
 protocol AppPageWireframe {
-    static func launchModally(rawPage: [String: AnyObject], fromViewController: UIViewController)
+    static func launchModule(rawPage: [String: AnyObject], fromViewController: UIViewController)
 }
