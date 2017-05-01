@@ -17,17 +17,23 @@ class HomeViewWireframe {
         self.navigationController = navigationController
     }
     
-    static func launchWithNavigationController(_ navigationController: UINavigationController) {
-        let wireframe = HomeViewWireframe(navigationController: navigationController)
+    static func createNavigation() -> UINavigationController {
         let homeViewController = HomeViewController()
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+
+        let wireframe = HomeViewWireframe(navigationController: navigationController)
         
-        let viewEventHandler = HomePresenter(wireframe: wireframe, userInterface: homeViewController)
+        let api = AppServerAPI()
+        
+        let viewEventHandler = HomePresenter(wireframe: wireframe, userInterface: homeViewController, api: api)
         
         homeViewController.evenHandler = viewEventHandler
         
-        navigationController.setViewControllers([homeViewController], animated: false)
+        return navigationController
     }
 }
+
+
 
 // MARK: - HomeViewWireframeProtocol
 extension HomeViewWireframe: HomeViewWireframeProtocol {
@@ -45,6 +51,4 @@ extension HomeViewWireframe: HomeViewWireframeProtocol {
             }
         }
     }
-    
-    
 }

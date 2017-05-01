@@ -9,7 +9,7 @@
 import Foundation
 
 enum AppPageType: String {
-    case notice
+    case notice, chargeback
 }
 
 //protocol AppPage {

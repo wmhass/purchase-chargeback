@@ -8,10 +8,9 @@
 
 import Foundation
 
-
-
 struct NoticePage {
     
+    var links: [AppApiLink] = [AppApiLink]()
     var descriptionStyleSheet = AppColor.noticeDescriptionStylesheet
     
     struct Action {
@@ -24,7 +23,6 @@ struct NoticePage {
     
     var title: String?
     var description: NSAttributedString?
-    var links: [String: NSURL] = [:]
     var actions: [NoticePage.Action] = []
     
     init(title: String?, htmlMessage html: String?, actions: [NoticePage.Action]) {
@@ -35,6 +33,15 @@ struct NoticePage {
             let styledHtml = html.prependStyleSheet(self.descriptionStyleSheet)
             self.description = NSAttributedString(html: styledHtml)
         }
+    }
+    
+    func link(withName name: String) -> URL? {
+        for link in self.links {
+            if link.name == name {
+                return link.url
+            }
+        }
+        return nil
     }
 }
 
@@ -47,19 +54,13 @@ extension NoticePage {
     init(raw: [String: AnyObject]) {
         self.title = raw[NoticePage.Field.title.rawValue] as? String
         
+        self.links.append(contentsOf: AppApiLink.parseLinks(fromRawPage: raw))
+        
         if let description = raw[NoticePage.Field.description.rawValue] as? String {
             if let attrString = NSMutableAttributedString(html: description.prependStyleSheet(self.descriptionStyleSheet)) {
                 self.description = attrString
             }
         }
-        
-        /*if let links = raw[AppLink.Field.links.rawValue] as?  [String: [String: AnyObject]] {
-            for (linkName, link) in links {
-                if let href = link[AppLink.Field.href.rawValue] as? String, let url = NSURL(string: href) {
-                    self.links[linkName] = url
-                }
-            }
-        }*/
 
         if let rawPrimaryAction = raw[NoticePage.Field.primary_action.rawValue] as? [String: String],
             let primaryAction = NoticePage.Action(raw: rawPrimaryAction) {

@@ -9,7 +9,15 @@
 import Foundation
 
 struct HomePage {
+    
+    var links: [AppApiLink] = []
+
+}
+
+extension HomePage {
+    
     init(raw: [String: AnyObject]) {
-        
+        self.links.append(contentsOf: AppApiLink.parseLinks(fromRawPage: raw))
     }
+
 }

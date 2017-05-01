@@ -20,46 +20,41 @@ protocol HomeUserInterface: class {
 
 class HomePresenter {
     
-    static let pageURL = URL(string: "https://nu-mobile-hiring.herokuapp.com/notice")
+    static let pageURL = URL(string: "https://nu-mobile-hiring.herokuapp.com")!
     
     weak var userInterface: HomeUserInterface?
     var wireframe: HomeViewWireframeProtocol?
+    let api: AppServerAPIProtocol
     
-    init(wireframe: HomeViewWireframeProtocol, userInterface: HomeUserInterface) {
+    init(wireframe: HomeViewWireframeProtocol, userInterface: HomeUserInterface, api: AppServerAPIProtocol) {
         self.wireframe = wireframe
         self.userInterface = userInterface
+        self.api = api
     }
 }
 
 // MARK: - HomeUIEventHandler
 extension HomePresenter: HomeUIEventHandler {
     
-    func beginChargebackFlow() {
-        if let url = URL(string: "https://nu-mobile-hiring.herokuapp.com/notice") {
-            self.userInterface?.showLoadingContentState(true)
-            self.wireframe?.launchNoticePage(fromURL: url) {
-                self.userInterface?.showLoadingContentState(false)
-            }
+    func didSelectLink(_ link: AppApiLink) {
+        self.userInterface?.showLoadingContentState(true)
+        self.wireframe?.launchNoticePage(fromURL: link.url) {
+            self.userInterface?.showLoadingContentState(false)
         }
     }
 
-    func uiFinishedLoading() {
-        if let url = HomePresenter.pageURL {
-            self.userInterface?.showLoadingContentState(true)
-            
-            AppServerAPI.get(url: url, completion: { [weak self] (result: AppServerAPI.Result) in
-                self?.userInterface?.showLoadingContentState(false)
-                
-                switch result {
-                case .failed(let error):
-                    self?.userInterface?.showErrorMessage(error)
-                    break
-                case .success(let rawPage):
-                    self?.userInterface?.refresh(withPage: HomePage(raw: rawPage))
-                    break
-                }
-            })
-        }
+    func loadPageContent() {
+        self.userInterface?.showLoadingContentState(true)
+        
+        self.api.get(url: HomePresenter.pageURL, completion: { [weak self] (result: AppServerAPIResponse) in
+            self?.userInterface?.showLoadingContentState(false)
+            switch result {
+            case .failed(let error):
+                self?.userInterface?.showErrorMessage(error)
+            case .success(let rawPage):
+                self?.userInterface?.refresh(withPage: HomePage(raw: rawPage))
+            }
+        })
     }
     
 }

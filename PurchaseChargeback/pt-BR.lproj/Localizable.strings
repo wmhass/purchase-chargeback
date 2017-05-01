@@ -35,3 +35,9 @@
 "appapi.error.button.ok" = "Okay";
 
 "appapi.error.pagenotsupported" = "A página requisitada não é suportada.";
+
+"app.emptystate.failedloadingcontent" = "Ocorreu um erro ao carregar o conteúdo. Tente novamente.";
+
+"app.emptystate.retry" = "Tentar novamente";
+
+"homepage.title.link" = "Home actions";

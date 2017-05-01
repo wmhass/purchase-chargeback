@@ -8,9 +8,10 @@
 
 import UIKit
 import WebKit
+import SVProgressHUD
 
 protocol NoticeUIEventHandler {
-    func didTapAction(action: NoticePage.Action)
+    func didTapAction(action: NoticePage.Action, inPage page: NoticePage)
 }
 
 class NoticeViewController: UIViewController {
@@ -35,6 +36,13 @@ class NoticeViewController: UIViewController {
         
         self.descriptionTextView.text = nil
         self.reloadPage()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationController?.view.setNeedsLayout()
+        self.navigationController?.view.layoutIfNeeded()
     }
     
     func setupActionsTableView() {
@@ -83,24 +91,10 @@ extension NoticeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        guard let action = self.page?.actions[indexPath.row] else {
+        guard let page = self.page, page.actions.indices.contains(indexPath.row) else {
             return
         }
-        
-        if action.type == .`continue` {
-            weak var presentingView = self.presentingViewController
-            self.dismiss(animated: true, completion: {
-                
-                let chargebackViewController = ChargebackViewController()
-                let modalViewController = UICustomModalViewController()
-                modalViewController.installContentViewController(chargebackViewController)
-                presentingView?.present(modalViewController, animated: true, completion: nil)
-            })
-            
-            
-        } else {
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.eventHandler?.didTapAction(action: page.actions[indexPath.row], inPage: page)
     }
     
 }
@@ -111,6 +105,14 @@ extension NoticeViewController: NoticeUserInterface {
         self.page = page
         if self.viewIfLoaded != nil {
             self.reloadPage()
+        }
+    }
+    
+    func showLoadingContentState(_ shouldShow: Bool) {
+        if shouldShow {
+            SVProgressHUD.show()
+        } else {
+            SVProgressHUD.dismiss()
         }
     }
 }

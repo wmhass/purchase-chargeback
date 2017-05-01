@@ -19,8 +19,6 @@ struct ChargebackPresenter {
 }
 
 // MARK: - NoticeUIEventHandler
-extension ChargebackPresenter: NoticeUIEventHandler {
-    func didTapAction(action: NoticePage.Action) {
-        
-    }
+extension ChargebackPresenter: ChargebackUIEventHandler {
+    
 }

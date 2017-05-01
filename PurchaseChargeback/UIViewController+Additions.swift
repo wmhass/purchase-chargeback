@@ -10,7 +10,7 @@ import UIKit
 extension UIViewController {
     func handleErrorMessage(_ message: String?) {
         let alertTitle = "appapi.error.generictitle".localized(comment: "Oops!")
-        let alert = UIAlertController(title: title, message: alertTitle, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         let okTitle = "appapi.error.button.ok".localized(comment: "Okay")
         alert.addAction(UIAlertAction(title: okTitle, style: UIAlertActionStyle.default, handler: nil))

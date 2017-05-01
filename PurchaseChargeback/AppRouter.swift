@@ -16,12 +16,14 @@ enum RouterResult {
 
 struct AppRouter {
     
+    static let api = AppServerAPI()
+    
     private static var routes: [AppPageType: AppPageWireframe.Type] = [
         AppPageType.notice : NoticeWireframe.self
     ]
     
     static func routePage(ofType pageType: AppPageType, fromURL url: URL, fromViewController: UIViewController, completion: @escaping (_ result: RouterResult) -> Void) {
-        AppServerAPI.get(url: url) { (result: AppServerAPI.Result) in
+        self.api.get(url: url) { (result: AppServerAPIResponse) in
             switch result {
             case .failed(_):
                 let message = "appapi.error.unknown".localized(comment:  "Ocorreu um erro desconhecido. Por favor, tente novamente.")
