@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeViewWireframeProtocol {
-    func launchNoticePage(fromURL url: URL)
+    func launchNoticePage(fromURL url: URL, completion: @escaping () -> Void)
 }
 
 protocol HomeUserInterface: class {
@@ -36,7 +36,10 @@ extension HomePresenter: HomeUIEventHandler {
     
     func beginChargebackFlow() {
         if let url = URL(string: "https://nu-mobile-hiring.herokuapp.com/notice") {
-            self.wireframe?.launchNoticePage(fromURL: url)
+            self.userInterface?.showLoadingContentState(true)
+            self.wireframe?.launchNoticePage(fromURL: url) {
+                self.userInterface?.showLoadingContentState(false)
+            }
         }
     }
 

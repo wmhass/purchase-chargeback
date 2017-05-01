@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol HomeUIEventHandler {
     func beginChargebackFlow()
@@ -47,7 +48,11 @@ extension HomeViewController: HomeUserInterface {
     }
     
     func showLoadingContentState(_ shouldShow: Bool) {
-        
+        if shouldShow {
+            SVProgressHUD.show()
+        } else {
+            SVProgressHUD.dismiss()
+        }
     }
     
 }

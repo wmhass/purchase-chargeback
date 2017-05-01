@@ -6,6 +6,7 @@ target 'PurchaseChargeback' do
 
   # Pods for PurchaseChargeback
   pod 'Alamofire', '~> 4.4'
+  pod 'SVProgressHUD'
 
   target 'PurchaseChargebackTests' do
     inherit! :search_paths

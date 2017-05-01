@@ -31,12 +31,12 @@ class HomeViewWireframe {
 
 // MARK: - HomeViewWireframeProtocol
 extension HomeViewWireframe: HomeViewWireframeProtocol {
-    
-    func launchNoticePage(fromURL url: URL) {
+    func launchNoticePage(fromURL url: URL, completion: @escaping () -> Void) {
         guard let navigationController = self.navigationController else {
             return
         }
         AppRouter.routePage(ofType: AppPageType.notice, fromURL: url, fromViewController: navigationController) { [weak self] (didRoute: RouterResult) in
+            completion()
             switch didRoute {
             case .success(let pagewireframe, let rawPage):
                 pagewireframe.launchModule(rawPage: rawPage, fromViewController: navigationController)
