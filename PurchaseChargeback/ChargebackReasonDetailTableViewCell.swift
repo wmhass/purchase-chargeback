@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ChargebackReasonDetailTableViewCellDelegate: class {
-    func reasonDetailTableViewCell(cell: ChargebackReasonDetailTableViewCell, didChangeSwitchToValue: Bool)
+    func reasonDetailTableViewCell(cell: ChargebackReasonDetailTableViewCell, didChangeSwitchToValue newValue: Bool)
 }
 
 class ChargebackReasonDetailTableViewCell: UITableViewCell {
@@ -47,6 +47,15 @@ class ChargebackReasonDetailTableViewCell: UITableViewCell {
         } else {
             self.titleLabel.textColor = AppColor.blackText
         }
+    }
+    
+}
+
+extension ChargebackReasonDetailTableViewCell {
+    
+    func setup(withReasonDetail reasonDetail: ReasonDetail?) {
+        self.titleLabel?.text = reasonDetail?.title
+        self.customSwitch.setOn(reasonDetail != nil ? reasonDetail!.response : false, animated: false)
     }
     
 }

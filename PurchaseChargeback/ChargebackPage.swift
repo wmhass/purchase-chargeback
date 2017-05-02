@@ -8,63 +8,67 @@
 
 import Foundation
 
+
 struct ChargebackPage {
-    
-    struct ReasonDetail {
-        var id: String?
-        var title: String?
-        var value: Bool = false
-    }
+    typealias LinkName = String
     
     var title: String?
-    var links: [String: NSURL] = [:]
-    var commentHint: String?
+    var links = [LinkName: AppApiLink]()
+    var commentHint: NSAttributedString?
     var id: String?
     var autoBlock: Bool = false
     var reasonDetails: [ReasonDetail] = []
+    var comment: String?
+    var isCardLocked: Bool = false
+    
+    var lockCardURL: URL? {
+        return self.links["unblock_card"]?.url
+    }
+    var unlockCardURL: URL? {
+        return self.links["block_card"]?.url
+    }
+    
+    var isDataValid: Bool {
+        guard let comment = self.comment else {
+            return false
+        }
+        return comment.characters.count > 0
+    }
+    
+    var submitURL: URL? {
+        return self.links["self"]?.url
+    }
 }
 
 extension ChargebackPage {
-    
     enum Field: String {
-        case comment_hint, id, title, autoblock, reason_details
+        case comment_hint, id, title, autoblock, reason_details, comment
     }
     init(raw: [String: AnyObject]) {
-        
+        AppApiLink.parseLinks(fromRawPage: raw).forEach { self.links[$0.name] = $0 }
+
         self.title = raw[ChargebackPage.Field.title.rawValue] as? String
-        self.commentHint = raw[ChargebackPage.Field.comment_hint.rawValue] as? String
         self.id = raw[ChargebackPage.Field.id.rawValue] as? String
+        
+        if let commentHint = raw[ChargebackPage.Field.comment_hint.rawValue] as? String {
+            self.commentHint = NSAttributedString(html: commentHint.prependStyleSheet(AppColor.chargebackDescriptionStylesheet))
+        }
         
         if let autoBlock = raw[ChargebackPage.Field.autoblock.rawValue] as? Bool {
             self.autoBlock = autoBlock
         }
-        
-        /*if let links = raw[AppLink.Field.links.rawValue] as?  [String: [String: AnyObject]] {
-            for (linkName, link) in links {
-                if let href = link[AppLink.Field.href.rawValue] as? String, let url = NSURL(string: href) {
-                    self.links[linkName] = url
-                }
-            }
-        }*/
-        
-        if let reasonDetails = raw[ChargebackPage.Field.reason_details.rawValue] as? [[String: AnyObject]] {
-            self.reasonDetails = reasonDetails.map({ (item: [String : AnyObject]) -> ChargebackPage.ReasonDetail in
-                return ChargebackPage.ReasonDetail(raw: item)
-            })
-        }
-        
-    }
-    
-}
 
-extension ChargebackPage.ReasonDetail {
-    
-    enum Field: String {
-        case title, id
+        if let reasonDetails = raw[ChargebackPage.Field.reason_details.rawValue] as? [[String: AnyObject]] {
+            self.reasonDetails = reasonDetails.map {ReasonDetail(raw: $0)}
+        }
     }
     
-    init(raw: [String: AnyObject]) {
-        self.id = raw[ChargebackPage.ReasonDetail.Field.id.rawValue] as? String
-        self.title = raw[ChargebackPage.Field.title.rawValue] as? String
+    var encodePage: [String: AnyObject] {
+        let reasonDetails: [[String: AnyObject]] = self.reasonDetails.map { $0.encodePage }
+        return [
+            ChargebackPage.Field.comment.rawValue: self.comment as AnyObject? ?? "" as AnyObject,
+            ChargebackPage.Field.reason_details.rawValue: reasonDetails as AnyObject
+        ]
     }
+    
 }

@@ -9,7 +9,8 @@
 import UIKit
 
 protocol ChargebackUIEventHandler {
-    
+    func toggleCardStatus(fromPage: ChargebackPage)
+    func submitPage(_ page: ChargebackPage)
 }
 
 class ChargebackViewController: UIViewController {
@@ -22,7 +23,10 @@ class ChargebackViewController: UIViewController {
     @IBOutlet var reasonTextView: AttributedPlaceholderTextView!
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var cardStatusButton: ToggleCardStatusButton!
+    @IBOutlet var cardButtonActivityIndicator: UIActivityIndicatorView!
+    
     var eventHandler: ChargebackUIEventHandler?
+    var page: ChargebackPage?
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -36,7 +40,6 @@ class ChargebackViewController: UIViewController {
         self.setupFooterButtons()
         self.themeKeylines()
         
-        self.cardStatusButton.mode = .unlocked
         self.view.backgroundColor = UIColor.clear
         
         self.reasonsDetailsTableVew.register(ChargebackReasonDetailTableViewCell.nib, forCellReuseIdentifier: ChargebackReasonDetailTableViewCell.defaultReuseIdentifier)
@@ -56,9 +59,6 @@ class ChargebackViewController: UIViewController {
     
     fileprivate func setupReasonTextView() {
         self.reasonTextView.text = nil
-        
-        let placeholderText = "Nos conte <strong>em detalhes</strong> o que aconteceu com a sua compra em Transaction...".prependStyleSheet(AppColor.chargebackDescriptionStylesheet)
-        self.reasonTextView.attributedPlaceholder = NSAttributedString(html: placeholderText)
         self.reasonTextView.delegate = self
     }
     
@@ -76,24 +76,38 @@ class ChargebackViewController: UIViewController {
         self.continueButton.titleLabel?.font = AppFont.chargebackFooterButton
         
         self.cancelButton.setTitleColor(AppColor.titleSecondary, for: .normal)
-        self.continueButton.setTitleColor(AppColor.titleSecondaryDisabled, for: .normal)
     }
     
     func dismissKeyboard() {
         self.reasonTextView.resignFirstResponder()
     }
+    
+    func toggleCardStatus() {
+        guard let page = self.page else {
+            return
+        }
+        self.cardStatusButton.isEnabled = false
+        self.cardButtonActivityIndicator.isHidden = false
+        self.cardButtonActivityIndicator.startAnimating()
+        
+        self.eventHandler?.toggleCardStatus(fromPage: page)
+    }
 
+    func enableContinueButton(_ enable: Bool) {
+        self.continueButton.isEnabled = enable
+        if self.continueButton.isEnabled {
+            self.continueButton.setTitleColor(AppColor.titlePrimary, for: .normal)
+        } else {
+            self.continueButton.setTitleColor(AppColor.titleSecondaryDisabled, for: .normal)
+        }
+    }
 }
 
 // MARK: - IBActions
 extension ChargebackViewController {
     
     @IBAction func cardStatusButtonTouched(_:AnyObject) {
-        if self.cardStatusButton.mode == .locked {
-            self.cardStatusButton.mode = .unlocked
-        } else {
-            self.cardStatusButton.mode = .locked
-        }
+        self.toggleCardStatus()
     }
     
     @IBAction func cancelButtonTouched(_:AnyObject) {
@@ -103,8 +117,11 @@ extension ChargebackViewController {
     
     @IBAction func continueButtonTouched(_:AnyObject) {
         self.dismissKeyboard()
-        weak var presentingView = self.presentingViewController
-        self.dismiss(animated: true) {
+        if let page = self.page {
+            self.eventHandler?.submitPage(page)
+        }
+        //weak var presentingView = self.presentingViewController
+        /*self.dismiss(animated: true) {
             
             let title = "Contestação de compra recebida"
             let message = "<center><p>Fique de olho no seu email! Nos próximos 3 dias você deverá receber um primeiro retorno sobre sua contestação</p></center>"
@@ -121,7 +138,7 @@ extension ChargebackViewController {
             modal.installContentViewController(noticeViewController)
             
             presentingView?.present(modal, animated: true, completion: nil)
-        }
+        }*/
     }
     
 }
@@ -167,18 +184,29 @@ extension ChargebackViewController: UIScrollViewDelegate, UITextViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.dismissKeyboard()
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        self.page?.comment = textView.attributedText.string
+        if let page = self.page {
+            self.enableContinueButton(page.isDataValid)
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
 extension ChargebackViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        guard let page = self.page else {
+            return 0
+        }
+        return page.reasonDetails.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChargebackReasonDetailTableViewCell.defaultReuseIdentifier, for: indexPath) as! ChargebackReasonDetailTableViewCell
         
+        cell.setup(withReasonDetail: self.page?.reasonDetails[indexPath.row])
         cell.delegate = self
         
         return cell
@@ -188,17 +216,44 @@ extension ChargebackViewController: UITableViewDataSource {
 
 // MARK: - ChargebackReasonDetailTableViewCellDelegate
 extension ChargebackViewController: ChargebackReasonDetailTableViewCellDelegate {
-    func reasonDetailTableViewCell(cell: ChargebackReasonDetailTableViewCell, didChangeSwitchToValue: Bool) {
-        
+    func reasonDetailTableViewCell(cell: ChargebackReasonDetailTableViewCell, didChangeSwitchToValue newValue: Bool) {
+        guard let indexPath = self.reasonsDetailsTableVew.indexPath(for: cell), let page = self.page, page.reasonDetails.indices.contains(indexPath.row) else {
+            return
+        }
+        self.page?.reasonDetails[indexPath.row].response = newValue
     }
 }
 
 // MARK: - ChargebackUserInterface
 extension ChargebackViewController: ChargebackUserInterface {
+    
+    func setCardLocked(isLocked locked: Bool) {
+        self.page?.isCardLocked = locked
+        if locked {
+            self.cardStatusButton.mode = .locked
+        } else {
+            self.cardStatusButton.mode = .unlocked
+        }
+        self.cardButtonActivityIndicator.stopAnimating()
+        self.cardStatusButton.isEnabled = true
+    }
+    
+    func showErrorMessage(_ message: String?) {
+        self.handleErrorMessage(message)
+    }
+
     func presentPage(_ page: ChargebackPage) {
-        /*self.page = page
-        if self.viewIfLoaded != nil {
-            self.reloadPage()
-        }*/
+        self.page = page
+        
+        self.reasonTextView.attributedPlaceholder = page.commentHint
+        self.reasonTextView.text = page.comment
+        self.reasonsDetailsTableVew.reloadData()
+        self.cardStatusButton.mode = page.isCardLocked ? .locked : .unlocked
+        self.enableContinueButton(page.isDataValid)
+        
+        if page.autoBlock {
+            self.cardStatusButton.mode = .locked
+            self.toggleCardStatus()
+        }
     }
 }

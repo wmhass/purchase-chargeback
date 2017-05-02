@@ -53,6 +53,7 @@
 		3DBD89D11EB4246100F03604 /* ChargebackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */; };
 		3DBD89D31EB4253700F03604 /* NoticePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD89D21EB4253700F03604 /* NoticePresenter.swift */; };
 		3DED8B711EB81FE200DE4895 /* ChargebackWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED8B701EB81FE200DE4895 /* ChargebackWireframe.swift */; };
+		3DED8B731EB8BC0B00DE4895 /* ReasonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED8B721EB8BC0B00DE4895 /* ReasonDetail.swift */; };
 		3DF1DF511EB0D225005FB570 /* UICustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */; };
 		E76726FD69E4AD5F799EA0AC /* Pods_PurchaseChargebackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4135F943322FA6E741AFA /* Pods_PurchaseChargebackTests.framework */; };
 		EDC73FD24633B860076D7675 /* Pods_PurchaseChargebackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63975188515CC37D981FC53 /* Pods_PurchaseChargebackUITests.framework */; };
@@ -128,6 +129,7 @@
 		3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackPresenter.swift; sourceTree = "<group>"; };
 		3DBD89D21EB4253700F03604 /* NoticePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticePresenter.swift; sourceTree = "<group>"; };
 		3DED8B701EB81FE200DE4895 /* ChargebackWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackWireframe.swift; sourceTree = "<group>"; };
+		3DED8B721EB8BC0B00DE4895 /* ReasonDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReasonDetail.swift; sourceTree = "<group>"; };
 		3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomSwitch.swift; sourceTree = "<group>"; };
 		3E6F83856ABF6AAC3E251336 /* Pods-PurchaseChargebackUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseChargebackUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PurchaseChargebackUITests/Pods-PurchaseChargebackUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4F832363E4B127A8603D0875 /* Pods-PurchaseChargebackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseChargebackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PurchaseChargebackTests/Pods-PurchaseChargebackTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				3D936B4E1EB769DE00AE4FB2 /* AppApiLink.swift */,
+				3DED8B721EB8BC0B00DE4895 /* ReasonDetail.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				3D54BD9C1EAD2E56000CC9AD /* AppColors.swift in Sources */,
 				3D54BDB71EAD54F7000CC9AD /* ToggleCardStatusButton.swift in Sources */,
 				3D54BDB21EAD48B0000CC9AD /* ChargebackViewController.swift in Sources */,
+				3DED8B731EB8BC0B00DE4895 /* ReasonDetail.swift in Sources */,
 				3D54BDBB1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift in Sources */,
 				3D3864451EB38B7500D94398 /* UICustomModalViewController.swift in Sources */,
 				3D936B321EB43CD200AE4FB2 /* NoticePage.swift in Sources */,

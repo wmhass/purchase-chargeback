@@ -41,3 +41,5 @@
 "app.emptystate.retry" = "Tentar novamente";
 
 "homepage.title.link" = "Home actions";
+
+"appapi.error.responserror" = "Algo errado ocorreu, tente novamente mais tarde!";

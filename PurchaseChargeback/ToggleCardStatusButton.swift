@@ -23,6 +23,16 @@ class ToggleCardStatusButton: UIButton {
         }
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            if self.isEnabled {
+                self.alpha = 1
+            } else {
+                self.alpha = 0.6
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.commonInit()

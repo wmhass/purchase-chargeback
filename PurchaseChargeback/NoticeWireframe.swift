@@ -44,16 +44,15 @@ extension NoticeWireframe: NoticeWireframeProtocol {
         }
         AppRouter.routePage(ofType: AppPageType.chargeback, fromURL: url, fromViewController: viewController) { [weak self] (result: RouterResult) in
             completion()
+            
             switch result {
             case .success(let pagewireframe, let rawPage):
-                
                 let presentingView = self?.rootViewController?.presentingViewController
                 self?.dismiss(completion: {
                     if let presentingView = presentingView {
                         pagewireframe.launchModule(rawPage: rawPage, fromViewController: presentingView)
                     }
                 })
-                
             case .error(let error):
                 self?.rootViewController?.handleErrorMessage(error)
             }

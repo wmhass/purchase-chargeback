@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChargebackViewController" customModule="PurchaseChargeback" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="Ohw-eM-SNF" id="E26-Rw-zyP"/>
+                <outlet property="cardButtonActivityIndicator" destination="tsc-8s-Xty" id="dMT-Y9-NQO"/>
                 <outlet property="cardStatusButton" destination="VxF-c9-M5P" id="XbG-MV-SV4"/>
                 <outlet property="contentScrollView" destination="ska-dy-QHa" id="smU-Cy-CX3"/>
                 <outlet property="continueButton" destination="0XK-ob-MXr" id="340-6u-N9I"/>
@@ -63,14 +64,19 @@
                                                 <action selector="cardStatusButtonTouched:" destination="-1" eventType="touchUpInside" id="bTQ-zp-xuC"/>
                                             </connections>
                                         </button>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tsc-8s-Xty">
+                                            <rect key="frame" x="177" y="15" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="VxF-c9-M5P" secondAttribute="trailing" id="4pS-7P-xt3"/>
                                         <constraint firstItem="VxF-c9-M5P" firstAttribute="top" secondItem="q3Z-2Z-6SP" secondAttribute="top" id="ClC-qw-noO"/>
+                                        <constraint firstItem="tsc-8s-Xty" firstAttribute="centerX" secondItem="VxF-c9-M5P" secondAttribute="centerX" id="Zvz-Vm-ag5"/>
                                         <constraint firstItem="VxF-c9-M5P" firstAttribute="leading" secondItem="q3Z-2Z-6SP" secondAttribute="leading" id="dXf-LZ-FzT"/>
                                         <constraint firstAttribute="height" constant="50" id="lof-Mr-isW"/>
                                         <constraint firstAttribute="bottom" secondItem="VxF-c9-M5P" secondAttribute="bottom" id="oJh-g1-0tS"/>
+                                        <constraint firstItem="tsc-8s-Xty" firstAttribute="centerY" secondItem="VxF-c9-M5P" secondAttribute="centerY" id="vsR-Zy-cLO"/>
                                     </constraints>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-XZ-ka6">
