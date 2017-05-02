@@ -52,6 +52,7 @@
 		3D936B4F1EB769DE00AE4FB2 /* AppApiLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B4E1EB769DE00AE4FB2 /* AppApiLink.swift */; };
 		3DBD89D11EB4246100F03604 /* ChargebackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */; };
 		3DBD89D31EB4253700F03604 /* NoticePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBD89D21EB4253700F03604 /* NoticePresenter.swift */; };
+		3DED8B711EB81FE200DE4895 /* ChargebackWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED8B701EB81FE200DE4895 /* ChargebackWireframe.swift */; };
 		3DF1DF511EB0D225005FB570 /* UICustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */; };
 		E76726FD69E4AD5F799EA0AC /* Pods_PurchaseChargebackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4135F943322FA6E741AFA /* Pods_PurchaseChargebackTests.framework */; };
 		EDC73FD24633B860076D7675 /* Pods_PurchaseChargebackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63975188515CC37D981FC53 /* Pods_PurchaseChargebackUITests.framework */; };
@@ -126,6 +127,7 @@
 		3D936B4E1EB769DE00AE4FB2 /* AppApiLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppApiLink.swift; sourceTree = "<group>"; };
 		3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackPresenter.swift; sourceTree = "<group>"; };
 		3DBD89D21EB4253700F03604 /* NoticePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticePresenter.swift; sourceTree = "<group>"; };
+		3DED8B701EB81FE200DE4895 /* ChargebackWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackWireframe.swift; sourceTree = "<group>"; };
 		3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomSwitch.swift; sourceTree = "<group>"; };
 		3E6F83856ABF6AAC3E251336 /* Pods-PurchaseChargebackUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseChargebackUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PurchaseChargebackUITests/Pods-PurchaseChargebackUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4F832363E4B127A8603D0875 /* Pods-PurchaseChargebackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseChargebackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PurchaseChargebackTests/Pods-PurchaseChargebackTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -322,11 +324,12 @@
 		3D54BDAF1EAD489B000CC9AD /* ChargebackViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3D936B2F1EB43CB200AE4FB2 /* ChargebackPage.swift */,
 				3DBD89D01EB4246100F03604 /* ChargebackPresenter.swift */,
 				3D54BDB01EAD48B0000CC9AD /* ChargebackViewController.swift */,
 				3D54BDB11EAD48B0000CC9AD /* ChargebackViewController.xib */,
+				3DED8B701EB81FE200DE4895 /* ChargebackWireframe.swift */,
 				3D54BDB51EAD4FD7000CC9AD /* Views */,
-				3D936B2F1EB43CB200AE4FB2 /* ChargebackPage.swift */,
 			);
 			name = ChargebackViewController;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				3D54BD991EAD2E27000CC9AD /* UIColor+Hex.swift in Sources */,
 				3D54BD811EAC4C5B000CC9AD /* NoticeViewController.swift in Sources */,
 				3D38643D1EB3609400D94398 /* Bundle+Additions.swift in Sources */,
+				3DED8B711EB81FE200DE4895 /* ChargebackWireframe.swift in Sources */,
 				3D54BD511EAB88D6000CC9AD /* AppDelegate.swift in Sources */,
 				3D936B4A1EB7596B00AE4FB2 /* UIViewController+Additions.swift in Sources */,
 				3DBD89D31EB4253700F03604 /* NoticePresenter.swift in Sources */,

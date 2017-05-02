@@ -13,9 +13,20 @@ protocol ChargebackUserInterface: class {
     
 }
 
+protocol ChargebackWireframeProtocol {
+    
+}
+
 
 struct ChargebackPresenter {
+    
     weak var userInterface: ChargebackUserInterface?
+    let wireframe: ChargebackWireframeProtocol
+    
+    init(wireframe: ChargebackWireframeProtocol, userInterface: ChargebackUserInterface) {
+        self.wireframe = wireframe
+    }
+    
 }
 
 // MARK: - NoticeUIEventHandler

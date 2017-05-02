@@ -20,7 +20,7 @@ protocol NoticeWireframeProtocol {
 
 class NoticePresenter {
     
-    var wireframe: NoticeWireframeProtocol
+    let wireframe: NoticeWireframeProtocol
     weak var userInterface: NoticeUserInterface?
     let api: AppServerAPIProtocol
     

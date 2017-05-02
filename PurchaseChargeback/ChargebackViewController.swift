@@ -195,5 +195,10 @@ extension ChargebackViewController: ChargebackReasonDetailTableViewCellDelegate 
 
 // MARK: - ChargebackUserInterface
 extension ChargebackViewController: ChargebackUserInterface {
-    
+    func presentPage(_ page: ChargebackPage) {
+        /*self.page = page
+        if self.viewIfLoaded != nil {
+            self.reloadPage()
+        }*/
+    }
 }

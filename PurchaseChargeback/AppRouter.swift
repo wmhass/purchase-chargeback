@@ -19,7 +19,8 @@ struct AppRouter {
     static let api = AppServerAPI()
     
     private static var routes: [AppPageType: AppPageWireframe.Type] = [
-        AppPageType.notice : NoticeWireframe.self
+        AppPageType.notice : NoticeWireframe.self,
+        AppPageType.chargeback: ChargebackWireframe.self
     ]
     
     static func routePage(ofType pageType: AppPageType, fromURL url: URL, fromViewController: UIViewController, completion: @escaping (_ result: RouterResult) -> Void) {
