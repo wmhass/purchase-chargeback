@@ -42,9 +42,9 @@ extension NoticeWireframe: NoticeWireframeProtocol {
         guard let viewController = self.rootViewController, let url = page.link(withName: self.continueActionLinkName) else {
             return
         }
-        AppRouter.routePage(ofType: AppPageType.chargeback, fromURL: url, fromViewController: viewController) { [weak self] (didRoute: RouterResult) in
+        AppRouter.routePage(ofType: AppPageType.chargeback, fromURL: url, fromViewController: viewController) { [weak self] (result: RouterResult) in
             completion()
-            switch didRoute {
+            switch result {
             case .success(let pagewireframe, let rawPage):
                 
                 let presentingView = self?.rootViewController?.presentingViewController
