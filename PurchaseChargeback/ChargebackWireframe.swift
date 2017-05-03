@@ -21,7 +21,7 @@ class ChargebackWireframe: AppPageWireframe {
         let api = AppServerAPI()
         let chargebackView = ChargebackViewController()
         let modal = UICustomModalViewController()
-        let wireframe = ChargebackWireframe(rootViewController: fromViewController)
+        let wireframe = ChargebackWireframe(rootViewController: modal)
         let presenter = ChargebackPresenter(wireframe: wireframe, userInterface: chargebackView, api: api)
         
         chargebackView.eventHandler = presenter
@@ -35,4 +35,24 @@ class ChargebackWireframe: AppPageWireframe {
 // MARK: - ChargebackWireframeProtocol
 extension ChargebackWireframe: ChargebackWireframeProtocol {
     
+    func chargebackDone() {
+        guard let presentingView = rootViewController?.presentingViewController else {
+            return
+        }
+        self.rootViewController?.dismiss(animated: true) {
+            
+            let title = "Contestação de compra recebida"
+            let message = "<center><p>Fique de olho no seu email! Nos próximos 3 dias você deverá receber um primeiro retorno sobre sua contestação</p></center>"
+            let actions = [
+                NoticePage.Action(title: "notice.action.close".localized(comment: "Fechar"), type: NoticePage.Action.ActionType.cancel)
+            ]
+            let page = NoticePage(title: title, htmlMessage: message, actions: actions)
+            
+            NoticeWireframe.launchModule(noticePage: page, fromViewController: presentingView)
+        }
+    }
+    
+    func chargebackCanceled() {
+        self.rootViewController?.dismiss(animated: true, completion: nil)
+    }
 }

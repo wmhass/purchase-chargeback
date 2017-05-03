@@ -17,8 +17,7 @@ class NoticeWireframe: AppPageWireframe {
         self.rootViewController = rootViewController
     }
     
-    static func launchModule(rawPage: [String: AnyObject], fromViewController: UIViewController) {
-        let noticePage = NoticePage(raw: rawPage)
+    static func launchModule(noticePage: NoticePage, fromViewController: UIViewController) {
         let noticeViewController = NoticeViewController()
         let modal = UICustomModalViewController()
         let api = AppServerAPI()
@@ -33,29 +32,22 @@ class NoticeWireframe: AppPageWireframe {
         fromViewController.present(modal, animated: true, completion: nil)
     }
     
+    static func launchModule(rawPage: [String: AnyObject], fromViewController: UIViewController) {
+        let noticePage = NoticePage(raw: rawPage)
+        self.launchModule(noticePage: noticePage, fromViewController: fromViewController)
+    }
+    
 }
 
 // MARK: - NoticeWireframeProtocol
 extension NoticeWireframe: NoticeWireframeProtocol {
     
-    func continueActionTapped(page: NoticePage, completion: @escaping () -> Void) {
-        guard let viewController = self.rootViewController, let url = page.link(withName: self.continueActionLinkName) else {
+    func launch(wireframeOfType: AppPageWireframe.Type, withPage rawPage: [String: AnyObject]) {
+        guard let presentingView = rootViewController?.presentingViewController else {
             return
         }
-        AppRouter.routePage(ofType: AppPageType.chargeback, fromURL: url, fromViewController: viewController) { [weak self] (result: RouterResult) in
-            completion()
-            
-            switch result {
-            case .success(let pagewireframe, let rawPage):
-                let presentingView = self?.rootViewController?.presentingViewController
-                self?.dismiss(completion: {
-                    if let presentingView = presentingView {
-                        pagewireframe.launchModule(rawPage: rawPage, fromViewController: presentingView)
-                    }
-                })
-            case .error(let error):
-                self?.rootViewController?.handleErrorMessage(error)
-            }
+        self.dismiss {
+            wireframeOfType.launchModule(rawPage: rawPage, fromViewController: presentingView)
         }
     }
     

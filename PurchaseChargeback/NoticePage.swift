@@ -35,10 +35,10 @@ struct NoticePage {
         }
     }
     
-    func link(withName name: String) -> URL? {
+    func link(withName name: String) -> AppApiLink? {
         for link in self.links {
             if link.name == name {
-                return link.url
+                return link
             }
         }
         return nil

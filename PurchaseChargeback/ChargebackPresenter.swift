@@ -9,13 +9,13 @@
 import Foundation
 
 
-protocol ChargebackUserInterface: class {
-    func showErrorMessage(_ message: String?)
+protocol ChargebackUserInterface: class, AppUserInterface {
     func setCardLocked(isLocked locked: Bool)
 }
 
 protocol ChargebackWireframeProtocol {
-    
+    func chargebackDone()
+    func chargebackCanceled()
 }
 
 
@@ -35,6 +35,10 @@ class ChargebackPresenter {
 
 // MARK: - NoticeUIEventHandler
 extension ChargebackPresenter: ChargebackUIEventHandler {
+    
+    func didTapCancel() {
+        self.wireframe.chargebackCanceled()
+    }
     
     func toggleCardStatus(fromPage: ChargebackPage) {
         guard let url = fromPage.isCardLocked ? fromPage.unlockCardURL : fromPage.lockCardURL else {
@@ -62,14 +66,18 @@ extension ChargebackPresenter: ChargebackUIEventHandler {
         guard let url = page.submitURL else {
             return
         }
+        self.userInterface?.showLoadingContentState(true)
         self.api.post(url: url, object: page.encodePage) { [weak self] (response: AppServerAPIResponse) in
+            self?.userInterface?.showLoadingContentState(false)
+            
             switch response {
             case .failed(let message):
                 self?.userInterface?.showErrorMessage(message)
-            case .success(let responseObject):
-                if responseObject["status"] as? String == "Ok" {
-                    
-                }
+            case .success(let responseObject) where responseObject["status"] as? String == "Ok":
+                self?.wireframe.chargebackDone()
+            default:
+                let error = "appapi.error.unknown".localized(comment: "Ocorreu um erro desconhecido. Por favor, tente novamente.")
+                self?.userInterface?.showErrorMessage(error)
             }
         }
     }

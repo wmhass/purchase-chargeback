@@ -14,7 +14,7 @@ protocol HomeUIEventHandler {
     func loadPageContent()
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, AppUserInterface {
     
     @IBOutlet var emptyStateContainerView: UIView!
     @IBOutlet var emptyStateLabel: UILabel!
@@ -63,26 +63,14 @@ class HomeViewController: UIViewController {
 // MARK: - HomeUserInterface
 extension HomeViewController: HomeUserInterface {
     
-    func showErrorMessage(_ message: String?) {
-        self.handleErrorMessage(message)
-        UIView.animate(withDuration: 0.3, animations: { self.emptyStateContainerView.alpha = 1 })
+    func showEmptyState(_ shouldShow: Bool) {
+        UIView.animate(withDuration: 0.3, animations: { self.emptyStateContainerView.alpha = shouldShow ? 1 : 0 })
     }
     
     func refresh(withPage page: HomePage) {
-        UIView.animate(withDuration: 0.3, animations: { self.emptyStateContainerView.alpha = 0 })
-        
         self.page = page
         self.linksTableView.reloadData()
     }
-    
-    func showLoadingContentState(_ shouldShow: Bool) {
-        if shouldShow {
-            SVProgressHUD.show()
-        } else {
-            SVProgressHUD.dismiss()
-        }
-    }
-    
 }
 
 // MARK: - UITableViewDataSource

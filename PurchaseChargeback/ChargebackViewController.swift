@@ -11,9 +11,10 @@ import UIKit
 protocol ChargebackUIEventHandler {
     func toggleCardStatus(fromPage: ChargebackPage)
     func submitPage(_ page: ChargebackPage)
+    func didTapCancel()
 }
 
-class ChargebackViewController: UIViewController {
+class ChargebackViewController: UIViewController, AppUserInterface {
 
     @IBOutlet var contentScrollView: UIScrollView!
     @IBOutlet var titleLabel: UILabel!
@@ -49,6 +50,10 @@ class ChargebackViewController: UIViewController {
         
         let tapViewGesture = UITapGestureRecognizer(target: self, action: #selector(ChargebackViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tapViewGesture)
+        
+        if let page = self.page {
+            self.presentPage(page)
+        }
     }
     
     fileprivate func setupNotificationObservers() {
@@ -112,7 +117,7 @@ extension ChargebackViewController {
     
     @IBAction func cancelButtonTouched(_:AnyObject) {
         self.dismissKeyboard()
-        self.dismiss(animated: true, completion: nil)
+        self.eventHandler?.didTapCancel()
     }
     
     @IBAction func continueButtonTouched(_:AnyObject) {
@@ -120,25 +125,6 @@ extension ChargebackViewController {
         if let page = self.page {
             self.eventHandler?.submitPage(page)
         }
-        //weak var presentingView = self.presentingViewController
-        /*self.dismiss(animated: true) {
-            
-            let title = "Contestação de compra recebida"
-            let message = "<center><p>Fique de olho no seu email! Nos próximos 3 dias você deverá receber um primeiro retorno sobre sua contestação</p></center>"
-            let actions = [
-                NoticePage.Action(title: "notice.action.close".localized(comment: "FECHAR"), type: NoticePage.Action.ActionType.cancel)
-            ]
-
-            let page = NoticePage(title: title, htmlMessage: message, actions: actions)
-            
-            let noticeViewController = NoticeViewController()
-            noticeViewController.presentPage(page)
-            
-            let modal = UICustomModalViewController()
-            modal.installContentViewController(noticeViewController)
-            
-            presentingView?.present(modal, animated: true, completion: nil)
-        }*/
     }
     
 }
@@ -237,23 +223,21 @@ extension ChargebackViewController: ChargebackUserInterface {
         self.cardButtonActivityIndicator.stopAnimating()
         self.cardStatusButton.isEnabled = true
     }
-    
-    func showErrorMessage(_ message: String?) {
-        self.handleErrorMessage(message)
-    }
 
     func presentPage(_ page: ChargebackPage) {
         self.page = page
         
-        self.reasonTextView.attributedPlaceholder = page.commentHint
-        self.reasonTextView.text = page.comment
-        self.reasonsDetailsTableVew.reloadData()
-        self.cardStatusButton.mode = page.isCardLocked ? .locked : .unlocked
-        self.enableContinueButton(page.isDataValid)
-        
-        if page.autoBlock {
-            self.cardStatusButton.mode = .locked
-            self.toggleCardStatus()
+        if self.isViewLoaded {
+            self.reasonTextView.attributedPlaceholder = page.commentHint
+            self.reasonTextView.text = page.comment
+            self.reasonsDetailsTableVew.reloadData()
+            self.cardStatusButton.mode = page.isCardLocked ? .locked : .unlocked
+            self.enableContinueButton(page.isDataValid)
+            
+            if page.autoBlock {
+                self.cardStatusButton.mode = .locked
+                self.toggleCardStatus()
+            }
         }
     }
 }

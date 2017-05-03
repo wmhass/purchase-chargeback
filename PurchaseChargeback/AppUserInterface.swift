@@ -1,14 +1,32 @@
 //
-//  UIViewController+Additions.swift
+//  AppUserInterface.swift
 //  PurchaseChargeback
 //
-//  Created by William Hass on 5/1/17.
+//  Created by William Hass on 5/3/17.
 //  Copyright © 2017 lilohass. All rights reserved.
 //
 
 import UIKit
-extension UIViewController {
-    func handleErrorMessage(_ message: String?) {
+
+import SVProgressHUD
+
+protocol AppUserInterface {
+    func showLoadingContentState(_ shouldShow: Bool)
+    func showErrorMessage(_ message: String?)
+}
+
+extension AppUserInterface {
+    func showLoadingContentState(_ shouldShow: Bool) {
+        if shouldShow {
+            SVProgressHUD.show()
+        } else {
+            SVProgressHUD.dismiss()
+        }
+    }
+}
+
+extension AppUserInterface where Self: UIViewController {
+    func showErrorMessage(_ message: String?) {
         let alertTitle = "appapi.error.generictitle".localized(comment: "Oops!")
         let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: UIAlertControllerStyle.alert)
         

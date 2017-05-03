@@ -8,13 +8,12 @@
 
 import UIKit
 import WebKit
-import SVProgressHUD
 
 protocol NoticeUIEventHandler {
     func didTapAction(action: NoticePage.Action, inPage page: NoticePage)
 }
 
-class NoticeViewController: UIViewController {
+class NoticeViewController: UIViewController, AppUserInterface {
     
     @IBOutlet var actionsTableView: UITableView!
     @IBOutlet var descriptionTextView: UITextView!
@@ -105,14 +104,6 @@ extension NoticeViewController: NoticeUserInterface {
         self.page = page
         if self.viewIfLoaded != nil {
             self.reloadPage()
-        }
-    }
-    
-    func showLoadingContentState(_ shouldShow: Bool) {
-        if shouldShow {
-            SVProgressHUD.show()
-        } else {
-            SVProgressHUD.dismiss()
         }
     }
 }
