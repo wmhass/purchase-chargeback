@@ -54,6 +54,12 @@ class ChargebackViewController: UIViewController, AppUserInterface {
         if let page = self.page {
             self.presentPage(page)
         }
+        
+        self.setupAccessibility()
+    }
+    
+    func setupAccessibility() {
+        self.titleLabel.accessibilityTraits = UIAccessibilityTraitHeader
     }
     
     fileprivate func setupNotificationObservers() {

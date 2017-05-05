@@ -64,6 +64,10 @@ open class UICustomSwitch: UIView {
     var valueChanged: (_: UICustomSwitch) -> Void = { _ in }
     
     fileprivate func commonInit() {
+        self.isAccessibilityElement = true
+        self.accessibilityHint = "app.customswitch.hint".localized(comment: "Pressione para inverter valor")
+        self.accessibilityTraits = UIAccessibilityTraitButton
+        
         self.valueLabel.font = self.labelFont
         self.valueLabel.textAlignment = .center
         
@@ -123,7 +127,16 @@ open class UICustomSwitch: UIView {
         self.valueChanged(self)
     }
 
+    fileprivate func reloadAccessibility() {
+        if self.isOn {
+            self.accessibilityLabel = self.onLabel
+        } else {
+            self.accessibilityLabel = self.offLabel
+        }
+    }
+    
     fileprivate func refreshView(animated: Bool) {
+        self.reloadAccessibility()
         self.setNeedsLayout()
         if animated {
             UIView.animate(withDuration: UICustomSwitch.animationDuration, delay: 0, options: .curveEaseOut, animations: { 

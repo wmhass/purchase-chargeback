@@ -11,8 +11,3 @@ import Foundation
 enum AppPageType: String {
     case notice, chargeback
 }
-
-//protocol AppPage {
-//    var type: AppPageType { get }
-//    init(raw: [String: AnyObject])
-//}

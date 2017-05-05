@@ -25,6 +25,9 @@ class NoticeActionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()        
         
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = UIAccessibilityTraitButton
+        
         self.selectedBackgroundView = UIView()
         self.titleLabel.font = AppFont.noticeActionTitle
         self.topKeyline.backgroundColor = AppColor.keylineBgd

@@ -22,6 +22,8 @@ class ChargebackReasonDetailTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.accessibilityElements = [self.titleLabel, self.customSwitch]
+        
         self.titleLabel.font = AppFont.chargebackReasonLabel
         
         self.customSwitch.frame = self.switchContainer.bounds

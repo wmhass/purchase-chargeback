@@ -43,3 +43,9 @@
 "homepage.title.link" = "Home actions";
 
 "appapi.error.responserror" = "Algo errado ocorreu, tente novamente mais tarde!";
+
+"cardstatus.hint.taptounlock" = "Pressione para desbloquear o seu cartão";
+
+"cardstatus.hint.taptolock" = "Pressione para bloquear o seu cartão";
+
+"app.customswitch.hint" = "Pressione para inverter valor";

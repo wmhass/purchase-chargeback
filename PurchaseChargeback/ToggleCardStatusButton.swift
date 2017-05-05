@@ -67,10 +67,13 @@ class ToggleCardStatusButton: UIButton {
             let localizedTitle = "cardstatus.button.cardlocked".localized(comment: "Bloqueamos preventivamente o seu cartão")
             self.setTitle(localizedTitle, for: UIControlState.normal)
             self.setImage(UIImage(named: "ic_chargeback_lock")?.withRenderingMode(.alwaysOriginal), for: UIControlState.normal)
+            self.accessibilityHint = "cardstatus.hint.taptounlock".localized(comment: "Pressione para desbloquear o seu cartão")
+            
         case .unlocked:
             let localizedTitle = "cardstatus.button.cardunlocked".localized(comment: "Cartão desbloqueado, recomendamos mantê-lo bloqueado.")
             self.setTitle(localizedTitle, for: UIControlState.normal)
             self.setImage(UIImage(named: "ic_chargeback_unlock")?.withRenderingMode(.alwaysOriginal), for: UIControlState.normal)
+            self.accessibilityHint = "cardstatus.hint.taptolock".localized(comment: "Pressione para bloquear o seu cartão")
         }
     }
     

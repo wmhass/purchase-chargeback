@@ -37,6 +37,10 @@ class NoticeViewController: UIViewController, AppUserInterface {
         self.reloadPage()
     }
     
+    func setupAccessibility() {
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
