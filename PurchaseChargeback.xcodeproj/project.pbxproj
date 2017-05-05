@@ -18,7 +18,6 @@
 		3D54BD531EAB88D6000CC9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD521EAB88D6000CC9AD /* ViewController.swift */; };
 		3D54BD581EAB88D6000CC9AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD571EAB88D6000CC9AD /* Assets.xcassets */; };
 		3D54BD661EAB88D6000CC9AD /* PurchaseChargebackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD651EAB88D6000CC9AD /* PurchaseChargebackTests.swift */; };
-		3D54BD711EAB88D6000CC9AD /* PurchaseChargebackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD701EAB88D6000CC9AD /* PurchaseChargebackUITests.swift */; };
 		3D54BD811EAC4C5B000CC9AD /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD7F1EAC4C5B000CC9AD /* NoticeViewController.swift */; };
 		3D54BD821EAC4C5B000CC9AD /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BD801EAC4C5B000CC9AD /* NoticeViewController.xib */; };
 		3D54BD861EAC4E97000CC9AD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BD841EAC4E97000CC9AD /* HomeViewController.swift */; };
@@ -57,18 +56,10 @@
 		3DED8B731EB8BC0B00DE4895 /* ReasonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED8B721EB8BC0B00DE4895 /* ReasonDetail.swift */; };
 		3DF1DF511EB0D225005FB570 /* UICustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1DF501EB0D225005FB570 /* UICustomSwitch.swift */; };
 		E76726FD69E4AD5F799EA0AC /* Pods_PurchaseChargebackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4135F943322FA6E741AFA /* Pods_PurchaseChargebackTests.framework */; };
-		EDC73FD24633B860076D7675 /* Pods_PurchaseChargebackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63975188515CC37D981FC53 /* Pods_PurchaseChargebackUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		3D54BD621EAB88D6000CC9AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D54BD451EAB88D6000CC9AD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3D54BD4C1EAB88D6000CC9AD;
-			remoteInfo = PurchaseChargeback;
-		};
-		3D54BD6D1EAB88D6000CC9AD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3D54BD451EAB88D6000CC9AD /* Project object */;
 			proxyType = 1;
@@ -93,7 +84,6 @@
 		3D54BD611EAB88D6000CC9AD /* PurchaseChargebackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurchaseChargebackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D54BD651EAB88D6000CC9AD /* PurchaseChargebackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseChargebackTests.swift; sourceTree = "<group>"; };
 		3D54BD671EAB88D6000CC9AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D54BD6C1EAB88D6000CC9AD /* PurchaseChargebackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurchaseChargebackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D54BD701EAB88D6000CC9AD /* PurchaseChargebackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseChargebackUITests.swift; sourceTree = "<group>"; };
 		3D54BD721EAB88D6000CC9AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D54BD7F1EAC4C5B000CC9AD /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
@@ -160,14 +150,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D54BD691EAB88D6000CC9AD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EDC73FD24633B860076D7675 /* Pods_PurchaseChargebackUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -197,7 +179,6 @@
 			children = (
 				3D54BD4D1EAB88D6000CC9AD /* PurchaseChargeback.app */,
 				3D54BD611EAB88D6000CC9AD /* PurchaseChargebackTests.xctest */,
-				3D54BD6C1EAB88D6000CC9AD /* PurchaseChargebackUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -460,27 +441,6 @@
 			productReference = 3D54BD611EAB88D6000CC9AD /* PurchaseChargebackTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3D54BD6B1EAB88D6000CC9AD /* PurchaseChargebackUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3D54BD7B1EAB88D6000CC9AD /* Build configuration list for PBXNativeTarget "PurchaseChargebackUITests" */;
-			buildPhases = (
-				89E60517B686F6579F2CF837 /* [CP] Check Pods Manifest.lock */,
-				3D54BD681EAB88D6000CC9AD /* Sources */,
-				3D54BD691EAB88D6000CC9AD /* Frameworks */,
-				3D54BD6A1EAB88D6000CC9AD /* Resources */,
-				5D9CF7278EBF9A9B49EC4AE9 /* [CP] Embed Pods Frameworks */,
-				B6D543182029AFB53066105E /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3D54BD6E1EAB88D6000CC9AD /* PBXTargetDependency */,
-			);
-			name = PurchaseChargebackUITests;
-			productName = PurchaseChargebackUITests;
-			productReference = 3D54BD6C1EAB88D6000CC9AD /* PurchaseChargebackUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -502,12 +462,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3D54BD4C1EAB88D6000CC9AD;
 					};
-					3D54BD6B1EAB88D6000CC9AD = {
-						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = R8DRDAPLCP;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 3D54BD4C1EAB88D6000CC9AD;
-					};
 				};
 			};
 			buildConfigurationList = 3D54BD481EAB88D6000CC9AD /* Build configuration list for PBXProject "PurchaseChargeback" */;
@@ -524,7 +478,6 @@
 			targets = (
 				3D54BD4C1EAB88D6000CC9AD /* PurchaseChargeback */,
 				3D54BD601EAB88D6000CC9AD /* PurchaseChargebackTests */,
-				3D54BD6B1EAB88D6000CC9AD /* PurchaseChargebackUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -548,13 +501,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3D54BD5F1EAB88D6000CC9AD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D54BD6A1EAB88D6000CC9AD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -594,21 +540,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5D9CF7278EBF9A9B49EC4AE9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PurchaseChargebackUITests/Pods-PurchaseChargebackUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7BAA372F518A6375BA55CB32 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -624,21 +555,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PurchaseChargebackTests/Pods-PurchaseChargebackTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89E60517B686F6579F2CF837 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		8B8B8753F8429AC60BB4E1B9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -652,21 +568,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B6D543182029AFB53066105E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PurchaseChargebackUITests/Pods-PurchaseChargebackUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CC1193A0CB6764B172753135 /* [CP] Copy Pods Resources */ = {
@@ -753,14 +654,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D54BD681EAB88D6000CC9AD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D54BD711EAB88D6000CC9AD /* PurchaseChargebackUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -768,11 +661,6 @@
 			isa = PBXTargetDependency;
 			target = 3D54BD4C1EAB88D6000CC9AD /* PurchaseChargeback */;
 			targetProxy = 3D54BD621EAB88D6000CC9AD /* PBXContainerItemProxy */;
-		};
-		3D54BD6E1EAB88D6000CC9AD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3D54BD4C1EAB88D6000CC9AD /* PurchaseChargeback */;
-			targetProxy = 3D54BD6D1EAB88D6000CC9AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -945,36 +833,6 @@
 			};
 			name = Release;
 		};
-		3D54BD7C1EAB88D6000CC9AD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C8A1F4C77AD77E1DACF1D4B /* Pods-PurchaseChargebackUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = R8DRDAPLCP;
-				INFOPLIST_FILE = PurchaseChargebackUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lilohass.PurchaseChargebackUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = PurchaseChargeback;
-			};
-			name = Debug;
-		};
-		3D54BD7D1EAB88D6000CC9AD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E6F83856ABF6AAC3E251336 /* Pods-PurchaseChargebackUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = R8DRDAPLCP;
-				INFOPLIST_FILE = PurchaseChargebackUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lilohass.PurchaseChargebackUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = PurchaseChargeback;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1001,15 +859,6 @@
 			buildConfigurations = (
 				3D54BD791EAB88D6000CC9AD /* Debug */,
 				3D54BD7A1EAB88D6000CC9AD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3D54BD7B1EAB88D6000CC9AD /* Build configuration list for PBXNativeTarget "PurchaseChargebackUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3D54BD7C1EAB88D6000CC9AD /* Debug */,
-				3D54BD7D1EAB88D6000CC9AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
