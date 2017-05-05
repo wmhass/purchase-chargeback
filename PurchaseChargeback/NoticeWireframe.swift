@@ -52,8 +52,8 @@ extension NoticeWireframe: NoticeWireframeProtocol {
     }
     
     func dismiss(completion: (() -> Void)?) {
-        self.rootViewController?.dismiss(animated: true, completion: {
+        self.rootViewController?.dismiss(animated: true) {
             completion?()
-        })
+        }
     }
 }
