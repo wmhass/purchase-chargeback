@@ -16,7 +16,7 @@ class HomeModule: XCTestCase {
     }
     
     class StubWireframe: HomeViewWireframeProtocol {
-        var launchExpectation: XCTestExpectation?
+        weak var launchExpectation: XCTestExpectation?
         func launch(wireframeOfType: AppPageWireframe.Type, withPage rawPage: [String: AnyObject]) {
             self.launchExpectation?.fulfill()
         }
@@ -58,9 +58,13 @@ class HomeModule: XCTestCase {
         self.presenter = HomePresenter(wireframe: self.stubWireframe, userInterface: self.stubUI, api: self.stubAPI)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testGetPageContent() {
+        let getFromAPIExpectation = self.expectation(description: "Should GET the cotnent")
+        self.stubAPI.getContentExpectation = getFromAPIExpectation
+        
+        self.presenter.loadPageContent()
+        
+        self.waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testLoadingState() {

@@ -10,7 +10,8 @@ import XCTest
 @testable import PurchaseChargeback
 
 class AppServerAPIStub {
-    var routeLinkExpectation: XCTestExpectation?
+    weak var routeLinkExpectation: XCTestExpectation?
+    weak var getContentExpectation: XCTestExpectation?
 }
 
 // MARK: - AppServerAPIProtocol
@@ -19,7 +20,7 @@ extension AppServerAPIStub: AppServerAPIProtocol {
     }
     
     func get(url: URL, completion: AppServerAPIProtocol.RequestCompletion?) {
-
+        self.getContentExpectation?.fulfill()
     }
     
     func routeLink(appLink: AppApiLink, completion: @escaping (_ result: RouterResult) -> Void) {
