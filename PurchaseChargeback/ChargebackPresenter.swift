@@ -31,6 +31,34 @@ class ChargebackPresenter {
         self.userInterface = userInterface
     }
     
+    func didToggleCardStatus(fromPage: ChargebackPage, response: AppServerAPIResponse) {
+        switch response {
+            
+        case .failed(let message):
+            self.userInterface?.showErrorMessage(message)
+            self.userInterface?.setCardLocked(isLocked: fromPage.isCardLocked)
+            
+        case .success(let responseObject):
+            if responseObject["status"] as? String == "Ok" {
+                self.userInterface?.setCardLocked(isLocked: !fromPage.isCardLocked)
+            } else {
+                self.userInterface?.setCardLocked(isLocked: fromPage.isCardLocked)
+            }
+        }
+    }
+    
+    func didSubmitPage(response: AppServerAPIResponse) {
+        self.userInterface?.showLoadingContentState(false)
+        switch response {
+        case .failed(let message):
+            self.userInterface?.showErrorMessage(message)
+        case .success(let responseObject) where responseObject["status"] as? String == "Ok":
+            self.wireframe.chargebackDone()
+        default:
+            let error = "appapi.error.unknown".localized(comment: "Ocorreu um erro desconhecido. Por favor, tente novamente.")
+            self.userInterface?.showErrorMessage(error)
+        }
+    }
 }
 
 // MARK: - NoticeUIEventHandler
@@ -44,21 +72,8 @@ extension ChargebackPresenter: ChargebackUIEventHandler {
         guard let url = fromPage.isCardLocked ? fromPage.unlockCardURL : fromPage.lockCardURL else {
             return
         }
-        
         self.api.post(url: url, object: nil) { [weak self] (response: AppServerAPIResponse) in
-            switch response {
-                
-            case .failed(let message):
-                self?.userInterface?.showErrorMessage(message)
-                self?.userInterface?.setCardLocked(isLocked: fromPage.isCardLocked)
-                
-            case .success(let responseObject):
-                if responseObject["status"] as? String == "Ok" {
-                    self?.userInterface?.setCardLocked(isLocked: !fromPage.isCardLocked)
-                } else {
-                    self?.userInterface?.setCardLocked(isLocked: fromPage.isCardLocked)
-                }
-            }
+            self?.didToggleCardStatus(fromPage: fromPage, response: response)
         }
     }
     
@@ -68,17 +83,7 @@ extension ChargebackPresenter: ChargebackUIEventHandler {
         }
         self.userInterface?.showLoadingContentState(true)
         self.api.post(url: url, object: page.encodePage) { [weak self] (response: AppServerAPIResponse) in
-            self?.userInterface?.showLoadingContentState(false)
-            
-            switch response {
-            case .failed(let message):
-                self?.userInterface?.showErrorMessage(message)
-            case .success(let responseObject) where responseObject["status"] as? String == "Ok":
-                self?.wireframe.chargebackDone()
-            default:
-                let error = "appapi.error.unknown".localized(comment: "Ocorreu um erro desconhecido. Por favor, tente novamente.")
-                self?.userInterface?.showErrorMessage(error)
-            }
+            self?.didSubmitPage(response: response)
         }
     }
 }

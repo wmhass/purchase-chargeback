@@ -30,24 +30,27 @@ class NoticePresenter {
         self.api = api
     }
     
+    func apiRoutedLink(result: RouterResult) {
+        self.userInterface?.showLoadingContentState(false)
+        
+        switch result {
+        case .error(let errorMessage) where errorMessage != nil:
+            self.userInterface?.showErrorMessage(errorMessage!)
+            
+        case .success(let wireframeType, let rawPage):
+            self.wireframe.launch(wireframeOfType: wireframeType, withPage: rawPage)
+            break
+        default:
+            let message = "appapi.error.unknown".localized(comment:  "Ocorreu um erro desconhecido. Por favor, tente novamente.")!
+            self.userInterface?.showErrorMessage(message)
+        }
+    }
+    
     func routeLink(_ link: AppApiLink) {
         self.userInterface?.showLoadingContentState(true)
-        self.api.routeLink(appLink: link, completion: { [weak self] (result) in
-            self?.userInterface?.showLoadingContentState(false)
-            
-            switch result {
-            case .error(let errorMessage) where errorMessage != nil:
-                self?.userInterface?.showErrorMessage(errorMessage!)
-                
-            case .success(let wireframeType, let rawPage):
-                self?.wireframe.launch(wireframeOfType: wireframeType, withPage: rawPage)
-                break
-                
-            default:
-                let message = "appapi.error.unknown".localized(comment:  "Ocorreu um erro desconhecido. Por favor, tente novamente.")!
-                self?.userInterface?.showErrorMessage(message)
-            }
-        })
+        self.api.routeLink(appLink: link) { [weak self] (result) in
+            self?.apiRoutedLink(result: result)
+        }
     }
 }
 
