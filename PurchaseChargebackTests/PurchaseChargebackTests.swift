@@ -10,17 +10,6 @@ import XCTest
 @testable import PurchaseChargeback
 
 class PurchaseChargebackTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func testCSSString() {
         let html = "<body>blah</body>"
         let styleSheet = "p { color: #ff0000 }"
@@ -29,5 +18,4 @@ class PurchaseChargebackTests: XCTestCase {
         let expectedCSS = "<style>" + styleSheet + "</style>" + html
         XCTAssertEqual(generatedCSS, expectedCSS)
     }
-    
 }
