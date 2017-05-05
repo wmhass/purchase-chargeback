@@ -39,6 +39,8 @@
 		3D54BDBB1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDB91EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift */; };
 		3D54BDBC1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */; };
 		3D54BDC01EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */; };
+		3D74DDF61EBC282B00F8682D /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74DDF51EBC282B00F8682D /* HomeModule.swift */; };
+		3D74DDF91EBC286600F8682D /* AppServerAPIStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D74DDF81EBC286600F8682D /* AppServerAPIStub.swift */; };
 		3D936B301EB43CB200AE4FB2 /* ChargebackPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B2F1EB43CB200AE4FB2 /* ChargebackPage.swift */; };
 		3D936B321EB43CD200AE4FB2 /* NoticePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B311EB43CD200AE4FB2 /* NoticePage.swift */; };
 		3D936B341EB50C2000AE4FB2 /* AppServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D936B331EB50C2000AE4FB2 /* AppServerAPI.swift */; };
@@ -114,6 +116,8 @@
 		3D54BDB91EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackReasonDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChargebackReasonDetailTableViewCell.xib; sourceTree = "<group>"; };
 		3D54BDBF1EADFF8C000CC9AD /* AttributedPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedPlaceholderTextView.swift; sourceTree = "<group>"; };
+		3D74DDF51EBC282B00F8682D /* HomeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
+		3D74DDF81EBC286600F8682D /* AppServerAPIStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppServerAPIStub.swift; sourceTree = "<group>"; };
 		3D936B2F1EB43CB200AE4FB2 /* ChargebackPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargebackPage.swift; sourceTree = "<group>"; };
 		3D936B311EB43CD200AE4FB2 /* NoticePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticePage.swift; sourceTree = "<group>"; };
 		3D936B331EB50C2000AE4FB2 /* AppServerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppServerAPI.swift; sourceTree = "<group>"; };
@@ -215,8 +219,10 @@
 		3D54BD641EAB88D6000CC9AD /* PurchaseChargebackTests */ = {
 			isa = PBXGroup;
 			children = (
+				3D74DDF71EBC283700F8682D /* Stubs */,
 				3D54BD651EAB88D6000CC9AD /* PurchaseChargebackTests.swift */,
 				3D54BD671EAB88D6000CC9AD /* Info.plist */,
+				3D74DDF51EBC282B00F8682D /* HomeModule.swift */,
 			);
 			path = PurchaseChargebackTests;
 			sourceTree = "<group>";
@@ -358,6 +364,14 @@
 				3D54BDBA1EAD60E4000CC9AD /* ChargebackReasonDetailTableViewCell.xib */,
 			);
 			name = ChargebackReasonDetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		3D74DDF71EBC283700F8682D /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				3D74DDF81EBC286600F8682D /* AppServerAPIStub.swift */,
+			);
+			name = Stubs;
 			sourceTree = "<group>";
 		};
 		3D936B3B1EB52B1600AE4FB2 /* Protocols */ = {
@@ -733,6 +747,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D74DDF61EBC282B00F8682D /* HomeModule.swift in Sources */,
+				3D74DDF91EBC286600F8682D /* AppServerAPIStub.swift in Sources */,
 				3D54BD661EAB88D6000CC9AD /* PurchaseChargebackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
